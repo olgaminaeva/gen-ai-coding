@@ -2,8 +2,15 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
+For this lesson, the setup includes a coding environment, an AI coding assistant, and datasets for practical exercises.
+
+## Code Editor
+
+The adviced code editor for this lesson is Visual Studio Code, a popular code editor frequantly used by researchers. You can download it from [the official website](https://code.visualstudio.com/). Follow the instructions on the website to install it on your operating system.
+
+## AI Coding Assistant
+
+TODO
 
 ## Data Sets
 
@@ -13,8 +20,6 @@ FIXME: place any data you want learners to use in `episodes/data` and then use
        link to it, replacing the example.com link.
 -->
 Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
-
-## Software Setup
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
@@ -26,29 +31,3 @@ of the software used in this lesson here and fill out the individual operating
 systems (and potentially add more, e.g. online setup) in the solutions blocks.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### Windows
-
-Use PuTTY
-
-::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### MacOS
-
-Use Terminal.app
-
-::::::::::::::::::::::::
-
-
-:::::::::::::::: spoiler
-
-### Linux
-
-Use Terminal
-
-::::::::::::::::::::::::
-
