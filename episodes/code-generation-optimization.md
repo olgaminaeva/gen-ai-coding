@@ -1,5 +1,5 @@
 ---
-title: "Code generation and optimization"
+title: "Code Generation and Optimization"
 teaching: 0
 exercises: 0
 ---
