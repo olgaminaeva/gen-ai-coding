@@ -37,7 +37,7 @@ With a foundation of how AI models for coding assistants function — how they a
 
 ## Popular AI coding assistants ##
 
-| **Feature** | **GitHub Copilot** | **Codeium** | **Amazon CodeWhisperer / Amazon Q Developer** | **Tabnine** | **Hugging Chat**  |
+|   | **GitHub Copilot** | **Codeium** | **Amazon CodeWhisperer / Amazon Q Developer** | **Tabnine** | **Hugging Chat**  |
 |------------|-----------|-----------------|-----------------|-------------------|------------------|
 |  | ![](episodes/fig/github copilot logo.png) | ![](episodes/fig/codeium_logo.png) | ![](episodes/fig/amazon Q developer logo.png) | ![](episodes/fig/Tabnine-AI logo.png) | ![](episodes/fig/hugging chat logo.webp) |
 | **Brief Introduction**  | AI-powered coding assistant developed in collaboration with OpenAI, suggests code as you type within the IDE. | AI coding assistant that enhances productivity with intelligent code completions and refactoring suggestions. | AI assistant from Amazon Web Services, offers real-time code recommendations and integrates into various development environments. | AI-powered code completion tool providing accurate, context-aware code suggestions across multiple languages. | Leverages open-source models for flexible and customizable AI code assistance. |
