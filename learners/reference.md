@@ -10,7 +10,7 @@ Application programming interface (API): An interface that allows software appli
 
 Natural language processing (NLP): A subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human (natural) languages.
 
-Integrated Development Environment (IDE): An environment for writing and debugging code.
+Integrated development environment (IDE): An environment for writing and debugging code.
 
 ## Acknowledgements
 
