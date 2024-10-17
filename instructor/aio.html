@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="Enhancing-coding-efficiency.html">3. Enhancing coding efficiency</a>
+        <a href="Enhancing-coding-efficiency.html">3. Enhancing Coding Efficiency</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -493,12 +493,12 @@ corrections</p>
 <p>TODO</p>
 </div>
 </div>
-</div></section><section id="aio-Enhancing-coding-efficiency"><p>Content from <a href="Enhancing-coding-efficiency.html">Enhancing coding efficiency</a></p>
+</div></section><section id="aio-Enhancing-coding-efficiency"><p>Content from <a href="Enhancing-coding-efficiency.html">Enhancing Coding Efficiency</a></p>
 <hr>
-<p>Last updated on 2024-09-13 |
+<p>Last updated on 2024-10-17 |
 
         <a href="https://github.com/olgaminaeva/gen-ai-coding/edit/main/episodes/Enhancing-coding-efficiency.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 0 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -509,7 +509,15 @@ corrections</p>
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<p>TODO</p>
+<ul>
+<li>How can the autocomplete function in Codeium help improve your
+coding speed?</li>
+<li>What types of repetitive coding tasks can be automated?</li>
+<li>What are some key components of a clear and effective prompt when
+using the autocomplete function?</li>
+<li>In what ways can Codeium assist in generating and improving code
+documentation?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -518,23 +526,349 @@ corrections</p>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Outline the main AI coding assistants</li>
-<li>Set up Codeium as coding assistant for the lesson</li>
+<li>Use an autocomplete function of Codeium to improve coding speed</li>
+<li>Automate repetitive coding tasks using the autocomplete function of
+Codeium</li>
+<li>Compose clear and effective prompts that capture and facilitate the
+expected outcomes using the autocomplete function</li>
+<li>Generate and improve documentation using Codeium</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>TODO</p>
-<div id="discussion1" class="callout discussion">
+<section><h2 class="section-heading" id="autocomplete-function">Autocomplete Function<a class="anchor" aria-label="anchor" href="#autocomplete-function"></a>
+</h2>
+<hr class="half-width">
+<p>A key feature of Codeium is its autocomplete function: with every
+keystroke, Codeium actively attempts to predict and complete what you’re
+typing. By analyzing the current file, previous edits, and contextual
+snippets from your codebase, it offers relevant suggestions as “ghost
+text”.</p>
+<figure><img src="../fig/acceleration.gif" alt="Autocomplete Function" class="figure mx-auto d-block"></figure><p>This feature can be particularly useful when you’re writing
+boilerplate code (which refers to repetitive code that often serves as a
+standard template), as it can save you time and reduce the likelihood of
+errors. By leveraging Codeium’s autocomplete function, you can speed up
+your coding process and focus on the more creative and challenging
+aspects of your work.</p>
+<div class="section level3">
+<h3 id="boilerplate-formatting-and-more">Boilerplate, Formatting, and More<a class="anchor" aria-label="anchor" href="#boilerplate-formatting-and-more"></a>
+</h3>
+<p>As already mentioned above, one of the most powerful ways to use
+Codeium is for automating repetitive coding tasks. Whether you’re
+writing boilerplate code, standard functions, or common design patterns,
+Codeium’s AI assistant can help speed up the process and reduce the
+manual effort required.</p>
+<p>By recognizing patterns in your codebase, Codeium can predict and
+suggest repetitive structures such as:</p>
+<ul>
+<li>
+<strong>Boilerplate code</strong>: Generate routine code structures
+like class definitions, function signatures, or common initialization
+blocks with minimal effort.</li>
+<li>
+<strong>Repetitive functions</strong>: Quickly replicate commonly
+used functions or methods that follow a similar pattern, reducing the
+need for retyping or copy-pasting.</li>
+<li>
+<strong>Code formatting and styling</strong>: Maintain consistency
+in your code format by allowing Codeium to suggest and automate
+repetitive formatting tasks, saving you from manual corrections.</li>
+</ul>
+<p>For example, when writing a set of functions that handle similar
+operations, Codeium can recognize the pattern after a few examples and
+suggest the next method based on prior code. This not only speeds up
+your workflow but also minimizes the risk of errors from copying or
+manually creating repetitive code.</p>
+</div>
+<div class="section level3">
+<h3 id="fill-in-the-middle-fim">Fill-in-the-middle (FIM)<a class="anchor" aria-label="anchor" href="#fill-in-the-middle-fim"></a>
+</h3>
+<p>Codeium’s Autocomplete model also includes Fill-in-the-Middle (FIM)
+capabilities. This is crucial because, more often than not, you’re
+inserting code within an existing file, rather than just appending new
+lines. With FIM, Autocomplete analyzes the code both above and below the
+current line to provide more accurate suggestions.</p>
+<p>Let’s compare the FIM-enabled model to the standard model.</p>
+<p>Codeium Autocomplete (with FIM):</p>
+<figure><img src="../fig/fim_12.png" alt="FIM" class="figure mx-auto d-block"></figure><p>Competitor Autocomplete (without FIM):</p>
+<figure><img src="../fig/fim_13.png" alt="No FIM" class="figure mx-auto d-block"></figure><p>Note that the non-FIM model suggests a generic docstring based on
+only the preceding line with the function signature. In contrast, the
+FIM model provides a more contextually relevant suggestion based on the
+entire function definition.</p>
+</div>
+<div class="section level3">
+<h3 id="inline-comments">Inline Comments<a class="anchor" aria-label="anchor" href="#inline-comments"></a>
+</h3>
+<p>You can guide the autocomplete feature by using comments within your
+code. Codeium interprets these comments and generates code suggestions
+to implement what the comment describes.</p>
+<figure><img src="../fig/minimize_boilerplate.gif" alt="Inline Comments" class="figure mx-auto d-block"></figure>
+</div>
+<div class="section level3">
+<h3 id="shortcuts">Shortcuts<a class="anchor" aria-label="anchor" href="#shortcuts"></a>
+</h3>
+<p>The following shortcuts can be used to speed up your workflow:</p>
+<ul>
+<li>
+<code>Tab</code> = accept suggestion</li>
+<li>
+<code>Esc</code> = clear suggestions</li>
+</ul>
+<div class="section level4">
+<h4 id="macos">MacOS<a class="anchor" aria-label="anchor" href="#macos"></a>
+</h4>
+<ul>
+<li>
+<code>Cmd</code> + <code>Left Arrow</code> = accept next word in
+suggestion</li>
+<li>
+<code>Option</code> + <code>]</code> = next suggestion</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="windowslinux">Windows/Linux<a class="anchor" aria-label="anchor" href="#windowslinux"></a>
+</h4>
+<ul>
+<li>
+<code>Ctrl</code> + <code>Left Allow</code> = accept next word in
+suggestion</li>
+<li>
+<code>Alt</code> + <code>]</code> = next suggestion</li>
+</ul>
+</div>
+</div>
+<div class="section level3">
+<h3 id="best-practices">Best Practices<a class="anchor" aria-label="anchor" href="#best-practices"></a>
+</h3>
+<ul>
+<li><p>Avoid manually triggering autocomplete; instead, let it naturally
+enhance your workflow. Writing prompts as comments is not recommended,
+but decorating your code with quality comments and information
+variable/function names yields the best results.</p></li>
+<li>
+<p>To achieve the best results with autocomplete, it’s important to
+enhance your code with clear, <em>declarative</em> (not instructive)
+code, descriptive function names, and good comments with examples of the
+desired inputs and outputs. See the table below for examples:</p>
+<figure><img src="../fig/table_autocomplete.png" alt="Best Practices for Autocomplete" class="figure mx-auto d-block"></figure>
+</li>
+<li><p>If needed, you can temporarily snooze autocomplete. This feature
+is available in VS Code version 1.8.66. Simply click the Codeium button
+in the bottom right to access it.</p></li>
+</ul>
+<div id="autocomplete-exploration-10-min" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<div id="autocomplete-exploration-10-min" class="callout-inner">
+<h3 class="callout-title">Autocomplete Exploration (10 min)</h3>
 <div class="callout-content">
-<p>Challenge example</p>
+<p>Familiarize yourself with Codeium’s autocomplete feature by
+practicing coding tasks. Create the function
+<code>analyze_co2_trends()</code> that processes the CO2 data in
+<code>weekly_in_situ_co2_mlo.csv</code> to calculate monthly average CO2
+concentrations and visualizes the trend over time. The function
+should:</p>
+<ul>
+<li>Accept the dataframe as an argument.</li>
+<li>Convert the <code>date</code> column to a datetime format.</li>
+<li>Discard any rows with missing values.</li>
+<li>Resample the data to calculate monthly averages for CO2
+concentrations.</li>
+<li>Visualize the trends over time in a well-formatted plot.</li>
+<li>Return the monthly averages.</li>
+</ul>
+<p><strong>Note</strong>: While this task can be solved without using
+autocomplete, it’s important to use Codeium in this exercise to
+demonstrate how autocomplete can assist with coding. Although using
+Python is not mandatory, the solution will be provided in Python.</p>
+<ol style="list-style-type: decimal">
+<li>What are the benefits of using Codeium’s autocomplete feature in
+this function?</li>
+<li>What are the potential drawbacks of relying on autocomplete?</li>
+<li>How can you improve the accuracy of suggestions using
+autocomplete?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Here’s a sample outline of what the <code>analyze_co2_trends()</code>
+function might look like:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> analyze_co2_trends(df):</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="co"># Convert 'date' column to datetime</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    df[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>])</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    </span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="co"># Set 'date' as index</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    df.set_index(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    </span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="co"># Drop rows with NaN values</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    <span class="co"># Resample data to get monthly averages</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    monthly_avg <span class="op">=</span> df.resample(<span class="st">'M'</span>).mean()</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>    <span class="co"># Plotting</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>    plt.plot(monthly_avg.index, monthly_avg[<span class="st">'CO2 ppm'</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>    plt.title(<span class="st">'Monthly Average CO2 Concentrations'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>    plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>    plt.ylabel(<span class="st">'CO2 Concentration (ppm)'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>    plt.grid()</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>    plt.show()</span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>    </span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>    <span class="cf">return</span> monthly_avg</span></code></pre>
+</div>
+<ol style="list-style-type: decimal">
+<li>Autocomplete saves time by suggesting common functions, reducing the
+need for memorization, preventing typos, and recognizing patterns to
+speed up repetitive tasks.</li>
+<li>Be cautious! You might miss out on understanding the code if you
+accept suggestions blindly. Autocomplete can also suggest incorrect
+functions if the context is unclear.</li>
+<li>Improve suggestion accuracy by writing clear comments and using
+meaningful variable/function names, which help Codeium understand the
+context better.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="documentation-generation">Documentation Generation<a class="anchor" aria-label="anchor" href="#documentation-generation"></a>
+</h2>
+<hr class="half-width">
+<p>Codeium displays code lenses, which are small, clickable text labels,
+above functions and classes. These lenses allow you to easily invoke
+Codeium’s AI capabilities for the specific item they reference.</p>
+<p>In the <a href="add%20link">previous episode</a>, we explored the
+<code>Refactor</code> code lens. Now, let’s focus on the
+<code>Docstring</code> lens.</p>
+<p>When you click on <code>Docstring</code>, Codeium will automatically
+generate a docstring above the function header. In Python for example,
+the docstring will be correctly placed directly beneath the function
+header.</p>
+<figure><img src="../fig/jetbrains_docstrings.gif" alt="Docstring generation" class="figure mx-auto d-block"></figure><div id="autocomplete-feature-for-docstrings" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="autocomplete-feature-for-docstrings" class="callout-inner">
+<h3 class="callout-title">Autocomplete Feature for Docstrings</h3>
+<div class="callout-content">
+<p>Note that Codeium’s autocomplete feature may also suggest docstrings
+as you type, further assisting in creating well-documented functions
+without needing to manually write them. This can be particularly useful
+when you need to create specific wordings and have the freedom to
+customize documents interactively.</p>
+</div>
+</div>
+</div>
+<div id="generate-docstrings-5-min" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="generate-docstrings-5-min" class="callout-inner">
+<h3 class="callout-title">Generate Docstrings (5 min)</h3>
+<div class="callout-content">
+<p>Modify the <code>analyze_co2_trends()</code> function you created
+earlier to add a detailed docstring using Codeium’s
+<code>Docstring</code> lens. The docstring should:</p>
+<ul>
+<li>Describe the purpose of the function.</li>
+<li>Document the function’s arguments and expected data types.</li>
+<li>Explain what the function returns.</li>
+<li>Optionally, provide a usage example.</li>
+</ul>
+<p><strong>Note</strong>: Although you could manually write the
+docstring, this task is meant to demonstrate the <code>Docstring</code>
+functionality in Codeium, so ensure that you use it to streamline the
+documentation process. Although using Python is not mandatory, the
+solution will be provided in Python.</p>
+<ol style="list-style-type: decimal">
+<li>How did Codeium’s Docstring feature improve the documentation
+process?</li>
+<li>In what situations might you need to adjust the generated docstring
+manually?</li>
+<li>What are the benefits of keeping well-documented functions in your
+codebase?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Here’s an example of how the <code>analyze_co2_trends()</code>
+function might look with a generated docstring:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> analyze_co2_trends(df):</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">    Processes weekly CO2 data to calculate monthly average CO2 concentrations </span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">    and visualizes the trend over time.</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">    df (DataFrame): A pandas DataFrame containing the CO2 data with a 'date' column </span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">                    in 'yyyy/mm/dd' format and a 'CO2 ppm' column representing CO2 concentrations.</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">    DataFrame: A DataFrame containing the monthly average CO2 concentrations.</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">    Example:</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; df = pd.read_csv('weekly_in_situ_co2_mlo.csv')</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; monthly_avg = analyze_co2_trends(df)</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>    <span class="co"># Convert 'date' column to datetime</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    df[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>])</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    </span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>    <span class="co"># Set 'date' as index</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>    df.set_index(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>    </span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>    <span class="co"># Drop rows with NaN values</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>    df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>    </span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>    <span class="co"># Resample data to get monthly averages</span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>    monthly_avg <span class="op">=</span> df.resample(<span class="st">'M'</span>).mean()</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>    </span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>    <span class="co"># Plotting</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>    plt.plot(monthly_avg.index, monthly_avg[<span class="st">'CO2 ppm'</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>    plt.title(<span class="st">'Monthly Average CO2 Concentrations'</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>    plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>    plt.ylabel(<span class="st">'CO2 Concentration (ppm)'</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>    plt.grid()</span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>    plt.show()</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>    </span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>    <span class="cf">return</span> monthly_avg</span></code></pre>
+</div>
+<ol style="list-style-type: decimal">
+<li>Codeium’s <code>Docstring</code> feature improves the documentation
+process by quickly generating structured and consistent docstrings,
+saving time and effort.</li>
+<li>You might need to adjust the generated docstring if the function has
+complex logic or if the generated docstring lacks specific details about
+edge cases or exceptions.</li>
+<li>Well-documented functions improve code readability, make it easier
+for others (or yourself) to understand and use the function, and reduce
+onboarding time for new developers.</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -545,10 +879,24 @@ corrections</p>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<p>TODO</p>
+<ul>
+<li>Codeium’s autocomplete boosts coding speed by predicting and
+completing code based on context, past edits, and current files.</li>
+<li>Automating repetitive tasks like boilerplate code, repetitive
+functions, and formatting reduces errors and saves time.</li>
+<li>Fill-in-the-Middle (FIM) improves suggestions by analyzing the code
+above and below the insertion point.</li>
+<li>Docstring generation via code lenses automates the creation of
+accurate docstrings in the correct location.</li>
+</ul>
 </div>
 </div>
-</div></section>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section>
 </div>
     </main>
 </div>
@@ -573,7 +921,7 @@ corrections</p>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.7" class="external-link">sandpaper (0.16.7)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.9" class="external-link">sandpaper (0.16.9)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -596,8 +944,8 @@ corrections</p>
   "url": "https://olgaminaeva.github.io/gen-ai-coding/instructor/aio.html",
   "identifier": "https://olgaminaeva.github.io/gen-ai-coding/instructor/aio.html",
   "dateCreated": "2024-09-12",
-  "dateModified": "2024-10-08",
-  "datePublished": "2024-10-08"
+  "dateModified": "2024-10-17",
+  "datePublished": "2024-10-17"
 }
 
   </script><script>
