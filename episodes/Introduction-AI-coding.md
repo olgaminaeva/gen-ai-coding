@@ -1,5 +1,5 @@
 ---
-title: "Introduction to AI coding assistants"
+title: "Introduction to AI Coding Assistants"
 teaching: 0
 exercises: 0
 ---

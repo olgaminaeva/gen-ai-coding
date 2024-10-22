@@ -9,3 +9,5 @@ Fill-in-the-middle (FIM): FIM is an advanced autocomplete feature in Codeium tha
 ## Acknowledgements
 
 This material incorporates information from the official Codeium website. For more details, please visit [Codeium Help Center](https://help.codeium.com/).
+
+This material was also developed with the assistance of [ChatGPT](https://chatgpt.com/) for refining the text.
