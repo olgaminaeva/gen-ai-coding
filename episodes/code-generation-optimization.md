@@ -24,9 +24,11 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+Codeium accelerates software development through three key modes: Command, Chat, and Autocomplete. Each mode leverages Codeium’s real-time context awareness engine to deliver highly relevant and useful suggestions. In this lesson, we will explore the Command and Chat modes, as well as the concept of context awareness. The next lesson will focus on the Autocomplete mode.
+
 ## Command ##
 
-Sometimes it can be easier to describe the what we want to code in natural language, espetially when writing simple pieces of code. In this episode, we will learn to use the **Command** fature of Codeium, which allows you to generate or modify code simply by using natural language inputs. Instead of manually coding everything, you can describe what you want in plain English, and Codeium will help you do it — whether it's creating new functions or refactoring existing pieces of code. 
+Sometimes it can be easier to describe the what we want to code in natural language, espetially when writing simple pieces of code. In this episode, we will learn to use the **Command** feature of Codeium, which allows you to generate or modify code simply by using natural language inputs. Instead of manually coding everything, you can describe what you want in plain English, and Codeium will help you do it — whether it's creating new functions or refactoring existing pieces of code. 
 
 - By pressing `⌘+I` on Mac or `Ctrl+I` on Windows/Linux, you can enter a prompt and receive code suggestions, making it easier and faster to develop code directly within your editor. 
 
