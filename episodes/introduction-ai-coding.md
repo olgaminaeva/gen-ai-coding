@@ -21,6 +21,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction ##
+
 Artificial intelligence (AI) models for coding assistants, such as Codeium and GitHub Copilot, rely on machine learning (ML) techniques, particularly deep learning and natural language processing (NLP), to assist developers. These models are trained on vast amounts of publicly available code and documentation to understand patterns, syntax, and code logic across various programming languages. 
 Let’s break down the *key characteristics* of how these models work:
 

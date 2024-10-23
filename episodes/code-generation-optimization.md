@@ -1,5 +1,5 @@
 ---
-title: "Code generation and optimization"
+title: "Code Generation and Optimization"
 teaching: 20
 exercises: 20
 ---
@@ -32,7 +32,6 @@ Sometimes it can be easier to describe the what we want to code in natural langu
 
 - Codeium will then provide a multiline suggestion that you can accept or reject. You can accept a suggestion by pressing `⌥(Option)+A` on Mac or `Alt+A` on Windows/Linux, reject (`⌥+R` on mac or `Alt+R` on Windows/Linux), or follow-up a generation (`⌥+F` on Mac or `Alt+F` on Windows/Linux) by using the appropriate shortcuts or by clicking the corresponding code lens above the generated diff.
 
-
 If you highlight a section of code before invoking **Command**, then the AI will edit the selection spanned by the highlighted lines. Otherwise, it will generate code at your cursor’s location.
 
 ![](episodes/fig/codeium_command_vscode.mp4){alt='Command'}
@@ -49,7 +48,7 @@ Codeium’s Command feature enhances your coding workflow by offering specific f
 
 ![](episodes/fig/command.webp){alt='Command'}
 
-### Best practices ###
+### Best Practices ###
 
 Here are a few things to remember when using Command function of Codeium:
 
@@ -64,7 +63,7 @@ Here are a few things to remember when using Command function of Codeium:
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Code and functions generation
+## Code and Functions Generation (10 min)
 
 Read a datafile into a Pandas `DataFrame` object, produce datafile descriptives and plot the data distributions.
 
@@ -77,6 +76,8 @@ Review the AI-generated code and compare it to the version you would have writte
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
 
 Here is what you would expect to see in the generated code:
 
@@ -102,6 +103,7 @@ for file in glob.glob('*.csv'):
     print(summary_stats)
 
 ```
+
 To generate histograms and bar plots, you can use see the following code:
 
 ```python
@@ -120,12 +122,12 @@ def visualize_data_distribution(data_frame, column):
         plt.title('Bar Plot of {}'.format(column))
         plt.show()
 
-
 for file in glob.glob('*.csv'):
     df = pd.read_csv(file)
     for col in df.columns:
         visualize_data_distribution(df, col)
 ```
+
 Keep in mind, this is a suggested code, and you should always verify that it works as expected.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -137,7 +139,6 @@ Another useful feature of Codeium is Chat function. It allows you to chat with t
 To use Chat function in VS code, click on the **Codeium** icon on the left sidebar of the VS code window. 
 
 ![](episodes/fig/chat_vscode_where_to_find.png){alt='Chat'}
-
 
 ### @mentions
 
@@ -156,7 +157,6 @@ Here are some typical use cases of Chat function in VS code:
 
 - **Explaining Code**: For those new to a codebase or trying to understand complex logic, Chat can explain functions. You might ask, “Explain @function,” and Chat will provide a breakdown of the function’s purpose and workings.
 
-
 ### Prompting
 
 Clear and efficient prompting is a vital element of both Chat and Command features. There are three key components to a good prompt:
@@ -167,7 +167,6 @@ Clear and efficient prompting is a vital element of both Chat and Command featur
 
 - **Constraints:** If there are specific requirements, such as using certain frameworks or considering performance, include these in your prompt.
 
-
 **Example:**
 
 Bad: Refactor rawDataTransform
@@ -176,10 +175,9 @@ Good: Refactor @func:rawDataTransform by turning the while loop into a for loop 
 
 ![](episodes/fig/best practices chat.png){alt='Best Practices for Chat'}
 
-
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Optimization of the code
+## Optimization of the Code (5 min)
 
 You will use Codeium to suggest improvements and restructure a sample Python code that processes a CO2 concentration dataset. 
 Here’s a sample Python code that reads the dataset, processes it to find the average CO2 concentration, and plots the data:
@@ -254,10 +252,9 @@ plot_co2(mean_co2)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Debugging assistance
+## Debugging Assistance (5 min)
 
 In this exercise, you will use Codeium to identify and fix errors in a Python code snippet that processes the CO2 concentration dataset. Here’s a sample code snippet that contains several bugs:
 
@@ -351,7 +348,6 @@ Instead of retraining the model, it retrieves the most relevant pieces of contex
 2. **Local repository**: Codeium goes beyond open files and searches through your entire local codebase. This retrieval engine can pull relevant snippets from the broader project, even from files that aren’t currently open, providing deeper insights and more accurate suggestions.
 
 For instance, if you're working on a function and ask Codeium to help refactor it, the tool will pull in relevant context from both your active file and other parts of your codebase to improve the output. This combination of multiple context sources ensures higher-quality code generation, fewer errors, and suggestions that feel tailored to your project.
-
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
