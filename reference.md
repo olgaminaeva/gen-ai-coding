@@ -15,3 +15,5 @@ Integrated development environment (IDE): An environment for writing and debuggi
 ## Acknowledgements
 
 This material incorporates information from the official Codeium website. For more details, please visit [Codeium Help Center](https://help.codeium.com/).
+
+This material was also developed with the assistance of [ChatGPT](https://chatgpt.com/) for refining the text.
