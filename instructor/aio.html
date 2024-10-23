@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="Introduction-AI-coding.html">1. Introduction to AI coding assistants</a>
+        <a href="Introduction-AI-coding.html">1. Introduction to AI Coding Assistants</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -332,12 +332,12 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-Introduction-AI-coding"><p>Content from <a href="Introduction-AI-coding.html">Introduction to AI coding assistants</a></p>
+<section id="aio-Introduction-AI-coding"><p>Content from <a href="Introduction-AI-coding.html">Introduction to AI Coding Assistants</a></p>
 <hr>
-<p>Last updated on 2024-09-13 |
+<p>Last updated on 2024-10-23 |
 
         <a href="https://github.com/olgaminaeva/gen-ai-coding/edit/main/episodes/Introduction-AI-coding.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 0 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 30 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -349,6 +349,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
+<li>How do AI coding assistants work?</li>
 <li>What are the main AI coding assistants and what are their main
 characteristics?</li>
 <li>How to set up Codeium as coding assistant for the lesson?</li>
@@ -361,7 +362,8 @@ characteristics?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Outline the main AI coding assistants</li>
+<li>Learn about AI models behind coding assistants</li>
+<li>Outline the main AI coding assistants and their capabilities</li>
 <li>Set up Codeium as coding assistant for the lesson</li>
 </ul>
 </div>
@@ -369,7 +371,254 @@ characteristics?</li>
 </div>
 </div>
 </div>
-<p>TODO</p>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>Artificial intelligence (AI) models for coding assistants, such as
+Codeium and GitHub Copilot, rely on machine learning (ML) techniques,
+particularly deep learning and natural language processing (NLP), to
+assist developers. These models are trained on vast amounts of publicly
+available code and documentation to understand patterns, syntax, and
+code logic across various programming languages. Let’s break down the
+<em>key characteristics</em> of how these models work:</p>
+<table class="table">
+<colgroup>
+<col width="14%">
+<col width="52%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>Characteristic</th>
+<th>Description</th>
+<th>Examples</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>Code understanding through ML</strong></td>
+<td>AI coding assistants are built on models that analyze and learn from
+vast amounts of data, including open-source codebases, libraries, and
+developer behavior. These models break down code into a mathematical
+representation that the AI can interpret. They learn common patterns,
+best practices, syntax rules, and how developers approach specific tasks
+or problems.</td>
+<td>When you start typing, the AI assistant predicts what you are likely
+to write next based on patterns it has learned. These predictions can be
+simple line completions or even more complex, multi-line code
+suggestions.</td>
+</tr>
+<tr class="even">
+<td><strong>Context awareness</strong></td>
+<td>AI coding assistants are designed to understand context at multiple
+levels, including code, variables, and functions. This makes them able
+to suggest relevant code suggestions based on the context.</td>
+<td>If you’re writing a loop to iterate over a list of items, the AI can
+suggest the entire loop structure based on what it recognizes in the
+surrounding code.</td>
+</tr>
+<tr class="odd">
+<td><strong>NLP</strong></td>
+<td>AI models are both trained to understand code syntax and to
+interpret natural language. This is crucial for features like chat-based
+interaction or when a developer types a comment or command in plain
+English, expecting the AI to generate code.</td>
+<td>If you write a comment like
+<code>"Create a function to fetch user data from an API"</code>, the AI
+can generate the function code based on that request. You can also ask
+questions, like <code>"How do I format dates in Python?"</code>, and the
+AI will provide an answer or relevant code snippet.</td>
+</tr>
+<tr class="even">
+<td><strong>Learning from user interaction</strong></td>
+<td>AI coding assistants also learn and improve from ongoing user
+interactions. Over time, they adjust to individual developer preferences
+and coding styles, offering more personalized and relevant
+suggestions.</td>
+<td>As users accept or reject suggestions, the assistant refines its
+future outputs based on this feedback (so-called “feedback loop”). Many
+AI coding assistants can learn from private codebases (when privacy
+policies allow) to better align with specific project structures,
+libraries, or functions common to a particular team or organization
+(custom adaptations).</td>
+</tr>
+<tr class="odd">
+<td><strong>Code generation and refactoring</strong></td>
+<td>
+<em>Code generation</em>: Based on a high-level description of what
+you want, the assistant can write larger blocks of code.<br><em>Code
+refactoring</em>: AI can help optimize and refactor your code.</td>
+<td>You might describe a task such as,
+<code>“Create a function to handle user authentication using OAuth2”</code>,
+and the assistant will generate the appropriate code. You might also
+ask,
+<code>“Refactor this code to use async/await for better performance”</code>,
+and the AI will generate the necessary changes to convert synchronous
+functions into asynchronous ones.</td>
+</tr>
+<tr class="even">
+<td><strong>Multilanguage and multimodal support</strong></td>
+<td>AI coding assistants are designed to support a wide variety of
+programming languages and paradigms, enabling them to work across
+different domains (e.g., web development, data science, system
+programming). They are trained on the syntax, idioms, and patterns of
+languages like Python, JavaScript, C++, and many others.</td>
+<td>Codeium supports Assembly, C, C++, C#, Clojure, CMake, CoffeeScript,
+CSS, CUDA, Dart, Delphi, Dockerfile, Elixir, F#, Go, Groovy, Haskell,
+HCL, HTML, Java, JavaScript, Julia, JSON, Kotlin, LISP, Less, Lua,
+Makefile, MATLAB, Objective-C, pbtxt, PHP, Protobuf, Python, Perl,
+Powershell, R, Ruby, Rust, Sass, Scala, SCSS, shell, Solidity, SQL,
+Starlark, Swift, TypeScript, TSX, VBA, Vue, YAML.</td>
+</tr>
+</tbody>
+</table>
+<p>With a foundation of how AI models for coding assistants function —
+how they analyze code, offer suggestions, and improve efficiency — let’s
+explore some of the most popular AI coding assistants available today.
+Each tool uses AI in slightly different ways to enhance your coding
+experience. In the following table, we’ll compare these tools to give
+you an overview of their key features, pricing, and capabilities. This
+will help you understand where Codeium fits and what alternatives you
+might consider.</p>
+</section><section><h2 class="section-heading" id="popular-ai-coding-assistants">Popular AI Coding Assistants<a class="anchor" aria-label="anchor" href="#popular-ai-coding-assistants"></a>
+</h2>
+<hr class="half-width">
+<table class="table">
+<colgroup>
+<col width="12%">
+<col width="11%">
+<col width="18%">
+<col width="18%">
+<col width="20%">
+<col width="19%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th><strong>GitHub Copilot</strong></th>
+<th><strong>Codeium</strong></th>
+<th><strong>Amazon CodeWhisperer / Amazon Q Developer</strong></th>
+<th><strong>Tabnine</strong></th>
+<th><strong>Hugging Chat</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><img src="../fig/github%20copilot%20logo.png" class="figure"></td>
+<td><img src="../fig/codeium_logo.png" class="figure"></td>
+<td><img src="../fig/amazon%20Q%20developer%20logo.png" class="figure"></td>
+<td><img src="../fig/Tabnine-AI%20logo.png" class="figure"></td>
+<td><img src="../fig/hugging%20chat%20logo.webp" class="figure"></td>
+</tr>
+<tr class="even">
+<td><strong>Brief Introduction</strong></td>
+<td>AI coding assistant developed in collaboration with OpenAI, suggests
+code as you type within the IDE</td>
+<td>AI coding assistant that provides code completions and refactoring
+suggestions</td>
+<td>AI assistant from Amazon Web Services, offers real-time code
+recommendations and integrates into various development
+environments</td>
+<td>AI code completion tool providing accurate, context-aware code
+suggestions across multiple languages</td>
+<td>Leverages open-source models for flexible and customizable AI code
+assistance</td>
+</tr>
+<tr class="odd">
+<td><strong>Key Features</strong></td>
+<td>Integration with GitHub ecosystem<br><br> Multilingual
+support<br><br> Acts as a virtual pair programmer</td>
+<td>Advanced code completions<br><br> Code refactoring
+capabilities<br><br> Supports multiple programming languages</td>
+<td>Code recommendations<br><br> Security scans for
+vulnerabilities<br><br> Real-time documentation assistance<br><br>
+Multilingual support</td>
+<td>Robust autocompletion<br><br> Learns from codebase to suggest
+relevant snippets and APIs<br><br> Extensive language support</td>
+<td>Open-source model integration<br><br> High flexibility in
+deployment<br><br> Supports diverse coding environments</td>
+</tr>
+<tr class="even">
+<td><strong>Pricing</strong></td>
+<td>Free for verified students (via GitHub Student Pack)<br><br> Monthly
+subscription fee, often with a free trial month</td>
+<td>Free version with basic features<br><br> Paid version for full
+access to advanced features and higher usage limits</td>
+<td>Free tier with basic features<br><br> Paid tiers with additional
+features, higher usage limits, and advanced support</td>
+<td>Free version with limited features<br><br> Pro version
+subscription-based, available monthly or yearly<br><br> Discounts for
+team licenses</td>
+<td>Free access to open-source models<br><br> Paid options for advanced
+support and additional features</td>
+</tr>
+</tbody>
+</table>
+<p>Now that we’ve compared some of the top AI coding assistants, you can
+see that each tool offers unique features and benefits. For this lesson,
+we’ll focus on teaching you how to use AI coding assistants with Codeium
+as our primary example. Codeium offers a powerful, beginner-friendly
+experience that helps you speed up coding through intelligent
+completions, refactoring suggestions, and support for multiple
+programming languages.</p>
+<p>In the next section, we’ll walk through the steps to set up Codeium
+in your development environment, so you can start taking advantage of
+these features right away.</p>
+</section><section><h2 class="section-heading" id="setting-up-codeium">Setting up Codeium<a class="anchor" aria-label="anchor" href="#setting-up-codeium"></a>
+</h2>
+<hr class="half-width">
+<ol style="list-style-type: decimal">
+<li><p>Make sure you have an Integrated Development Environment (IDE)
+installed on your computer. Go to <a href="https://codeium.com/download" class="external-link">the Codeium download page</a> to see
+a list of supported IDEs and installation instructions. In the current
+lesson, we will be working in Visual Studio Code (VS Code), therefore,
+we recommend installing VS Code. You can download it from the <a href="https://code.visualstudio.com/Download" class="external-link">VS Code download
+page</a>.</p></li>
+<li><p>You can follow the <a href="https://codeium.com/vscode_tutorial" class="external-link">Codeium installation
+instructions in VS Code</a> on the official website.</p></li>
+<li><p>Open Extension Marketplace: Open the Extension Marketplace, which
+is the icon with boxes on the primary sidebar in your VS Code.</p></li>
+<li><p>Install Codeium: Type Codeium in the marketplace search bar, open
+up the page and click the blue Install button.</p></li>
+</ol>
+<figure><img src="../fig/install_extension.png" class="figure mx-auto d-block"></figure><ol start="5" style="list-style-type: decimal">
+<li><p>Authorize: After installation is complete, you should be prompted
+by Visual Studio Code with a pop-up on the bottom right to authorize
+Codeium. <em>If not, you should see an option to sign in to your Codeium
+account in the bottom left Accounts tab of your Visual Studio Code
+window.</em> Click the Sign in with Auth to use Codeium option. Either
+method (popup or Accounts tab) should redirect you to the Codeium
+website.</p></li>
+<li><p>Create Account: If you do not have a Codeium account yet, you
+will be redirected to create an account.</p></li>
+<li><p>Sign In: If you are not signed in, please sign in with your
+account details. Once you sign in, you will be redirected back to Visual
+Studio Code via pop-up. Click Open Visual Studio Code, which should
+redirect you back to Visual Studio Code. <em>If you are using a
+browser-based IDE, instead of being redirected back with pop-up, you
+will be routed to instructions on how to complete authentication by
+providing an access token. Please follow these instructions instead of
+Step 6, and then continue on with “Using Codeium.”</em></p></li>
+<li><p>All Done! You will be asked to confirm the authentication in
+Visual Studio Code (click Open in the resulting pop-up).</p></li>
+</ol>
+<div class="section level3">
+<h3 id="using-codeium-as-your-coding-assistant">Using Codeium as your Coding Assistant<a class="anchor" aria-label="anchor" href="#using-codeium-as-your-coding-assistant"></a>
+</h3>
+<p>In this lesson, we will learn about the three ways Codeium can assist
+with coding: <em>Autocomplete</em>, <em>Chat</em>, and
+<em>Command</em>.</p>
+<p><strong>Autocomplete:</strong> This feature is always working in the
+background of your coding tool (IDE). It gives suggestions as you type,
+shown in light gray text. Autocomplete is most helpful when you already
+have a rough idea of what you want to code and just need to finish it
+quickly. It helps you stay focused and keeps your work flowing
+smoothly.</p>
+<p><strong>Chat:</strong> This feature allows you to ask questions and
+get answers using simple, everyday language. You can access Chat from
+the side panel in your coding tool. It’s great for when you’re working
+with new or unfamiliar code and need quick guidance or explanations.</p>
+<p><strong>Command:</strong> With Command, you can tell Codeium what
+changes you want to make to your code in plain language. Codeium will
+then suggest the changes, which you can choose to accept, reject, or
+adjust as needed.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -378,6 +627,12 @@ characteristics?</li>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
+<li>AI coding assistants work by combining ML, contextual code
+understanding, and NLP to help developers code faster and more
+efficiently.</li>
+<li>These tools predict, generate, and even optimize code based on the
+developer’s input and ongoing context, making them powerful companions
+in modern software development.</li>
 <li>There are several AI coding assistants abailable on the market, and
 they are designed to optimize your coding experience.</li>
 <li>To set up Codeium as your coding assistant you need to download and
@@ -385,7 +640,13 @@ install the extension on our local PC.</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-code-generation-optimization"><p>Content from <a href="code-generation-optimization.html">Code generation and optimization</a></p>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-code-generation-optimization"><p>Content from <a href="code-generation-optimization.html">Code generation and optimization</a></p>
 <hr>
 <p>Last updated on 2024-09-13 |
 
@@ -699,7 +960,7 @@ autocomplete?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Here’s a sample outline of what the <code>analyze_co2_trends()</code>
 function might look like:</p>
@@ -811,7 +1072,7 @@ codebase?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Here’s an example of how the <code>analyze_co2_trends()</code>
 function might look with a generated docstring:</p>
@@ -944,8 +1205,8 @@ any links that you are not going to use.
   "url": "https://olgaminaeva.github.io/gen-ai-coding/instructor/aio.html",
   "identifier": "https://olgaminaeva.github.io/gen-ai-coding/instructor/aio.html",
   "dateCreated": "2024-09-12",
-  "dateModified": "2024-10-22",
-  "datePublished": "2024-10-22"
+  "dateModified": "2024-10-23",
+  "datePublished": "2024-10-23"
 }
 
   </script><script>
