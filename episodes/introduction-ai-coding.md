@@ -73,8 +73,6 @@ Click Open Visual Studio Code, which should redirect you back to Visual Studio C
 
 8. All Done! You will be asked to confirm the authentication in Visual Studio Code (click Open in the resulting pop-up).
 
-
-
 ### Using Codeium as your Coding Assistant ###
 
 In this lesson, we will learn about the three ways Codeium can assist with coding: *Autocomplete*, *Chat*, and *Command*.
@@ -84,8 +82,6 @@ In this lesson, we will learn about the three ways Codeium can assist with codin
 **Chat:** This feature allows you to ask questions and get answers using simple, everyday language. You can access Chat from the side panel in your coding tool. It’s great for when you’re working with new or unfamiliar code and need quick guidance or explanations.
 
 **Command:** With Command, you can tell Codeium what changes you want to make to your code in plain language. Codeium will then suggest the changes, which you can choose to accept, reject, or adjust as needed.
-
-
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

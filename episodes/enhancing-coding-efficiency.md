@@ -6,29 +6,29 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How can the autocomplete function in Codeium help improve your coding speed?
+- How can the Autocomplete function in Codeium help improve your coding speed?
 - What types of repetitive coding tasks can be automated?
-- What are some key components of a clear and effective prompt when using the autocomplete function?
+- What are some key components of a clear and effective prompt when using the Autocomplete function?
 - In what ways can Codeium assist in generating and improving code documentation?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Use an autocomplete function of Codeium to improve coding speed
-- Automate repetitive coding tasks using the autocomplete function of Codeium
-- Compose clear and effective prompts that capture and facilitate the expected outcomes using the autocomplete function
+- Use an Autocomplete function of Codeium to improve coding speed
+- Automate repetitive coding tasks using the Autocomplete function of Codeium
+- Compose clear and effective prompts that capture and facilitate the expected outcomes using the Autocomplete function
 - Generate and improve documentation using Codeium
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Autocomplete Function
 
-A key feature of Codeium is its autocomplete function: with every keystroke, Codeium actively attempts to predict and complete what you're typing. By analyzing the current file, previous edits, and contextual snippets from your codebase, it offers relevant suggestions as "ghost text".
+A key feature of Codeium is its Autocomplete function: with every keystroke, Codeium actively attempts to predict and complete what you're typing. By analyzing the current file, previous edits, and contextual snippets from your codebase, it offers relevant suggestions as "ghost text".
 
 ![](episodes/fig/acceleration.gif){alt='Autocomplete Function'}
 
-This feature can be particularly useful when you're writing boilerplate code (which refers to repetitive code that often serves as a standard template), as it can save you time and reduce the likelihood of errors. By leveraging Codeium's autocomplete function, you can speed up your coding process and focus on the more creative and challenging aspects of your work.
+This feature can be particularly useful when you're writing boilerplate code (which refers to repetitive code that often serves as a standard template), as it can save you time and reduce the likelihood of errors. By leveraging Codeium's Autocomplete function, you can speed up your coding process and focus on the more creative and challenging aspects of your work.
 
 ### Boilerplate, Formatting, and More
 
@@ -60,7 +60,7 @@ Note that the non-FIM model suggests a generic docstring based on only the prece
 
 ### Inline Comments
 
-You can guide the autocomplete feature by using comments within your code. Codeium interprets these comments and generates code suggestions to implement what the comment describes.
+You can guide the Autocomplete feature by using comments within your code. Codeium interprets these comments and generates code suggestions to implement what the comment describes.
 
 ![](episodes/fig/minimize_boilerplate.gif){alt='Inline Comments'}
 
@@ -84,18 +84,18 @@ The following shortcuts can be used to speed up your workflow:
 
 ### Best Practices
 
-- Avoid manually triggering autocomplete; instead, let it naturally enhance your workflow. Writing prompts as comments is not recommended, but decorating your code with quality comments and information variable/function names yields the best results.
-- To achieve the best results with autocomplete, it's important to enhance your code with clear, *declarative* (not instructive) code, descriptive function names, and good comments with examples of the desired inputs and outputs. See the table below for examples:
+- Avoid manually triggering Autocomplete; instead, let it naturally enhance your workflow. Writing prompts as comments is not recommended, but decorating your code with quality comments and information variable/function names yields the best results.
+- To achieve the best results with Autocomplete, it's important to enhance your code with clear, *declarative* (not instructive) code, descriptive function names, and good comments with examples of the desired inputs and outputs. See the table below for examples:
 
     ![](episodes/fig/table_autocomplete.png){alt='Best Practices for Autocomplete'}
 
-- If needed, you can temporarily snooze autocomplete. This feature is available in VS Code version 1.8.66. Simply click the Codeium button in the bottom right to access it.
+- If needed, you can temporarily snooze Autocomplete. This feature is available in VS Code version 1.8.66. Simply click the Codeium button in the bottom right to access it.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## Autocomplete Exploration (10 min)
 
-Familiarize yourself with Codeium's autocomplete feature by practicing coding tasks. Create the function `analyze_co2_trends()` that processes the CO2 data in `weekly_in_situ_co2_mlo.csv` to calculate monthly average CO2 concentrations and visualizes the trend over time. The function should:
+Familiarize yourself with Codeium's Autocomplete feature by practicing coding tasks. Create the function `analyze_co2_trends()` that processes the CO2 data in `weekly_in_situ_co2_mlo.csv` to calculate monthly average CO2 concentrations and visualizes the trend over time. The function should:
 
 - Accept the dataframe as an argument.
 - Convert the `date` column to a datetime format.
@@ -104,11 +104,11 @@ Familiarize yourself with Codeium's autocomplete feature by practicing coding ta
 - Visualize the trends over time in a well-formatted plot.
 - Return the monthly averages.
 
-**Note**: While this task can be solved without using autocomplete, it’s important to use Codeium in this exercise to demonstrate how autocomplete can assist with coding. Although using Python is not mandatory, the solution will be provided in Python.
+**Note**: While this task can be solved without using Autocomplete, it’s important to use Codeium in this exercise to demonstrate how Autocomplete can assist with coding. Although using Python is not mandatory, the solution will be provided in Python.
 
-1. What are the benefits of using Codeium’s autocomplete feature in this function?
-2. What are the potential drawbacks of relying on autocomplete?
-3. How can you improve the accuracy of suggestions using autocomplete?
+1. What are the benefits of using Codeium’s Autocomplete feature in this function?
+2. What are the potential drawbacks of relying on Autocomplete?
+3. How can you improve the accuracy of suggestions using Autocomplete?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -164,7 +164,7 @@ When you click on `Docstring`, Codeium will automatically generate a docstring a
 
 ## Autocomplete Feature for Docstrings
 
-Note that Codeium's autocomplete feature may also suggest docstrings as you type, further assisting in creating well-documented functions without needing to manually write them. This can be particularly useful when you need to create specific wordings and have the freedom to customize documents interactively.
+Note that Codeium's Autocomplete feature may also suggest docstrings as you type, further assisting in creating well-documented functions without needing to manually write them. This can be particularly useful when you need to create specific wordings and have the freedom to customize documents interactively.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -242,7 +242,7 @@ def analyze_co2_trends(df):
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Codeium's autocomplete boosts coding speed by predicting and completing code based on context, past edits, and current files.
+- Codeium's Autocomplete boosts coding speed by predicting and completing code based on context, past edits, and current files.
 - Automating repetitive tasks like boilerplate code, repetitive functions, and formatting reduces errors and saves time.
 - Fill-in-the-Middle (FIM) improves suggestions by analyzing the code above and below the insertion point.
 - Docstring generation via code lenses automates the creation of accurate docstrings in the correct location.
