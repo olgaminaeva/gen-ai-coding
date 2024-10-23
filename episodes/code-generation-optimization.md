@@ -96,17 +96,16 @@ def calculate_descriptives(data_frame):
     
     return nrow, ncol, data_types, summary_stats
 
-
-for file in glob.glob('*.csv'):
-    df = pd.read_csv(file)
-    nrow, ncol, data_types, summary_stats = calculate_descriptives(df)
-    print(f'\nFile: {file}')
-    print(f'Number of rows: {nrow}\nNumber of columns: {ncol}\nData types: {data_types}')
-    print(summary_stats)
+url = 'https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv'
+df = pd.read_csv(url)
+nrow, ncol, data_types, summary_stats = calculate_descriptives(df)
+print(f'\nFile: {url}')
+print(f'Number of rows: {nrow}\nNumber of columns: {ncol}\nData types: {data_types}')
+summary_stats
 
 ```
 
-To generate histograms and bar plots, you can use see the following code:
+And here is the histograms and bar plots that should be generated:
 
 ```python
 def visualize_data_distribution(data_frame, column):
@@ -116,18 +115,9 @@ def visualize_data_distribution(data_frame, column):
         plt.ylabel('Frequency')
         plt.title('Histogram of {}'.format(column))
         plt.show()
-    else:
-        data_frame[column].value_counts().plot(kind='bar')
-        plt.xlabel(column)
-        sns.scatterplot(data=df)
-        plt.ylabel('Frequency')
-        plt.title('Bar Plot of {}'.format(column))
-        plt.show()
 
-for file in glob.glob('*.csv'):
-    df = pd.read_csv(file)
-    for col in df.columns:
-        visualize_data_distribution(df, col)
+for col in df.columns:
+    visualize_data_distribution(df, col)
 ```
 
 Keep in mind, this is a suggested code, and you should always verify that it works as expected.
@@ -185,17 +175,13 @@ You will use Codeium to suggest improvements and restructure a sample Python cod
 Here’s a sample Python code that reads the dataset, processes it to find the average CO2 concentration, and plots the data:
 
 ```python
-# Load dataset
-url = 'https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv'
-data = pd.read_csv(url)
-
 # Extract date and mean CO2
-data['year'] = pd.to_datetime(data['date']).dt.year
-mean_co2 = data.groupby('year')['Interpolated'].mean()
+df['year'] = pd.to_datetime(df['Date']).dt.year
+mean_co2 = df.groupby('year')['Interpolated'].mean()
 
 # Plot the data
 plt.figure(figsize=(10,5))
-plt.plot(mean_co2.index, mean_co2.values)
+plt.plot(mean_co2.index, mean_co2)
 plt.title('Average CO2 Concentration Over Years')
 plt.xlabel('Year')
 plt.ylabel('CO2 Concentration (ppm)')
@@ -221,14 +207,11 @@ After applying the suggestions, your optimized code might look something like th
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Read the CSV file into a Pandas DataFrame
-data = pd.read_csv('co2-mm-mlo.csv')
-
 # Convert date to datetime and extract the year
-data['year'] = pd.to_datetime(data['date']).dt.year
+data['year'] = pd.to_datetime(df['Date']).dt.year
 
 # Calculate the average CO2 concentration per year
-mean_co2 = data.groupby('year')['Interpolated'].mean()
+mean_co2 = df.groupby('year')['Interpolated'].mean()
 
 # Function to plot CO2 concentration
 def plot_co2(data):
@@ -261,16 +244,6 @@ plot_co2(mean_co2)
 In this exercise, you will use Codeium to identify and fix errors in a Python code snippet that processes the CO2 concentration dataset. Here’s a sample code snippet that contains several bugs:
 
 ```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Read the CSV file into a Pandas DataFrame
-data = pd.read_csv('co2-mm-mlo.csv')
-
-# Extract year and CO2 levels
-data['year'] = data['date'].dt.year
-mean_co2 = data.groupby('year')['Interpolated'].mean()
-
 # Plot the data
 plt.figure(figsize=(10, 5))
 plt.plot(mean_co2.index, mean_co2)
