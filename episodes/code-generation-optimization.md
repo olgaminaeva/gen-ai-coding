@@ -62,15 +62,19 @@ Here are a few things to remember when using Command function of Codeium:
 
 - Always review AI-generated code to ensure they accurately reflect the purpose and parameters of the function.
 
+![](episodes/fig/codeium_chat_best_practices.png){alt='Best Practices for Command'}
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Code and Functions Generation (10 min)
 
-Read a datafile into a Pandas `DataFrame` object, produce datafile descriptives and plot the data distributions.
+In this exercise, you will practice to use Codeium to read a datafile `co2-mm-mlo.csv` from a [CO2 concentration dataset] (https://datahub.io/core/co2-ppm/) into a Pandas `DataFrame` object, produce datafile descriptives and plot the data distributions.
 
 - Write a function that takes as input a `DataFrame` and that calculates basic descriptive statistics like: number of rows (`nrow`), number of columns (`ncol`), data types of each column, basic summary statistics (like mean, min, max for numeric columns).
 
 - Write a function that takes as inputs a `DataFrame` and a column and generate an histogram to visualize data distribution if the column is numeric (e.g., `int64`, `float64`), a bar plot showing the category frequency if the column is categorical.
+
+- Finally, write a function that plots the distribution of `Average` and `Interpolated` columns on a single graph with `Date` on x-axis.
 
 Review the AI-generated code and compare it to the version you would have written independently without the AI-assistant.
 
@@ -96,7 +100,7 @@ def calculate_descriptives(data_frame):
     return nrow, ncol, data_types, summary_stats
 
 url = 'https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv'
-df = pd.read_csv(url)
+df = pd.read_csv(url, df = pd.read_csv(url, index_col=False))
 nrow, ncol, data_types, summary_stats = calculate_descriptives(df)
 print(f'\nFile: {url}')
 print(f'Number of rows: {nrow}\nNumber of columns: {ncol}\nData types: {data_types}')
@@ -117,6 +121,21 @@ def visualize_data_distribution(data_frame, column):
 
 for col in df.columns:
     visualize_data_distribution(df, col)
+```
+Finally, this is what you would expect to see in the plot function:
+
+```python
+def plot_co2_distribution(data_frame):
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(data_frame['Date'], data_frame['Average'], label='Average')
+    ax.plot(data_frame['Date'], data_frame['Interpolated'], label='Interpolated')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('CO2 Concentration (ppm)')
+    ax.set_title('CO2 Concentration Distribution Over Time')
+    ax.legend()
+    plt.show()
+
+plot_co2_distribution(df)
 ```
 
 Keep in mind, this is a suggested code, and you should always verify that it works as expected.
@@ -174,21 +193,14 @@ Good: Refactor @func:rawDataTransform by turning the while loop into a for loop 
 ## Optimization of the Code (5 min)
 
 You will use Codeium to suggest improvements and restructure a sample Python code that processes a CO2 concentration dataset. 
-Here’s a sample Python code that reads the dataset, processes it to find the average CO2 concentration, and plots the data:
+Here’s a sample Python code that processes the dataset to find the difference between the average and interpolated CO2 concentration for each row:
 
 ```python
-# Extract date and mean CO2
-df['year'] = pd.to_datetime(df['Date']).dt.year
-mean_co2 = df.groupby('year')['Interpolated'].mean()
+avg_int = []
+for i in range(df.shape[0]):
+    avg_int.append(df.iloc[i]['Average'] - df.iloc[i]['Interpolated'])
 
-# Plot the data
-plt.figure(figsize=(10,5))
-plt.plot(mean_co2.index, mean_co2)
-plt.title('Average CO2 Concentration Over Years')
-plt.xlabel('Year')
-plt.ylabel('CO2 Concentration (ppm)')
-plt.grid()
-plt.show()
+df['Avg-Int'] = avg_int
 ```
 
 - Review the provided code. Identify areas that could be improved in terms of clarity, efficiency, or functionality.
@@ -206,54 +218,161 @@ You can try this with your own piece of code and see how it improves.
 After applying the suggestions, your optimized code might look something like this:
 
 ```python
-import pandas as pd
-import matplotlib.pyplot as plt
+df['Avg-Int_opt'] = df.apply(lambda x: x['Average'] - x['Interpolated'], axis=1)
+assert df['Avg-Int'].equals(df['Avg-Int_opt'])
+```
+Or even like this:
 
-# Convert date to datetime and extract the year
-data['year'] = pd.to_datetime(df['Date']).dt.year
-
-# Calculate the average CO2 concentration per year
-mean_co2 = df.groupby('year')['Interpolated'].mean()
-
-# Function to plot CO2 concentration
-def plot_co2(data):
-    plt.figure(figsize=(10, 5))
-    plt.plot(data.index, data.values)
-    plt.title('Average CO2 Concentration Over Years')
-    plt.xlabel('Year')
-    plt.ylabel('CO2 Concentration (ppm)')
-    plt.grid()
-    plt.show()
-
-# Call the plotting function
-plot_co2(mean_co2)
+```python
+df['Avg-Int'] = df['Average'] - df['Interpolated']
 ```
 
 **Comparison:**
 
-- The restructured code introduces a function `(plot_co2)` for plotting, making it clearer and more modular. Variable names remain descriptive, and comments provide context.
+- The second version is faster and more memory-efficient because it uses vectorized operations, which are a key feature of the pandas library.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-- The restructured version might have slightly more lines due to the function encapsulation, but it enhances readability and reusability.
+::::::::::::::::::::::::::::::::::::: challenge
 
-- Further, the use of functions is generally considered best practice in Python, making the code easier to maintain.
+## Optimization of the Code - 2 
+
+Similar to the exercise above, execute the code as is to verify it works and examine the output. Then use Codeium’s Chat feature to analyze and suggest potential improvements. Look for ways to enhance performance, readability, and conciseness.
+
+```python
+# Convert 'Date' column to datetime format
+data['Date'] = pd.to_datetime(data['Date'], format='%Y-%m')
+
+# Filter data for a specific date range
+filtered_data = data[(data['Date'] >= '2000-01-01') & (data['Date'] <= '2010-12-31')]
+
+# Extract the year value from the 'Date' column
+filtered_data['Year'] = filtered_data['Date'].dt.year
+
+# Group data by year and calculate the average CO2 level for each year
+avg_co2_per_year = filtered_data.groupby('Year')['Interpolated'].mean()
+
+# Plot the results
+plt.figure(figsize=(10, 6))
+plt.plot(avg_co2_per_year.index, avg_co2_per_year, label='Average CO2 (ppm)', marker='o')
+plt.xlabel('Year')
+plt.ylabel('CO2 (ppm)')
+plt.title('Average CO2 Levels by Year (2000-2010)')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
+
+```python
+# Convert 'Date' column to datetime format and filter data for a specific date range
+filtered_data = data[(pd.to_datetime(data['Date'], format='%Y-%m') >= '2000-01-01') & 
+                     (pd.to_datetime(data['Date'], format='%Y-%m') <= '2010-12-31')]
+
+
+# Group data by year and calculate the average CO2 level for each year
+avg_co2_per_year = filtered_data.groupby(pd.to_datetime(filtered_data['Date'], format='%Y-%m').dt.year)['Interpolated'].mean()
+
+
+# Plot the results
+avg_co2_per_year.plot(figsize=(10, 6), marker='o')
+plt.xlabel('Year')
+plt.ylabel('CO2 (ppm)')
+plt.title('Average CO2 Levels by Year (2000-2010)')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+**Comparison:**
+
+- Combined the `pd.to_datetime` conversion and filtering steps into one.
+
+- Removed the unnecessary `filtered_data['Year']` column and used the `dt.year` accessor to extract the year from the `'Date'` column.
+
+- Simplified the plotting code by using the `plot` method of the Series object and removing the unnecessary `plt.figure` call.
+
+- Removed the `label` parameter from the `plot` function, as it is not necessary when using the `plot` method of the Series object.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Debugging Assistance (5 min)
+## Optimization of the Code - 3
 
-In this exercise, you will use Codeium to identify and fix errors in a Python code snippet that processes the CO2 concentration dataset. Here’s a sample code snippet that contains several bugs:
+In this exercise, you’ll again work with a code snippet that loads a dataset, processes CO₂ concentration data, and performs calculations. The initial code is functional but could benefit from optimization. Your task is to analyze it with Codeium to find improvements in both performance and readability.
 
 ```python
-# Plot the data
-plt.figure(figsize=(10, 5))
-plt.plot(mean_co2.index, mean_co2)
-plt.title('Average CO2 Concentration Over Years')
-plt.xlabel('Year')
-plt.ylabel('CO2 Concentration (ppm)')
-plt.grid()
-plt.show()
+# Process data
+data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
+data = data.dropna(subset=['Date', 'Interpolated'])
+
+# Calculate annual CO2 average
+annual_avg = data.groupby(data['Date'].dt.year)['Interpolated'].mean()
+
+# Find the highest year-over-year increase
+yearly_diff = annual_avg.diff().fillna(0)
+max_increase_year = annual_avg.idxmax()
+max_increase = yearly_diff[max_increase_year]
+
+print(f"The year with the highest CO₂ increase was {max_increase_year} with an increase of {max_increase:.2f} ppm.")
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
+
+```python
+# Process data and calculate annual CO2 average
+annual_avg = data.dropna(subset=['Date', 'Interpolated'])['Interpolated'].groupby(pd.to_datetime(data['Date'], errors='coerce').dt.year).mean()
+
+
+# Find the highest year-over-year increase
+max_increase_year = annual_avg.idxmax()
+max_increase = annual_avg.diff().fillna(0)[max_increase_year]
+
+
+print(f"The year with the highest CO₂ increase was {max_increase_year} with an increase of {max_increase:.2f} ppm.")
+```
+
+**Comparison:**
+
+- Combined the data processing and annual average calculation into a single line of code.
+
+- Removed the unnecessary `yearly_diff` variable and instead calculated the difference directly in the line where `max_increase` is calculated.
+
+- Removed the unnecessary `max_increase_year` calculation and instead used the `idxmax` method directly on the `annual_avg` series.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Debugging Assistance (5 min)
+
+In this exercise, you will use Codeium to identify and fix errors in a Python code snippet that processes the CO2 concentration dataset. The initial code has both logical and runtime errors, and there's potential for optimizations. You’ll use Codeium to debug, correct, and improve the script for better functionality and efficiency.
+
+```python
+# Filter data where CO₂ concentration is above average
+above_avg_data = data[data['ppm'] > data['ppm'].mean]
+
+# Calculate the monthly change in CO₂ concentration
+data['monthly_change'] = data['ppm'] - data['ppm'].shift()
+
+# Find the max monthly change
+max_monthly_change = max(data['monthly_change'])
+
+# Find the date when max monthly change occurred
+max_change_date = data['date'][data['monthly_change'] == max_monthly_change]
+
+print(f"The maximum monthly change in CO₂ concentration was {max_monthly_change} ppm on {max_change_date}.")
 ```
 
 - Review the provided code snippet. Note any potential errors or issues that may prevent it from running correctly.
@@ -275,40 +394,52 @@ plt.show()
 After applying the corrections suggested by Codeium, your code should look something like this:
 
 ```python
-import pandas as pd
-import matplotlib.pyplot as plt
 
-# Read the CSV file into a Pandas DataFrame
-data = pd.read_csv('co2-mm-mlo.csv')
-
-# Convert date column to datetime
-data['date'] = pd.to_datetime(data['date'])
-
-# Extract year and CO2 levels
-data['year'] = data['date'].dt.year
-mean_co2 = data.groupby('year')['Interpolated'].mean()
-
-# Plot the data
-plt.figure(figsize=(10, 5))
-plt.plot(mean_co2.index, mean_co2.values)
-plt.title('Average CO2 Concentration Over Years')
-plt.xlabel('Year')
-plt.ylabel('CO2 Concentration (ppm)')
-plt.grid()
-plt.show()
 ```
 
 **Changes:**
 
-*Date Conversion:*
 
-The code attempted to access the dt attribute of the 'date' column without first converting it to a datetime format, which would raise an error. --><br>
-Added `data['date'] = pd.to_datetime(data['date'])` to ensure the date column is in the correct format for extracting the year.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-*Plotting Values:*
+::::::::::::::::::::::::::::::::::::: challenge
 
-When plotting, the code used mean_co2 directly, which could lead to confusion about the data being plotted. --><br> 
-Changed `plt.plot(mean_co2.index, mean_co2)` to `plt.plot(mean_co2.index, mean_co2.values)` for clarity and to explicitly use the values.
+## Debugging Assistance - 2 (5 min)
+
+```python
+import pandas as pd
+import numpy as np
+
+# Load the dataset
+data = pd.read_csv("https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv")
+
+# Filter data for the years 2010 and 2020
+data_2010 = data[data['Year'] == 2010]
+data_2020 = data[data['Year'] == 2020]
+
+# Calculate average CO2 concentration for each year
+avg_co2_2010 = data_2010['Interpolated'].mean
+avg_co2_2020 = data_2020['Interpolated'].mean
+
+# Calculate the CO2 increase
+co2_increase = avg_co2_2020 - avg_co2_2010
+
+print("The increase in CO2 levels from 2010 to 2020 is:", co2_increase)
+```
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
+
+After applying the corrections suggested by Codeium, your code should look something like this:
+
+```python
+
+```
+
+**Changes:**
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
