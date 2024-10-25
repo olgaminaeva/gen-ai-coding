@@ -34,25 +34,25 @@ You can alternatively follow the [Codeium installation instructions in VS Code](
 
 ## Data Sets
 
-For this lesson, we'll work with datasets tracking atmospheric CO2 levels, specifically the Trends in Atmospheric Carbon Dioxide dataset, available [here](https://datahub.io/core/co2-ppm). This dataset, sourced from the U.S. Government's Earth System Research Laboratory, Global Monitoring Division, includes two primary series:
+For this lesson, we will work with datasets tracking atmospheric CO2 levels, specifically the Trends in Atmospheric Carbon Dioxide dataset, available [here](https://datahub.io/core/co2-ppm). This dataset, sourced from the U.S. Government's Earth System Research Laboratory, Global Monitoring Division, includes two primary series:
 
 1. Mauna Loa Series – The longest continuous record of atmospheric CO₂ concentrations, dating back to 1958, from measurements at Mauna Loa Observatory in Hawaii.
 
 2. Global Average Series – A calculated global average of atmospheric CO₂ levels from marine surface sites worldwide.
 
-During the exercises, we’ll download and analyze these datasets together, so there’s no need to prepare or download anything in advance.
+During the exercises, we will download and analyze these datasets together, so there’s no need to prepare or download anything in advance.
 
 ## Setting Up Your Python Environment
 
-1. Installing Python
+### Installing Python
 
 For the practical exercises in this lesson, we will use Python. If Python isn't already installed on your system, download it from the [official Python website](https://www.python.org/downloads/) and follow the provided instructions for installation.
 
-2. Setting Up a Virtual Environment
+### Setting Up a Virtual Environment
 
 To ensure a consistent and isolated Python environment, we recommend using a virtual environment. Virtual environments allow you to manage dependencies specific to each project without affecting other Python projects or your global Python setup.
 
-Install `virtualenv` if it's not already available by running:
+Install [`virtualenv`](https://virtualenv.pypa.io/en/latest/installation.html) if it's not already available by running:
 
 ```bash
 pip install virtualenv
@@ -74,8 +74,8 @@ This command will create a `.venv` folder in your current directory to store all
 
 To activate the virtual environment, you will use the following command:
 
-- On Windows, run `.venv\Scripts\activate.bat`.
-- On macOS/Linux, run `source .venv/bin/activate`.
+- On Windows, run `.venv\Scripts\activate.bat`
+- On macOS/Linux, run `source .venv/bin/activate`
 
 After activation, you should see the name of your environment (e.g., `.venv`) appear in your terminal prompt, indicating that the environment is active.
 
