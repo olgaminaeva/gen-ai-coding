@@ -34,12 +34,13 @@ You can alternatively follow the [Codeium installation instructions in VS Code](
 
 ## Data Sets
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+For this lesson, we'll work with datasets tracking atmospheric CO2 levels, specifically the Trends in Atmospheric Carbon Dioxide dataset, available [here](https://datahub.io/core/co2-ppm). This dataset, sourced from the U.S. Government's Earth System Research Laboratory, Global Monitoring Division, includes two primary series:
+
+1. Mauna Loa Series – The longest continuous record of atmospheric CO₂ concentrations, dating back to 1958, from measurements at Mauna Loa Observatory in Hawaii.
+
+2. Global Average Series – A calculated global average of atmospheric CO₂ levels from marine surface sites worldwide.
+
+During the exercises, we’ll download and analyze these datasets together, so there’s no need to prepare or download anything in advance.
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
