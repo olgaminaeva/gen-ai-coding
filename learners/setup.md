@@ -42,13 +42,47 @@ For this lesson, we'll work with datasets tracking atmospheric CO2 levels, speci
 
 During the exercises, we’ll download and analyze these datasets together, so there’s no need to prepare or download anything in advance.
 
-::::::::::::::::::::::::::::::::::::::: discussion
+## Setting Up Your Python Environment
 
-### Details
+1. Installing Python
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+For the practical exercises in this lesson, we will use Python. If Python isn't already installed on your system, download it from the [official Python website](https://www.python.org/downloads/) and follow the provided instructions for installation.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::
+2. Setting Up a Virtual Environment
+
+To ensure a consistent and isolated Python environment, we recommend using a virtual environment. Virtual environments allow you to manage dependencies specific to each project without affecting other Python projects or your global Python setup.
+
+Install `virtualenv` if it's not already available by running:
+
+```bash
+pip install virtualenv
+```
+
+Alternatively, you can use `pipx` to manage `virtualenv` installation:
+
+```bash
+pipx install virtualenv
+```
+
+Then, in your project directory, you can create a virtual environment:
+
+```bash
+python3 -m venv .venv
+```
+
+This command will create a `.venv` folder in your current directory to store all environment-specific files.
+
+To activate the virtual environment, you will use the following command:
+
+- On Windows, run `.venv\Scripts\activate.bat`.
+- On macOS/Linux, run `source .venv/bin/activate`.
+
+After activation, you should see the name of your environment (e.g., `.venv`) appear in your terminal prompt, indicating that the environment is active.
+
+Once the environment is activated, you can install the packages needed for this lesson. Run the following command to install the necessary dependencies:
+
+```bash
+pip install -r https://raw.githubusercontent.com/olgaminaeva/gen-ai-coding/refs/heads/main/learners/files/requirements.txt
+```
+
+When you're finished with your work, after the end of this lesson, deactivate the virtual environment by typing `deactivate`. This will return you to your global Python environment.
