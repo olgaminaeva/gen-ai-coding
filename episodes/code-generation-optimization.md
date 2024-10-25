@@ -28,9 +28,9 @@ Codeium accelerates software development through three key modes: Command, Chat,
 
 ## Command ##
 
-Sometimes it can be easier to describe the what we want to code in natural language, espetially when writing simple pieces of code. In this episode, we will learn to use the **Command** feature of Codeium, which allows you to generate or modify code simply by using natural language inputs. Instead of manually coding everything, you can describe what you want in plain English, and Codeium will help you do it — whether it's creating new functions or refactoring existing pieces of code. 
+Sometimes it can be easier to describe the what we want to code in natural language, especially when writing simple pieces of code. In this episode, we will learn to use the **Command** feature of Codeium, which allows you to generate or modify code simply by using natural language inputs. Instead of manually coding everything, you can describe what you want in plain English, and Codeium will help you do it — whether it's creating new functions or refactoring existing pieces of code. 
 
-- By pressing `⌘+I` on Mac or `Ctrl+I` on Windows/Linux, you can enter a prompt and receive code suggestions, making it easier and faster to develop code directly within your editor. 
+- By pressing `⌘(Command)+I` on Mac or `Ctrl+I` on Windows/Linux, you can enter a prompt and receive code suggestions, making it easier and faster to develop code directly within your editor. 
 
 - Codeium will then provide a multiline suggestion that you can accept or reject. You can accept a suggestion by pressing `⌥(Option)+A` on Mac or `Alt+A` on Windows/Linux, reject (`⌥+R` on mac or `Alt+R` on Windows/Linux), or follow-up a generation (`⌥+F` on Mac or `Alt+F` on Windows/Linux) by using the appropriate shortcuts or by clicking the corresponding code lens above the generated diff.
 
@@ -60,8 +60,7 @@ Here are a few things to remember when using Command function of Codeium:
 
 - For effective use, try to give clear and detailed prompts. While simple requests like “Fix this” or “Refactor” can work well due to context awareness, more specific instructions like “Write a function that takes two inputs of type Diffable and implements the Myers diff algorithm” can yield even better results.
 
-- Always review AI-generated docstrings to ensure they accurately reflect the purpose and parameters of the function.
-
+- Always review AI-generated code to ensure they accurately reflect the purpose and parameters of the function.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -126,11 +125,13 @@ Keep in mind, this is a suggested code, and you should always verify that it wor
 
 ## Chat
 
-Another useful feature of Codeium is Chat function. It allows you to chat with the AI assistant and get instant feedback on your code. The Chat function is similar to the Command function, but it allows you to interact with the AI assistant in a more interactive and interactive way.
+The Codeium Chat feature offers a powerful way to interact with an AI assistant directly within your coding environment, providing instant, contextual feedback on your code. Unlike the Command function, Codeium Chat is designed for a more conversational and responsive interaction, making it easy to discuss complex coding questions and solutions.
 
-To use Chat function in VS code, click on the **Codeium** icon on the left sidebar of the VS code window. 
+In Visual Studio Code, you can access Codeium Chat by clicking on the Codeium icon located in the left sidebar by default.
 
 ![](episodes/fig/chat_vscode_where_to_find.png){alt='Chat'}
+
+To quickly open the chat panel or toggle focus between it and your code editor, use `⌘+⇧+A` on Mac or `Ctrl+⇧+A` on Windows/Linux. For a more flexible experience, you can pop the chat panel out of the IDE entirely by clicking the "pop-out" icon at the top of the chat window.
 
 ### @mentions
 
@@ -141,6 +142,7 @@ For instance, you can mention classes, as shown below:
 ![](episodes/fig/atmentions1.gif){alt='@mentions'}
 
 Here are some typical use cases of Chat function in VS code:
+
 - **Writing Boilerplate Code**: Easily generate function headers or repetitive code blocks by providing simple prompts like “Write a function that takes X and Y, performs A, B, C, and returns Z.”
 
 - **Writing Unit Tests**: You can use Chat to quickly write unit tests for your functions. For instance, ask it, “Write a unit test for @function-name that tests edge cases for X and Y.”
