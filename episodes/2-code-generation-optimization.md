@@ -525,7 +525,7 @@ After applying the corrections suggested by Codeium, your code should look somet
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Autocomplete Function
+## Autocomplete
 
 A key feature of Codeium is its Autocomplete function: with every keystroke, Codeium actively attempts to predict and complete what you're typing. By analyzing the current file, previous edits, and contextual snippets from your codebase, it offers relevant suggestions as "ghost text".
 
