@@ -4,6 +4,9 @@ teaching: 20
 exercises: 20
 ---
 
+### TODO: Update times
+### TODO: Update questions and objectives
+
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - How to generate useful snippets of code using Codeium as AI-assistant?
@@ -32,11 +35,13 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Codeium accelerates software development through three key modes: Command, Chat, and Autocomplete. Each mode leverages Codeium’s real-time context awareness engine to deliver highly relevant and useful suggestions. In this lesson, we will explore the Command and Chat modes, as well as the concept of context awareness. The next lesson will focus on the Autocomplete mode.
+Codeium accelerates software development through three key modes: Command, Chat, and Autocomplete. Each mode leverages Codeium’s real-time context awareness engine to deliver highly relevant and useful suggestions. We will explore how to use these features to generate, optimize, and refactor code, as well as to identify and fix bugs. 
 
-## Command ##
+Please note that while using Python is not required since Codeium supports multiple programming languages, all exercises and solutions will be provided in Python.
 
-Sometimes it can be easier to describe the what we want to code in natural language, especially when writing simple pieces of code. In this episode, we will learn to use the **Command** feature of Codeium, which allows you to generate or modify code simply by using natural language inputs. Instead of manually coding everything, you can describe what you want in plain English, and Codeium will help you do it — whether it's creating new functions or refactoring existing pieces of code. 
+## Command
+
+The **Command** feature of Codeium allows you to generate or modify code by using natural language inputs. Instead of manually coding everything, you can describe what you want in plain English, and Codeium will help you do it — whether it's creating new functions or refactoring existing pieces of code. 
 
 - By pressing `⌘(Command)+I` on Mac or `Ctrl+I` on Windows/Linux, you can enter a prompt and receive code suggestions, making it easier and faster to develop code directly within your editor. 
 
@@ -46,93 +51,34 @@ If you highlight a section of code before invoking **Command**, then the AI will
 
 ![](episodes/fig/codeium_command_vscode.mp4){alt='Command'}
 
-### Refactoring and Docstrings
+### Refactoring, Docstrings, and More
 
-In Codeium, code lenses appear right above your function and class definitions, providing convenient shortcuts for common tasks. These clickable labels allow you to quickly generate docstrings, explain code, or refactor code with just a click, saving time on manual edits. These features are powered by Command, which uses natural language inputs to assist with tasks like improving code structure and generating documentation.
+In Codeium, code lenses appear right above your function and class definitions, providing convenient shortcuts for common tasks. These clickable labels allow you to quickly generate docstrings, explain code, or refactor code with just a click, saving time on manual edits. These features are powered by Command, which is invoked when the code lenses are clicked.
 
-Codeium’s Command feature enhances your coding workflow by offering specific functions through code lenses.
+- **Refactor Functionality**: Clicking the `Refactor` label triggers Codeium’s refactoring capabilities, providing a dropdown of pre-filled options or allowing you to write a custom instruction. This is particularly useful for improving performance or restructuring code. You can also highlight a block of code and use Command (`⌘+I` or `Ctrl+I`) to perform more targeted refactoring.
 
-- **Refactor Functionality**: Clicking the Refactor label triggers Codeium’s refactoring capabilities, providing a dropdown of pre-filled options or allowing you to write a custom instruction. This is particularly useful for improving performance or restructuring code. You can also highlight a block of code and use Command (`⌘+I` or `Ctrl+I`) to perform more targeted refactoring.
-
-- **Docstring Generation**: For generating documentation, clicking the Docstring label automatically creates a docstring above your function header (or under the function header in Python). This AI-generated documentation will describe what the function does, helping you maintain well-documented, readable code. In Python for example, the docstring will be correctly placed directly beneath the function header.
+- **Docstring Generation**: For generating documentation, clicking the `Docstring` label automatically creates a docstring above your function header (or under the function header in Python). This AI-generated documentation will describe what the function does, helping you maintain well-documented, readable code. In Python, for example, the docstring will be correctly placed directly beneath the function header.
 
 ![](episodes/fig/command.webp){alt='Command'}
 
 ![](episodes/fig/jetbrains_docstrings.gif){alt='Docstring generation'}
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: callout
 
-## Generate Docstrings (5 min)
+### Smart Paste
 
-Modify the `analyze_co2_trends()` function you created earlier to add a detailed docstring using Codeium's `Docstring` lens. The docstring should:
+This feature lets you copy code and paste it into a file in your IDE that's written in a different programming language. Use `⌘+⌥+V` (Mac) or `Ctrl+Alt+V` (Windows/Linux) to activate Smart Paste. Codeium will automatically detect the language of the destination file and translate the code in your clipboard accordingly. With context awareness, Codeium will also adapt the pasted code to integrate seamlessly, such as by referencing relevant variable names.
 
-- Describe the purpose of the function.
-- Document the function’s arguments and expected data types.
-- Explain what the function returns.
-- Optionally, provide a usage example.
 
-**Note**: Although you could manually write the docstring, this task is meant to demonstrate the `Docstring` functionality in Codeium, so ensure that you use it to streamline the documentation process. Although using Python is not mandatory, the solution will be provided in Python.
+Here are some potential use cases:
 
-1. How did Codeium’s Docstring feature improve the documentation process?
-2. In what situations might you need to adjust the generated docstring manually?
-3. What are the benefits of keeping well-documented functions in your codebase?
+- Code migration: for instance, converting JavaScript to TypeScript or translating Java into Kotlin.
+- Adapting code from online sources: you found a helpful utility function in Go, but your project is in Rust.
+- Exploring a new language: if you're curious about Haskell, you can see how your code might look if written in it.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: solution 
-
-## Solution
-
-Here’s an example of how the `analyze_co2_trends()` function might look with a generated docstring:
-
-```python
-def analyze_co2_trends(df):
-    """
-    Processes weekly CO2 data to calculate monthly average CO2 concentrations 
-    and visualizes the trend over time.
-
-    Args:
-    df (DataFrame): A pandas DataFrame containing the CO2 data with a 'date' column 
-                    in 'yyyy/mm/dd' format and a 'CO2 ppm' column representing CO2 concentrations.
-
-    Returns:
-    DataFrame: A DataFrame containing the monthly average CO2 concentrations.
-
-    Example:
-    >>> df = pd.read_csv('weekly_in_situ_co2_mlo.csv')
-    >>> monthly_avg = analyze_co2_trends(df)
-    """
-    # Convert 'date' column to datetime
-    df['date'] = pd.to_datetime(df['date'])
-    
-    # Set 'date' as index
-    df.set_index('date', inplace=True)
-    
-    # Drop rows with NaN values
-    df.dropna(inplace=True)
-    
-    # Resample data to get monthly averages
-    monthly_avg = df.resample('M').mean()
-    
-    # Plotting
-    plt.figure(figsize=(10, 5))
-    plt.plot(monthly_avg.index, monthly_avg['CO2 ppm'], marker='o')
-    plt.title('Monthly Average CO2 Concentrations')
-    plt.xlabel('Date')
-    plt.ylabel('CO2 Concentration (ppm)')
-    plt.grid()
-    plt.show()
-    
-    return monthly_avg
-```
-
-1. Codeium’s `Docstring` feature improves the documentation process by quickly generating structured and consistent docstrings, saving time and effort.
-2. You might need to adjust the generated docstring if the function has complex logic or if the generated docstring lacks specific details about edge cases or exceptions.
-3. Well-documented functions improve code readability, make it easier for others (or yourself) to understand and use the function, and reduce onboarding time for new developers.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-### Best Practices ###
+### Best Practices
 
 Here are a few things to remember when using Command function of Codeium:
 
@@ -140,25 +86,29 @@ Here are a few things to remember when using Command function of Codeium:
 
 - To edit a specific selection of code, highlight that piece of code before using Command. If not, it will generate new code at the cursor's position.
 
-- For effective use, try to give clear and detailed prompts. While simple requests like “Fix this” or “Refactor” can work well due to context awareness, more specific instructions like “Write a function that takes two inputs of type Diffable and implements the Myers diff algorithm” can yield even better results.
-
-- Always review AI-generated code to ensure they accurately reflect the purpose and parameters of the function.
+- For effective use, try to give clear and detailed prompts. While simple requests like “Fix this” or “Refactor” can work well due to context awareness, more specific instructions like “Write a function that takes two inputs of type `Diffable` and implements the Myers diff algorithm” can yield even better results.
 
 ![](episodes/fig/codeium_chat_best_practices.png){alt='Best Practices for Command'}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Code and Functions Generation (10 min)
+## Assisted Code Generation, Part 1 (5 min)
 
-In this exercise, you will practice to use Codeium to read a datafile `co2-mm-mlo.csv` from a [CO2 concentration dataset] (https://datahub.io/core/co2-ppm/) into a Pandas `DataFrame` object, produce datafile descriptives and plot the data distributions.
+### TODO: add part 2 in debugging
 
-- Write a function that takes as input a `DataFrame` and that calculates basic descriptive statistics like: number of rows (`nrow`), number of columns (`ncol`), data types of each column, basic summary statistics (like mean, min, max for numeric columns).
+In this exercise, you will use the Command mode to load a [CO2 concentration dataset](https://datahub.io/core/co2-ppm/) from the file `co2-mm-mlo.csv` into a Pandas DataFrame, then generate descriptive statistics and visualize data distributions.
 
-- Write a function that takes as inputs a `DataFrame` and a column and generate an histogram to visualize data distribution if the column is numeric (e.g., `int64`, `float64`), a bar plot showing the category frequency if the column is categorical.
+1.  Write a function that takes a DataFrame as input and calculates key descriptive statistics, including:
 
-- Finally, write a function that plots the distribution of `Average` and `Interpolated` columns on a single graph with `Date` on x-axis.
+   - Number of rows and columns
+   - Data types of each column
+   - Summary statistics (e.g., mean, minimum, maximum) for numeric columns
 
-Review the AI-generated code and compare it to the version you would have written independently without the AI-assistant.
+2. Write a function that accepts a DataFrame and a specific column as inputs. If the column is numeric (e.g., `int64`, `float64`), create a histogram to display its distribution; if categorical, create a bar plot to show category frequencies.
+
+3. Write a function to plot the `Average` and `Interpolated` columns on a single graph, with Date on the x-axis, to visualize their distributions over time.
+
+After completing these tasks, review the AI-generated code and compare it to the version you might have written independently, considering structure, readability, and accuracy.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -171,60 +121,140 @@ Here is what you would expect to see in the generated code:
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import glob
 
-def calculate_descriptives(data_frame):
+# Load the dataset
+url = 'https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv'
+df = pd.read_csv(url)
+
+def calculate_descriptive_stats(data_frame):
     nrow, ncol = data_frame.shape
     data_types = data_frame.dtypes
     summary_stats = data_frame.describe()
-    
     return nrow, ncol, data_types, summary_stats
 
-url = 'https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv'
-df = pd.read_csv(url, df = pd.read_csv(url, index_col=False))
-nrow, ncol, data_types, summary_stats = calculate_descriptives(df)
-print(f'\nFile: {url}')
-print(f'Number of rows: {nrow}\nNumber of columns: {ncol}\nData types: {data_types}')
-summary_stats
-
-```
-
-And here is the histograms and bar plots that should be generated:
-
-```python
-def visualize_data_distribution(data_frame, column):
+def visualize_column_distribution(data_frame, column):
     if data_frame[column].dtype in ['int64', 'float64']:
-        plt.hist(data_frame[column])
+        plt.hist(data_frame[column], bins=20, edgecolor='k')
         plt.xlabel(column)
         plt.ylabel('Frequency')
-        plt.title('Histogram of {}'.format(column))
-        plt.show()
-
-for col in df.columns:
-    visualize_data_distribution(df, col)
-```
-Finally, this is what you would expect to see in the plot function:
-
-```python
-def plot_co2_distribution(data_frame):
-    fig, ax = plt.subplots(figsize=(10, 5))
-    ax.plot(data_frame['Date'], data_frame['Average'], label='Average')
-    ax.plot(data_frame['Date'], data_frame['Interpolated'], label='Interpolated')
-    ax.set_xlabel('Date')
-    ax.set_ylabel('CO2 Concentration (ppm)')
-    ax.set_title('CO2 Concentration Distribution Over Time')
-    ax.legend()
+        plt.title(f'Histogram of {column}')
+    else:
+        data_frame[column].value_counts().plot(kind='bar')
+        plt.xlabel(column)
+        plt.ylabel('Count')
+        plt.title(f'Bar Plot of {column}')
     plt.show()
 
-plot_co2_distribution(df)
+def plot_average_and_interpolated(data_frame):
+    data_frame['Date'] = pd.to_datetime(data_frame['Date'])
+    plt.figure(figsize=(12, 6))
+    plt.plot(data_frame['Date'], data_frame['Average'], label='Average')
+    plt.plot(data_frame['Date'], data_frame['Interpolated'], label='Interpolated', linestyle='--')
+    plt.xlabel('Date')
+    plt.ylabel('CO2 Concentration (ppm)')
+    plt.title('Average vs Interpolated CO2 Concentrations Over Time')
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+# Example usage
+nrow, ncol, data_types, summary_stats = calculate_descriptive_stats(df)
+print(f'Number of rows: {nrow}, Number of columns: {ncol}')
+print(f'Data types:\n{data_types}')
+print(f'Summary statistics:\n{summary_stats}')
+
+for col in df.columns:
+    visualize_column_distribution(df, col)
+
+plot_average_and_interpolated(df)
 ```
 
-Keep in mind, this is a suggested code, and you should always verify that it works as expected.
+There is something wrong here—can you spot it? We will address this issue later, but for now, let's continue.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Docstrings Generation (5 min)
+
+Modify the `calculate_descriptive_stats()` and `visualize_column_distribution()` functions you created during the previous exercise to add a detailed docstring using Codeium's `Docstring` lens. Each docstring should:
+
+- Describe the purpose of the function
+- Document the function’s arguments and expected data types
+- Explain what the function returns (if applicable)
+- Optionally, provide a usage example
+
+Please note that, while you could manually write the docstring and use suggestions from Autocomplete mode (which we will cover later in this episode), this task is designed to demonstrate Codeium's `Docstring` functionality.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
+
+Here’s an example of how the `calculate_descriptive_stats()` and the `visualize_column_distribution() `functions might look with the generated docstrings:
+
+```python
+def calculate_descriptive_stats(data_frame):
+    """
+    Calculate the number of rows, number of columns, data types of columns,
+    and descriptive statistics of a given DataFrame.
+
+    Parameters
+    ----------
+    data_frame : pandas.DataFrame
+        The DataFrame to be analyzed
+
+    Returns
+    -------
+    tuple
+        A tuple containing (nrow, ncol, data_types, summary_stats)
+    """
+    nrow, ncol = data_frame.shape
+    data_types = data_frame.dtypes
+    summary_stats = data_frame.describe()
+    return nrow, ncol, data_types, summary_stats
+
+def visualize_column_distribution(data_frame, column):
+    """
+    Visualize the distribution of the given column in a DataFrame.
+
+    Parameters
+    ----------
+    data_frame : pandas.DataFrame
+        The DataFrame containing the column to be visualized
+    column : str
+        The column name to be visualized
+
+    Returns
+    -------
+    None
+
+    Notes
+    -----
+    If the column is numeric (int64 or float64), a histogram is plotted.
+    Otherwise, a bar plot of the value counts is plotted.
+    """    
+    if data_frame[column].dtype in ["int64", "float64"]:
+        plt.hist(data_frame[column], bins=20, edgecolor="k")
+        plt.xlabel(column)
+        plt.ylabel("Frequency")
+        plt.title(f"Histogram of {column}")
+    else:
+        data_frame[column].value_counts().plot(kind="bar")
+        plt.xlabel(column)
+        plt.ylabel("Count")
+        plt.title(f"Bar Plot of {column}")
+    plt.show()
+```
+
+Note that you might need to adjust the generated docstring if the function has complex logic or if the generated docstring lacks specific details about edge cases or exceptions.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Chat
+
+### TODO: refactor this section
 
 The Codeium Chat feature offers a powerful way to interact with an AI assistant directly within your coding environment, providing instant, contextual feedback on your code. Unlike the Command function, Codeium Chat is designed for a more conversational and responsive interaction, making it easy to discuss complex coding questions and solutions.
 
@@ -527,6 +557,8 @@ After applying the corrections suggested by Codeium, your code should look somet
 
 ## Autocomplete
 
+### TODO: refactor this section
+
 A key feature of Codeium is its Autocomplete function: with every keystroke, Codeium actively attempts to predict and complete what you're typing. By analyzing the current file, previous edits, and contextual snippets from your codebase, it offers relevant suggestions as "ghost text".
 
 ![](episodes/fig/acceleration.gif){alt='Autocomplete Function'}
@@ -662,6 +694,8 @@ def analyze_co2_trends(df):
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Context Awareness
+
+### TODO: refactor this section
 
 Above we mentioned that the Chat function is particularly helpful due to context awareness. Context awareness is one of Codeium’s most powerful features, allowing it to offer personalized and highly relevant suggestions by pulling information from various sources. Traditionally, generating code required training large LLMs on specific codebases, which is resource-intensive and not scalable for individual users. However, Codeium uses a more efficient method known as **retrieval-augmented generation (RAG)**.
 
