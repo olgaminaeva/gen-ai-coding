@@ -1,7 +1,7 @@
 ---
 title: "Introduction to AI Coding Assistants"
 teaching: 20
-exercises: 10
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
