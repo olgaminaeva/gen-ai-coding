@@ -66,10 +66,9 @@ contact: 'o.minaeva@nwo-i.nl' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- Introduction-AI-coding.md
-- code-generation-optimization.md
-- Enhancing-coding-efficiency.md
-- Ethical-and-security-considerations.md
+- 1-introduction-ai-coding.md
+- 2-code-generation-optimization.md
+- 3-ethical-and-security-considerations.md
 
 # Information for Learners
 learners: 

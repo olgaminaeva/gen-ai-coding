@@ -21,6 +21,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction ##
+
 Artificial intelligence (AI) models for coding assistants, such as Codeium and GitHub Copilot, rely on machine learning (ML) techniques, particularly deep learning and natural language processing (NLP), to assist developers. These models are trained on vast amounts of publicly available code and documentation to understand patterns, syntax, and code logic across various programming languages. 
 Let’s break down the *key characteristics* of how these models work:
 
@@ -46,6 +47,7 @@ With a foundation of how AI models for coding assistants function — how they a
 
 Now that we've compared some of the top AI coding assistants, you can see that each tool offers unique features and benefits. For this lesson, we’ll focus on teaching you how to use AI coding assistants with Codeium as our primary example. Codeium offers a powerful, beginner-friendly experience that helps you speed up coding through intelligent completions, refactoring suggestions, and support for multiple programming languages.
 
+
 For setting up Codeium, you can follow the instructions on [this lesson's setup page](https://olgaminaeva.github.io/gen-ai-coding/#setting-up-codeium).
 
 ### Using Codeium as your Coding Assistant ###
@@ -57,7 +59,6 @@ In this lesson, we will learn about the three ways Codeium can assist with codin
 **Chat:** This feature allows you to ask questions and get answers using simple, everyday language. You can access Chat from the side panel in your coding tool. It’s great for when you’re working with new or unfamiliar code and need quick guidance or explanations.
 
 **Command:** With Command, you can tell Codeium what changes you want to make to your code in plain language. Codeium will then suggest the changes, which you can choose to accept, reject, or adjust as needed.
-
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
