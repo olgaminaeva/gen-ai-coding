@@ -52,5 +52,5 @@ po/*~
 # Mac OS X Finder
 .DS_Store
 
-# Custom folders
+# Local folders
 exercises/
