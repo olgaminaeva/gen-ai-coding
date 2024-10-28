@@ -1,6 +1,6 @@
 ---
 title: "Ethical and Security Considerations"
-teaching: 15
+teaching: 25
 exercises: 15
 ---
 
