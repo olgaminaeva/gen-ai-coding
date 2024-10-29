@@ -1,37 +1,26 @@
 ---
 title: "Code Generation and Optimization"
-teaching: 20
-exercises: 20
+teaching: 25
+exercises: 35
 ---
-
-### TODO: Update times
-### TODO: Update questions and objectives
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How to generate useful snippets of code using Codeium as AI-assistant?
-- What steps to follow to optimize the performance of the code that Codeium generates?
-- How to refactor and improve the structure of existing code using Codeium as AI-assistant?
-- What are the best ways to use Codeium for identifying and fixing bugs in a code?
-- How does Codeium’s context-awareness improve code suggestions during optimization and refactoring?
-- How can the Autocomplete function in Codeium help improve your coding speed?
-- What types of repetitive coding tasks can be automated?
-- What are some key components of a clear and effective prompt when using the Autocomplete function?
-- In what ways can Codeium assist in generating and improving code documentation?
+- What are the three main modes of Codeium and how do they differ?
+- How can developers effectively use the Command feature for code generation and refactoring?
+- What role does context awareness play in improving Codeium's suggestions?
+- How does the Chat feature complement the Command and Autocomplete modes?
+- What are the best practices for writing prompts that get optimal results from Codeium?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Generate snippets of code using Codeium as AI-assistant
-- Optimize performance of the generated code using Codeium as AI-assistant
-- Refactor and improve the structure and quality of existing code using Codeium as AI-assistant
-- Identify and fix bugs using Codeium as AI-assistant
-- Learn about context-awareness in AI-assisted coding
-- Use an Autocomplete function of Codeium to improve coding speed
-- Automate repetitive coding tasks using the Autocomplete function of Codeium
-- Compose clear and effective prompts that capture and facilitate the expected outcomes using the Autocomplete function
-- Generate and improve documentation using Codeium
+- Learn how to use Codeium's Command mode for code generation and refactoring
+- Master the Chat feature for interactive coding assistance and problem-solving
+- Understand how to leverage Autocomplete for efficient code writing
+- Practice using context awareness to get more relevant code suggestions
+- Develop skills in writing effective prompts for better AI assistance
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -93,8 +82,6 @@ Here are a few things to remember when using Command function of Codeium:
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Assisted Code Generation, Part 1 (5 min)
-
-### TODO: add part 2 in debugging
 
 In this exercise, you will use the Command mode to load a [CO2 concentration dataset](https://datahub.io/core/co2-ppm/) from the file `co2-mm-mlo.csv` into a Pandas DataFrame, then generate descriptive statistics and visualize data distributions.
 
@@ -254,9 +241,7 @@ Note that you might need to adjust the generated docstring if the function has c
 
 ## Chat
 
-### TODO: refactor this section
-
-The Codeium Chat feature offers a powerful way to interact with an AI assistant directly within your coding environment, providing instant, contextual feedback on your code. Unlike the Command function, Codeium Chat is designed for a more conversational and responsive interaction, making it easy to discuss complex coding questions and solutions.
+The Codeium Chat feature offers a powerful way to interact with an AI assistant directly within your coding environment, providing instant, contextual feedback on the code. Unlike the Command function, Codeium Chat is designed for a more conversational and responsive interaction, making it easy to discuss complex coding questions and solutions. The base Chat model is available to all Codeium users and it is based on Meta’s [Llama 3.1 70B](https://ai.meta.com/blog/meta-llama-3-1/).
 
 In Visual Studio Code, you can access Codeium Chat by clicking on the Codeium icon located in the left sidebar by default.
 
@@ -264,23 +249,13 @@ In Visual Studio Code, you can access Codeium Chat by clicking on the Codeium ic
 
 To quickly open the chat panel or toggle focus between it and your code editor, use `⌘+⇧+A` on Mac or `Ctrl+⇧+A` on Windows/Linux. For a more flexible experience, you can pop the chat panel out of the IDE entirely by clicking the "pop-out" icon at the top of the chat window.
 
-### @mentions
+### @-Mentions
 
-In any chat message, you can use the @mentions feature to refer to context items from within the chat input by prefixing a word with `@`. Context items can be function names, class names, directories and files, or even content of your termnal history. By doing this explicitly, Codeium will make the most relevant suggestions for you.
+In any chat message, you can use the @-Mentions feature to refer to context items from within the chat input by prefixing a word with `@`. Context items can be function names, class names, directories and files, or even content of your termnal history. By doing this explicitly, Codeium will make the most relevant suggestions for you.
 
 For instance, you can mention classes, as shown below:
 
 ![](episodes/fig/atmentions1.gif){alt='@mentions'}
-
-Here are some typical use cases of Chat function in VS code:
-
-- **Writing Boilerplate Code**: Easily generate function headers or repetitive code blocks by providing simple prompts like “Write a function that takes X and Y, performs A, B, C, and returns Z.”
-
-- **Writing Unit Tests**: You can use Chat to quickly write unit tests for your functions. For instance, ask it, “Write a unit test for @function-name that tests edge cases for X and Y.”
-
-- **Generating Docstrings and Comments**: Use Chat to add useful comments or docstrings to your code. Simply prompt it by saying, “Write a docstring for @function-name,” and it will generate a detailed explanation.
-
-- **Explaining Code**: For those new to a codebase or trying to understand complex logic, Chat can explain functions. You might ask, “Explain @function,” and Chat will provide a breakdown of the function’s purpose and workings.
 
 ### Prompting
 
@@ -300,12 +275,61 @@ Good: Refactor @func:rawDataTransform by turning the while loop into a for loop 
 
 ![](episodes/fig/best practices chat.png){alt='Best Practices for Chat'}
 
+### Other Features
+
+- **Persistent Context**: Configure the `Context` tab in the chat panel to enable continuous contextual awareness during and across conversations. Within this tab, you’ll find:
+    - Custom Chat Instructions: Brief prompts like “Respond in Kotlin and assume I have little familiarity with it,” which guide the model’s response style.
+    - Pinned Contexts: Key items from your codebase (such as files, directories, or code snippets) that you want the model to actively consider.
+    - Active Document: Highlights the currently active file, giving it priority.
+    - Local Indexes: Lists repositories that the Codeium context engine has locally indexed.
+- **Slash Commands**: Use the `/explain` command at the beginning of a message to request an explanation from the model. Currently, this is the only supported slash command.
+- **Copy and Insert**: When a response includes code blocks, you can either copy the block to your clipboard or insert it directly into your editor by using the buttons above the code block.
+- **Inline Citations**: The model can reference specific items from your code, often linking snippets directly in its responses.
+- **Regenerate with Context**: Codeium assesses whether a question requires general or codebase-specific context by default. You can ensure a response includes code context by pressing `⌘⏎`, or for previously answered questions, by clicking the sparkle icon to rerun it with context.
+- **Chat History**: Access past conversations by selecting the history icon in the chat panel. You can start a new conversation by clicking `+` or export existing chats using the `⋮` menu.
+
+Here are some typical use cases of the Chat functionality:
+
+- **Writing Boilerplate Code**: Easily generate function headers or repetitive code blocks by providing simple prompts like “Write a function that takes X and Y, performs A, B, C, and returns Z.”
+
+- **Writing Unit Tests**: You can use Chat to quickly write unit tests for your functions. For instance, ask it, “Write a unit test for @function-name that tests edge cases for X and Y.”
+
+- **Generating Docstrings and Comments**: Use Chat to add useful comments or docstrings to your code. Simply prompt it by saying, “Write a docstring for @function-name,” and it will generate a detailed explanation.
+
+- **Explaining Code**: For those new to a codebase or trying to understand complex logic, Chat can explain functions. You might ask, “Explain @function,” and Chat will provide a breakdown of the function’s purpose and workings.
+  
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Assisted Code Generation, Part 2 (5 min)
+
+Look back at the previous "Assisted Code Generation, Part 1" exercise and consider the code generated by Codeium. If you look at the head of the DataFrame, what do you notice? Use the Chat feature to discuss the issue with Codeium and ask for suggestions on how to resolve it. Then run again the functions defined in the previous exercise to see if the issue has been resolved.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
+
+The issue is that the `Date` column is used as index column, causing all the other columns to shift by one. Here’s how you might discuss the issue with Codeium in the Chat:
+
+1. **Prompt**: "The `Date` column is being used as the index, causing the other columns to shift by one. How can I resolve this issue?"
+2. **Discussion**: Codeium might suggest resetting the index or using the `reset_index()` function to address the issue. Alternatively, it might recommend setting `index_col=False` when reading the CSV file to prevent the `Date` column from being used as the index.
+
+Correct example of how to resolve the issue:
+
+```python
+df = pd.read_csv(url, index_col=False)
+```
+
+3. Verifiy the suggestion by running the functions again and checking the output.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Optimization of the Code (5 min)
 
-You will use Codeium to suggest improvements and restructure a sample Python code that processes a CO2 concentration dataset. 
-Here’s a sample Python code that processes the dataset to find the difference between the average and interpolated CO2 concentration for each row:
+Given the following piece of code that processes the previously read the dataset to find the difference between the average and interpolated CO2 concentration for each row:
 
 ```python
 avg_int = []
@@ -315,11 +339,7 @@ for i in range(df.shape[0]):
 df['Avg-Int'] = avg_int
 ```
 
-- Review the provided code. Identify areas that could be improved in terms of clarity, efficiency, or functionality.
-
-- Use Command feature to generate suggestions, and then review and implement them. Did your code improve in terms of clarity, efficiency, or functionality?
-
-You can try this with your own piece of code and see how it improves.
+Use the Command or Chat feature to optimize this code for better performance and readability. Consider using vectorized operations or other pandas functions to achieve this.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -346,7 +366,7 @@ df['Avg-Int'] = df['Average'] - df['Interpolated']
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Optimization of the Code - 2 
+## Optimization of the Code - 2 (5 min)
 
 Similar to the exercise above, execute the code as is to verify it works and examine the output. Then use Codeium’s Chat feature to analyze and suggest potential improvements. Look for ways to enhance performance, readability, and conciseness.
 
@@ -413,151 +433,7 @@ plt.show()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Optimization of the Code - 3
-
-In this exercise, you’ll again work with a code snippet that loads a dataset, processes CO₂ concentration data, and performs calculations. The initial code is functional but could benefit from optimization. Your task is to analyze it with Codeium to find improvements in both performance and readability.
-
-```python
-# Process data
-data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
-data = data.dropna(subset=['Date', 'Interpolated'])
-
-# Calculate annual CO2 average
-annual_avg = data.groupby(data['Date'].dt.year)['Interpolated'].mean()
-
-# Find the highest year-over-year increase
-yearly_diff = annual_avg.diff().fillna(0)
-max_increase_year = annual_avg.idxmax()
-max_increase = yearly_diff[max_increase_year]
-
-print(f"The year with the highest CO₂ increase was {max_increase_year} with an increase of {max_increase:.2f} ppm.")
-```
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: solution 
-
-## Solution
-
-```python
-# Process data and calculate annual CO2 average
-annual_avg = data.dropna(subset=['Date', 'Interpolated'])['Interpolated'].groupby(pd.to_datetime(data['Date'], errors='coerce').dt.year).mean()
-
-
-# Find the highest year-over-year increase
-max_increase_year = annual_avg.idxmax()
-max_increase = annual_avg.diff().fillna(0)[max_increase_year]
-
-
-print(f"The year with the highest CO₂ increase was {max_increase_year} with an increase of {max_increase:.2f} ppm.")
-```
-
-**Comparison:**
-
-- Combined the data processing and annual average calculation into a single line of code.
-
-- Removed the unnecessary `yearly_diff` variable and instead calculated the difference directly in the line where `max_increase` is calculated.
-
-- Removed the unnecessary `max_increase_year` calculation and instead used the `idxmax` method directly on the `annual_avg` series.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Debugging Assistance (5 min)
-
-In this exercise, you will use Codeium to identify and fix errors in a Python code snippet that processes the CO2 concentration dataset. The initial code has both logical and runtime errors, and there's potential for optimizations. You’ll use Codeium to debug, correct, and improve the script for better functionality and efficiency.
-
-```python
-# Filter data where CO₂ concentration is above average
-above_avg_data = data[data['ppm'] > data['ppm'].mean]
-
-# Calculate the monthly change in CO₂ concentration
-data['monthly_change'] = data['ppm'] - data['ppm'].shift()
-
-# Find the max monthly change
-max_monthly_change = max(data['monthly_change'])
-
-# Find the date when max monthly change occurred
-max_change_date = data['date'][data['monthly_change'] == max_monthly_change]
-
-print(f"The maximum monthly change in CO₂ concentration was {max_monthly_change} ppm on {max_change_date}.")
-```
-
-- Review the provided code snippet. Note any potential errors or issues that may prevent it from running correctly.
-
-- Use the Chat or Command feature to generate suggestions to fix the errors. Review the suggestions provided by Codeium and apply the necessary fixes. Did your code improve in terms of clarity, efficiency, or functionality?
-
-- Test the corrected code to ensure it runs without errors and produces the expected output.
-
-- Review the changes made and discuss how Codeium helped identify and fix the errors. Consider the impact of these fixes on code functionality and readability.
-
-- Reflect on the debugging process. What did you learn about using AI tools for debugging? How might this affect your future coding practices?
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: solution 
-
-## Solution
-
-After applying the corrections suggested by Codeium, your code should look something like this:
-
-```python
-
-```
-
-**Changes:**
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Debugging Assistance - 2 (5 min)
-
-```python
-import pandas as pd
-import numpy as np
-
-# Load the dataset
-data = pd.read_csv("https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv")
-
-# Filter data for the years 2010 and 2020
-data_2010 = data[data['Year'] == 2010]
-data_2020 = data[data['Year'] == 2020]
-
-# Calculate average CO2 concentration for each year
-avg_co2_2010 = data_2010['Interpolated'].mean
-avg_co2_2020 = data_2020['Interpolated'].mean
-
-# Calculate the CO2 increase
-co2_increase = avg_co2_2020 - avg_co2_2010
-
-print("The increase in CO2 levels from 2010 to 2020 is:", co2_increase)
-```
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: solution 
-
-## Solution
-
-After applying the corrections suggested by Codeium, your code should look something like this:
-
-```python
-
-```
-
-**Changes:**
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
 ## Autocomplete
-
-### TODO: refactor this section
 
 A key feature of Codeium is its Autocomplete function: with every keystroke, Codeium actively attempts to predict and complete what you're typing. By analyzing the current file, previous edits, and contextual snippets from your codebase, it offers relevant suggestions as "ghost text".
 
@@ -638,20 +514,11 @@ The following shortcuts can be used to speed up your workflow:
 
 ## Autocomplete Exploration (10 min)
 
-Familiarize yourself with Codeium's Autocomplete feature by practicing coding tasks. Create the function `analyze_co2_trends()` that processes the CO2 data in `weekly_in_situ_co2_mlo.csv` to calculate monthly average CO2 concentrations and visualizes the trend over time. The function should:
+Use Codeium's Autocomplete to assist in writing Python code that analyzes seasonal trends and interpolates missing values in the dataset you loaded earlier. Considering the dataset previously loaded into a Pandas DataFrame, pretending that you have only `Date`, `Decimal Date`, and `Average` columns, follow these instructions:
 
-- Accept the dataframe as an argument.
-- Convert the `date` column to a datetime format.
-- Discard any rows with missing values.
-- Resample the data to calculate monthly averages for CO2 concentrations.
-- Visualize the trends over time in a well-formatted plot.
-- Return the monthly averages.
-
-**Note**: While this task can be solved without using Autocomplete, it’s important to use Codeium in this exercise to demonstrate how Autocomplete can assist with coding. Although using Python is not mandatory, the solution will be provided in Python.
-
-1. What are the benefits of using Codeium’s Autocomplete feature in this function?
-2. What are the potential drawbacks of relying on Autocomplete?
-3. How can you improve the accuracy of suggestions using Autocomplete?
+1. Prompt Codeium to suggest code that will plot the `Date` versus `Average` values to visualize the seasonal trends over time. Use Autocomplete to adjust the plot (e.g., adding labels, legends, or gridlines) for better readability.
+2. Use linear or time-based interpolation and plot the Interpolated column over `Date` to confirm the method worked as expected.
+3. Use Autocomplete to write code that calculates the moving average or seasonal trend, potentially using the `Trend` column. Plot the calculated trend alongside the `Average` and `Interpolated` values to observe any patterns.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -659,72 +526,32 @@ Familiarize yourself with Codeium's Autocomplete feature by practicing coding ta
 
 ## Solution
 
-Here’s a sample outline of what the `analyze_co2_trends()` function might look like:
-
-```python
-def analyze_co2_trends(df):
-    # Convert 'date' column to datetime
-    df['date'] = pd.to_datetime(df['date'])
-    
-    # Set 'date' as index
-    df.set_index('date', inplace=True)
-    
-    # Drop rows with NaN values
-    df.dropna(inplace=True)
-    
-    # Resample data to get monthly averages
-    monthly_avg = df.resample('M').mean()
-    
-    # Plotting
-    plt.figure(figsize=(10, 5))
-    plt.plot(monthly_avg.index, monthly_avg['CO2 ppm'], marker='o')
-    plt.title('Monthly Average CO2 Concentrations')
-    plt.xlabel('Date')
-    plt.ylabel('CO2 Concentration (ppm)')
-    plt.grid()
-    plt.show()
-    
-    return monthly_avg
-```
-
-1. Autocomplete saves time by suggesting common functions, reducing the need for memorization, preventing typos, and recognizing patterns to speed up repetitive tasks.
-2. Be cautious! You might miss out on understanding the code if you accept suggestions blindly. Autocomplete can also suggest incorrect functions if the context is unclear.
-3. Improve suggestion accuracy by writing clear comments and using meaningful variable/function names, which help Codeium understand the context better.
+TBD
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Context Awareness
 
-### TODO: refactor this section
-
-Above we mentioned that the Chat function is particularly helpful due to context awareness. Context awareness is one of Codeium’s most powerful features, allowing it to offer personalized and highly relevant suggestions by pulling information from various sources. Traditionally, generating code required training large LLMs on specific codebases, which is resource-intensive and not scalable for individual users. However, Codeium uses a more efficient method known as **retrieval-augmented generation (RAG)**.
+Above we mentioned that the Chat function is particularly helpful due to context awareness. Context awareness is one of Codeium’s most powerful features, allowing it to offer personalized and highly relevant suggestions by pulling information from various sources. Traditionally, generating code required training large LLMs on specific codebases, which is resource-intensive and not scalable for individual users. However, Codeium uses a more efficient method known as **retrieval-augmented generation (RAG)**. This applies across the board to Autocompete, Chat, and Command.
 
 ![](episodes/fig/RAG.png){alt='RAG'}
 
-Instead of retraining the model, it retrieves the most relevant pieces of context, such as:
-
-1. **Open files in your IDE**: Codeium scans the current file and other open files in your development environment to gather context. This means the suggestions you receive are directly related to the code you're actively working on, ensuring relevance.
-   
-2. **Local repository**: Codeium goes beyond open files and searches through your entire local codebase. This retrieval engine can pull relevant snippets from the broader project, even from files that aren’t currently open, providing deeper insights and more accurate suggestions.
+- **Default Context**: Codeium automatically pulls context from multiple sources, including the current file and other open files in your IDE, which are typically highly relevant to your ongoing work. Additionally, Codeium indexes your entire local codebase, retrieving relevant snippets even from closed files to assist as you write code, ask questions, or execute commands.
+- **Context Pinning**: Developers can provide specific guidance by "pinning" custom context through the chat panel's context tab. You can pin directories, files, repositories, or specific code elements (like functions or classes) for persistent reference across Autocomplete, Chat, and Command. Context Pinning is useful when your current work depends on code from other files; however, it’s best to pin only essential items to avoid slowing performance. Here are some effective uses of Context Pinning:
+    - Module Definitions: Pin class/struct definitions from other modules within your repository.
+    - Internal Frameworks/Libraries: Pin directories with framework/library usage examples.
+    - Specific Tasks: Pin files or folders with interfaces (e.g., .proto files, config templates).
+    - Current Focus Area: Pin a directory containing most of the files relevant to your coding session.
+    - Testing: Pin a file containing the class you’re writing unit tests for.
 
 For instance, if you're working on a function and ask Codeium to help refactor it, the tool will pull in relevant context from both your active file and other parts of your codebase to improve the output. This combination of multiple context sources ensures higher-quality code generation, fewer errors, and suggestions that feel tailored to your project.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Command and Chat allow you to generate or edit code using natural language instructions, making it easy to describe complex tasks concisely.
-
-- Chat can also be useful for code-related discussions and quick responses to queries; it will help you draft boilerplate code, write unit tests, and explain code functionality.
-
-- Lenses, which are clickable prompts appear above functions and classes, offer shortcuts for common tasks like refactoring or generating docstrings, could help improve workflow efficiency.
-
-- With Context Awareness, Codeium retrieves relevant context from open files and your entire codebase, ensuring tailored, high-quality suggestions that align with your current coding task.
-
-- Codeium's Autocomplete boosts coding speed by predicting and completing code based on context, past edits, and current files.
-
-- Automating repetitive tasks like boilerplate code, repetitive functions, and formatting reduces errors and saves time.
-
-- Fill-in-the-Middle (FIM) improves suggestions by analyzing the code above and below the insertion point.
-
-- Docstring generation via code lenses automates the creation of accurate docstrings in the correct location.
+- Codeium offers three main modes: Command, Chat, and Autocomplete, each serving different coding needs
+- Context awareness through RAG technology helps Codeium provide more relevant and accurate suggestions
+- The Chat feature enables conversational interaction with code-aware AI assistance
+- Autocomplete includes Fill-in-the-Middle capabilities for more accurate code completion
+- Clear, declarative comments and good naming conventions improve Codeium's effectiveness
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
