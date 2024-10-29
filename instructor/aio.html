@@ -609,20 +609,13 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-2-code-generation-optimization"><p>Content from <a href="2-code-generation-optimization.html">Code Generation and Optimization</a></p>
 <hr>
-<p>Last updated on 2024-10-28 |
+<p>Last updated on 2024-10-29 |
 
         <a href="https://github.com/olgaminaeva/gen-ai-coding/edit/main/episodes/2-code-generation-optimization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<div class="section level3">
-<h3 id="todo-update-times">TODO: Update times<a class="anchor" aria-label="anchor" href="#todo-update-times"></a>
-</h3>
-</div>
-<div class="section level3">
-<h3 id="todo-update-questions-and-objectives">TODO: Update questions and objectives<a class="anchor" aria-label="anchor" href="#todo-update-questions-and-objectives"></a>
-</h3>
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -631,23 +624,16 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How to generate useful snippets of code using Codeium as
-AI-assistant?</li>
-<li>What steps to follow to optimize the performance of the code that
-Codeium generates?</li>
-<li>How to refactor and improve the structure of existing code using
-Codeium as AI-assistant?</li>
-<li>What are the best ways to use Codeium for identifying and fixing
-bugs in a code?</li>
-<li>How does Codeium’s context-awareness improve code suggestions during
-optimization and refactoring?</li>
-<li>How can the Autocomplete function in Codeium help improve your
-coding speed?</li>
-<li>What types of repetitive coding tasks can be automated?</li>
-<li>What are some key components of a clear and effective prompt when
-using the Autocomplete function?</li>
-<li>In what ways can Codeium assist in generating and improving code
-documentation?</li>
+<li>What are the three main modes of Codeium and how do they
+differ?</li>
+<li>How can developers effectively use the Command feature for code
+generation and refactoring?</li>
+<li>What role does context awareness play in improving Codeium’s
+suggestions?</li>
+<li>How does the Chat feature complement the Command and Autocomplete
+modes?</li>
+<li>What are the best practices for writing prompts that get optimal
+results from Codeium?</li>
 </ul>
 </div>
 </div>
@@ -657,19 +643,16 @@ documentation?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Generate snippets of code using Codeium as AI-assistant</li>
-<li>Optimize performance of the generated code using Codeium as
-AI-assistant</li>
-<li>Refactor and improve the structure and quality of existing code
-using Codeium as AI-assistant</li>
-<li>Identify and fix bugs using Codeium as AI-assistant</li>
-<li>Learn about context-awareness in AI-assisted coding</li>
-<li>Use an Autocomplete function of Codeium to improve coding speed</li>
-<li>Automate repetitive coding tasks using the Autocomplete function of
-Codeium</li>
-<li>Compose clear and effective prompts that capture and facilitate the
-expected outcomes using the Autocomplete function</li>
-<li>Generate and improve documentation using Codeium</li>
+<li>Learn how to use Codeium’s Command mode for code generation and
+refactoring</li>
+<li>Master the Chat feature for interactive coding assistance and
+problem-solving</li>
+<li>Understand how to leverage Autocomplete for efficient code
+writing</li>
+<li>Practice using context awareness to get more relevant code
+suggestions</li>
+<li>Develop skills in writing effective prompts for better AI
+assistance</li>
 </ul>
 </div>
 </div>
@@ -684,7 +667,6 @@ optimize, and refactor code, as well as to identify and fix bugs.</p>
 <p>Please note that while using Python is not required since Codeium
 supports multiple programming languages, all exercises and solutions
 will be provided in Python.</p>
-</div>
 <section><h2 class="section-heading" id="command">Command<a class="anchor" aria-label="anchor" href="#command"></a>
 </h2>
 <hr class="half-width">
@@ -782,12 +764,12 @@ context awareness, more specific instructions like “Write a function
 that takes two inputs of type <code>Diffable</code> and implements the
 Myers diff algorithm” can yield even better results.</p></li>
 </ul>
-<figure><img src="../fig/codeium_chat_best_practices.png" alt="Best Practices for Command" class="figure mx-auto d-block"></figure><div id="todo-add-part-2-in-debugging" class="callout discussion">
+<figure><img src="../fig/codeium_chat_best_practices.png" alt="Best Practices for Command" class="figure mx-auto d-block"></figure><div id="assisted-code-generation-part-1-5-min" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="todo-add-part-2-in-debugging" class="callout-inner">
-<h3 class="callout-title">TODO: add part 2 in debugging</h3>
+<div id="assisted-code-generation-part-1-5-min" class="callout-inner">
+<h3 class="callout-title">Assisted Code Generation, Part 1 (5 min)</h3>
 <div class="callout-content">
 <p>In this exercise, you will use the Command mode to load a <a href="https://datahub.io/core/co2-ppm/" class="external-link">CO2 concentration dataset</a>
 from the file <code>co2-mm-mlo.csv</code> into a Pandas DataFrame, then
@@ -822,7 +804,7 @@ considering structure, readability, and accuracy.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Here is what you would expect to see in the generated code:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -912,7 +894,7 @@ this episode), this task is designed to demonstrate Codeium’s
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Here’s an example of how the
 <code>calculate_descriptive_stats()</code> and the
@@ -984,14 +966,14 @@ details about edge cases or exceptions.</p>
 </section><section><h2 class="section-heading" id="chat">Chat<a class="anchor" aria-label="anchor" href="#chat"></a>
 </h2>
 <hr class="half-width">
-<div class="section level3">
-<h3 id="todo-refactor-this-section">TODO: refactor this section<a class="anchor" aria-label="anchor" href="#todo-refactor-this-section"></a>
-</h3>
 <p>The Codeium Chat feature offers a powerful way to interact with an AI
 assistant directly within your coding environment, providing instant,
-contextual feedback on your code. Unlike the Command function, Codeium
+contextual feedback on the code. Unlike the Command function, Codeium
 Chat is designed for a more conversational and responsive interaction,
-making it easy to discuss complex coding questions and solutions.</p>
+making it easy to discuss complex coding questions and solutions. The
+base Chat model is available to all Codeium users and it is based on
+Meta’s <a href="https://ai.meta.com/blog/meta-llama-3-1/" class="external-link">Llama 3.1
+70B</a>.</p>
 <p>In Visual Studio Code, you can access Codeium Chat by clicking on the
 Codeium icon located in the left sidebar by default.</p>
 <figure><img src="../fig/chat_vscode_where_to_find.png" alt="Chat" class="figure mx-auto d-block"></figure><p>To quickly open the chat panel or toggle focus between it and your
@@ -999,37 +981,17 @@ code editor, use <code>⌘+⇧+A</code> on Mac or <code>Ctrl+⇧+A</code> on
 Windows/Linux. For a more flexible experience, you can pop the chat
 panel out of the IDE entirely by clicking the “pop-out” icon at the top
 of the chat window.</p>
-</div>
 <div class="section level3">
-<h3 id="mentions">
-<span class="citation">@mentions</span><a class="anchor" aria-label="anchor" href="#mentions"></a>
+<h3 id="mentions">@-Mentions<a class="anchor" aria-label="anchor" href="#mentions"></a>
 </h3>
-<p>In any chat message, you can use the <span class="citation">@mentions</span> feature to refer to context items from
-within the chat input by prefixing a word with <code>@</code>. Context
-items can be function names, class names, directories and files, or even
-content of your termnal history. By doing this explicitly, Codeium will
-make the most relevant suggestions for you.</p>
+<p>In any chat message, you can use the @-Mentions feature to refer to
+context items from within the chat input by prefixing a word with
+<code>@</code>. Context items can be function names, class names,
+directories and files, or even content of your termnal history. By doing
+this explicitly, Codeium will make the most relevant suggestions for
+you.</p>
 <p>For instance, you can mention classes, as shown below:</p>
-<figure><img src="../fig/atmentions1.gif" alt="@mentions" class="figure mx-auto d-block"></figure><p>Here are some typical use cases of Chat function in VS code:</p>
-<ul>
-<li><p><strong>Writing Boilerplate Code</strong>: Easily generate
-function headers or repetitive code blocks by providing simple prompts
-like “Write a function that takes X and Y, performs A, B, C, and returns
-Z.”</p></li>
-<li><p><strong>Writing Unit Tests</strong>: You can use Chat to quickly
-write unit tests for your functions. For instance, ask it, “Write a unit
-test for <span class="citation">@function-name</span> that tests edge
-cases for X and Y.”</p></li>
-<li><p><strong>Generating Docstrings and Comments</strong>: Use Chat to
-add useful comments or docstrings to your code. Simply prompt it by
-saying, “Write a docstring for <span class="citation">@function-name</span>,” and it will generate a detailed
-explanation.</p></li>
-<li><p><strong>Explaining Code</strong>: For those new to a codebase or
-trying to understand complex logic, Chat can explain functions. You
-might ask, “Explain <span class="citation">@function</span>,” and Chat
-will provide a breakdown of the function’s purpose and
-workings.</p></li>
-</ul>
+<figure><img src="../fig/atmentions1.gif" alt="@mentions" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="prompting">Prompting<a class="anchor" aria-label="anchor" href="#prompting"></a>
@@ -1052,35 +1014,88 @@ these in your prompt.</p></li>
 <p>Good: Refactor <span class="citation">@func:rawDataTransform</span>
 by turning the while loop into a for loop and using the same data
 structure output as <span class="citation">@func:otherDataTransformer</span></p>
-<figure><img src="../fig/best%20practices%20chat.png" alt="Best Practices for Chat" class="figure mx-auto d-block"></figure><div id="optimization-of-the-code-5-min" class="callout discussion">
+<figure><img src="../fig/best%20practices%20chat.png" alt="Best Practices for Chat" class="figure mx-auto d-block"></figure>
+</div>
+<div class="section level3">
+<h3 id="other-features">Other Features<a class="anchor" aria-label="anchor" href="#other-features"></a>
+</h3>
+<ul>
+<li>
+<strong>Persistent Context</strong>: Configure the
+<code>Context</code> tab in the chat panel to enable continuous
+contextual awareness during and across conversations. Within this tab,
+you’ll find:
+<ul>
+<li>Custom Chat Instructions: Brief prompts like “Respond in Kotlin and
+assume I have little familiarity with it,” which guide the model’s
+response style.</li>
+<li>Pinned Contexts: Key items from your codebase (such as files,
+directories, or code snippets) that you want the model to actively
+consider.</li>
+<li>Active Document: Highlights the currently active file, giving it
+priority.</li>
+<li>Local Indexes: Lists repositories that the Codeium context engine
+has locally indexed.</li>
+</ul>
+</li>
+<li>
+<strong>Slash Commands</strong>: Use the <code>/explain</code>
+command at the beginning of a message to request an explanation from the
+model. Currently, this is the only supported slash command.</li>
+<li>
+<strong>Copy and Insert</strong>: When a response includes code
+blocks, you can either copy the block to your clipboard or insert it
+directly into your editor by using the buttons above the code
+block.</li>
+<li>
+<strong>Inline Citations</strong>: The model can reference specific
+items from your code, often linking snippets directly in its
+responses.</li>
+<li>
+<strong>Regenerate with Context</strong>: Codeium assesses whether a
+question requires general or codebase-specific context by default. You
+can ensure a response includes code context by pressing <code>⌘⏎</code>,
+or for previously answered questions, by clicking the sparkle icon to
+rerun it with context.</li>
+<li>
+<strong>Chat History</strong>: Access past conversations by
+selecting the history icon in the chat panel. You can start a new
+conversation by clicking <code>+</code> or export existing chats using
+the <code>⋮</code> menu.</li>
+</ul>
+<p>Here are some typical use cases of the Chat functionality:</p>
+<ul>
+<li><p><strong>Writing Boilerplate Code</strong>: Easily generate
+function headers or repetitive code blocks by providing simple prompts
+like “Write a function that takes X and Y, performs A, B, C, and returns
+Z.”</p></li>
+<li><p><strong>Writing Unit Tests</strong>: You can use Chat to quickly
+write unit tests for your functions. For instance, ask it, “Write a unit
+test for <span class="citation">@function-name</span> that tests edge
+cases for X and Y.”</p></li>
+<li><p><strong>Generating Docstrings and Comments</strong>: Use Chat to
+add useful comments or docstrings to your code. Simply prompt it by
+saying, “Write a docstring for <span class="citation">@function-name</span>,” and it will generate a detailed
+explanation.</p></li>
+<li><p><strong>Explaining Code</strong>: For those new to a codebase or
+trying to understand complex logic, Chat can explain functions. You
+might ask, “Explain <span class="citation">@function</span>,” and Chat
+will provide a breakdown of the function’s purpose and
+workings.</p></li>
+</ul>
+<div id="assisted-code-generation-part-2-5-min" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="optimization-of-the-code-5-min" class="callout-inner">
-<h3 class="callout-title">Optimization of the Code (5 min)</h3>
+<div id="assisted-code-generation-part-2-5-min" class="callout-inner">
+<h3 class="callout-title">Assisted Code Generation, Part 2 (5 min)</h3>
 <div class="callout-content">
-<p>You will use Codeium to suggest improvements and restructure a sample
-Python code that processes a CO2 concentration dataset. Here’s a sample
-Python code that processes the dataset to find the difference between
-the average and interpolated CO2 concentration for each row:</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>avg_int <span class="op">=</span> []</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(df.shape[<span class="dv">0</span>]):</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    avg_int.append(df.iloc[i][<span class="st">'Average'</span>] <span class="op">-</span> df.iloc[i][<span class="st">'Interpolated'</span>])</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>df[<span class="st">'Avg-Int'</span>] <span class="op">=</span> avg_int</span></code></pre>
-</div>
-<ul>
-<li><p>Review the provided code. Identify areas that could be improved
-in terms of clarity, efficiency, or functionality.</p></li>
-<li><p>Use Command feature to generate suggestions, and then review and
-implement them. Did your code improve in terms of clarity, efficiency,
-or functionality?</p></li>
-</ul>
-<p>You can try this with your own piece of code and see how it
-improves.</p>
+<p>Look back at the previous “Assisted Code Generation, Part 1” exercise
+and consider the code generated by Codeium. If you look at the head of
+the DataFrame, what do you notice? Use the Chat feature to discuss the
+issue with Codeium and ask for suggestions on how to resolve it. Then
+run again the functions defined in the previous exercise to see if the
+issue has been resolved.</p>
 </div>
 </div>
 </div>
@@ -1089,21 +1104,82 @@ improves.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>After applying the suggestions, your optimized code might look
-something like this:</p>
+<p>The issue is that the <code>Date</code> column is used as index
+column, causing all the other columns to shift by one. Here’s how you
+might discuss the issue with Codeium in the Chat:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Prompt</strong>: “The <code>Date</code> column is being used
+as the index, causing the other columns to shift by one. How can I
+resolve this issue?”</li>
+<li>
+<strong>Discussion</strong>: Codeium might suggest resetting the
+index or using the <code>reset_index()</code> function to address the
+issue. Alternatively, it might recommend setting
+<code>index_col=False</code> when reading the CSV file to prevent the
+<code>Date</code> column from being used as the index.</li>
+</ol>
+<p>Correct example of how to resolve the issue:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url, index_col<span class="op">=</span><span class="va">False</span>)</span></code></pre>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Verifiy the suggestion by running the functions again and checking
+the output.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="optimization-of-the-code-5-min" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="optimization-of-the-code-5-min" class="callout-inner">
+<h3 class="callout-title">Optimization of the Code (5 min)</h3>
+<div class="callout-content">
+<p>Given the following piece of code that processes the previously read
+the dataset to find the difference between the average and interpolated
+CO2 concentration for each row:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>df[<span class="st">'Avg-Int_opt'</span>] <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="st">'Average'</span>] <span class="op">-</span> x[<span class="st">'Interpolated'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="cf">assert</span> df[<span class="st">'Avg-Int'</span>].equals(df[<span class="st">'Avg-Int_opt'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>avg_int <span class="op">=</span> []</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(df.shape[<span class="dv">0</span>]):</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    avg_int.append(df.iloc[i][<span class="st">'Average'</span>] <span class="op">-</span> df.iloc[i][<span class="st">'Interpolated'</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>df[<span class="st">'Avg-Int'</span>] <span class="op">=</span> avg_int</span></code></pre>
 </div>
-<p>Or even like this:</p>
+<p>Use the Command or Chat feature to optimize this code for better
+performance and readability. Consider using vectorized operations or
+other pandas functions to achieve this.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div class="accordion-body">
+<p>After applying the suggestions, your optimized code might look
+something like this:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>df[<span class="st">'Avg-Int'</span>] <span class="op">=</span> df[<span class="st">'Average'</span>] <span class="op">-</span> df[<span class="st">'Interpolated'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>df[<span class="st">'Avg-Int_opt'</span>] <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="st">'Average'</span>] <span class="op">-</span> x[<span class="st">'Interpolated'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="cf">assert</span> df[<span class="st">'Avg-Int'</span>].equals(df[<span class="st">'Avg-Int_opt'</span>])</span></code></pre>
+</div>
+<p>Or even like this:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>df[<span class="st">'Avg-Int'</span>] <span class="op">=</span> df[<span class="st">'Average'</span>] <span class="op">-</span> df[<span class="st">'Interpolated'</span>]</span></code></pre>
 </div>
 <p><strong>Comparison:</strong></p>
 <ul>
@@ -1115,73 +1191,73 @@ library.</li>
 </div>
 </div>
 </div>
-<div id="optimization-of-the-code---2" class="callout discussion">
+<div id="optimization-of-the-code---2-5-min" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="optimization-of-the-code---2" class="callout-inner">
-<h3 class="callout-title">Optimization of the Code - 2</h3>
+<div id="optimization-of-the-code---2-5-min" class="callout-inner">
+<h3 class="callout-title">Optimization of the Code - 2 (5 min)</h3>
 <div class="callout-content">
 <p>Similar to the exercise above, execute the code as is to verify it
 works and examine the output. Then use Codeium’s Chat feature to analyze
 and suggest potential improvements. Look for ways to enhance
 performance, readability, and conciseness.</p>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Convert 'Date' column to datetime format</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>data[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># Filter data for a specific date range</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>filtered_data <span class="op">=</span> data[(data[<span class="st">'Date'</span>] <span class="op">&gt;=</span> <span class="st">'2000-01-01'</span>) <span class="op">&amp;</span> (data[<span class="st">'Date'</span>] <span class="op">&lt;=</span> <span class="st">'2010-12-31'</span>)]</span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co"># Extract the year value from the 'Date' column</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>filtered_data[<span class="st">'Year'</span>] <span class="op">=</span> filtered_data[<span class="st">'Date'</span>].dt.year</span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co"># Group data by year and calculate the average CO2 level for each year</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>avg_co2_per_year <span class="op">=</span> filtered_data.groupby(<span class="st">'Year'</span>)[<span class="st">'Interpolated'</span>].mean()</span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co"># Plot the results</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>plt.plot(avg_co2_per_year.index, avg_co2_per_year, label<span class="op">=</span><span class="st">'Average CO2 (ppm)'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>plt.ylabel(<span class="st">'CO2 (ppm)'</span>)</span>
-<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>plt.title(<span class="st">'Average CO2 Levels by Year (2000-2010)'</span>)</span>
-<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>plt.legend()</span>
-<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>plt.show()</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
-</button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
-<div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Convert 'Date' column to datetime format and filter data for a specific date range</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>filtered_data <span class="op">=</span> data[(pd.to_datetime(data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>) <span class="op">&gt;=</span> <span class="st">'2000-01-01'</span>) <span class="op">&amp;</span> </span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>                     (pd.to_datetime(data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>) <span class="op">&lt;=</span> <span class="st">'2010-12-31'</span>)]</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co"># Group data by year and calculate the average CO2 level for each year</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>avg_co2_per_year <span class="op">=</span> filtered_data.groupby(pd.to_datetime(filtered_data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>).dt.year)[<span class="st">'Interpolated'</span>].mean()</span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Convert 'Date' column to datetime format</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>data[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># Filter data for a specific date range</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>filtered_data <span class="op">=</span> data[(data[<span class="st">'Date'</span>] <span class="op">&gt;=</span> <span class="st">'2000-01-01'</span>) <span class="op">&amp;</span> (data[<span class="st">'Date'</span>] <span class="op">&lt;=</span> <span class="st">'2010-12-31'</span>)]</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co"># Extract the year value from the 'Date' column</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>filtered_data[<span class="st">'Year'</span>] <span class="op">=</span> filtered_data[<span class="st">'Date'</span>].dt.year</span>
 <span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co"># Plot the results</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>avg_co2_per_year.plot(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>), marker<span class="op">=</span><span class="st">'o'</span>)</span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>plt.ylabel(<span class="st">'CO2 (ppm)'</span>)</span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>plt.title(<span class="st">'Average CO2 Levels by Year (2000-2010)'</span>)</span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>plt.show()</span></code></pre>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co"># Group data by year and calculate the average CO2 level for each year</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>avg_co2_per_year <span class="op">=</span> filtered_data.groupby(<span class="st">'Year'</span>)[<span class="st">'Interpolated'</span>].mean()</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co"># Plot the results</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>plt.plot(avg_co2_per_year.index, avg_co2_per_year, label<span class="op">=</span><span class="st">'Average CO2 (ppm)'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>plt.ylabel(<span class="st">'CO2 (ppm)'</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>plt.title(<span class="st">'Average CO2 Levels by Year (2000-2010)'</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Convert 'Date' column to datetime format and filter data for a specific date range</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>filtered_data <span class="op">=</span> data[(pd.to_datetime(data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>) <span class="op">&gt;=</span> <span class="st">'2000-01-01'</span>) <span class="op">&amp;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>                     (pd.to_datetime(data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>) <span class="op">&lt;=</span> <span class="st">'2010-12-31'</span>)]</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co"># Group data by year and calculate the average CO2 level for each year</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>avg_co2_per_year <span class="op">=</span> filtered_data.groupby(pd.to_datetime(filtered_data[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y-%m'</span>).dt.year)[<span class="st">'Interpolated'</span>].mean()</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co"># Plot the results</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>avg_co2_per_year.plot(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>), marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>plt.ylabel(<span class="st">'CO2 (ppm)'</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>plt.title(<span class="st">'Average CO2 Levels by Year (2000-2010)'</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p><strong>Comparison:</strong></p>
 <ul>
@@ -1201,199 +1277,10 @@ method of the Series object and removing the unnecessary
 </div>
 </div>
 </div>
-<div id="optimization-of-the-code---3" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="optimization-of-the-code---3" class="callout-inner">
-<h3 class="callout-title">Optimization of the Code - 3</h3>
-<div class="callout-content">
-<p>In this exercise, you’ll again work with a code snippet that loads a
-dataset, processes CO₂ concentration data, and performs calculations.
-The initial code is functional but could benefit from optimization. Your
-task is to analyze it with Codeium to find improvements in both
-performance and readability.</p>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Process data</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>data[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(data[<span class="st">'Date'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>data <span class="op">=</span> data.dropna(subset<span class="op">=</span>[<span class="st">'Date'</span>, <span class="st">'Interpolated'</span>])</span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co"># Calculate annual CO2 average</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>annual_avg <span class="op">=</span> data.groupby(data[<span class="st">'Date'</span>].dt.year)[<span class="st">'Interpolated'</span>].mean()</span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co"># Find the highest year-over-year increase</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>yearly_diff <span class="op">=</span> annual_avg.diff().fillna(<span class="dv">0</span>)</span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>max_increase_year <span class="op">=</span> annual_avg.idxmax()</span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>max_increase <span class="op">=</span> yearly_diff[max_increase_year]</span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The year with the highest CO₂ increase was </span><span class="sc">{</span>max_increase_year<span class="sc">}</span><span class="ss"> with an increase of </span><span class="sc">{</span>max_increase<span class="sc">:.2f}</span><span class="ss"> ppm."</span>)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
-</button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Process data and calculate annual CO2 average</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>annual_avg <span class="op">=</span> data.dropna(subset<span class="op">=</span>[<span class="st">'Date'</span>, <span class="st">'Interpolated'</span>])[<span class="st">'Interpolated'</span>].groupby(pd.to_datetime(data[<span class="st">'Date'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>).dt.year).mean()</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co"># Find the highest year-over-year increase</span></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>max_increase_year <span class="op">=</span> annual_avg.idxmax()</span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>max_increase <span class="op">=</span> annual_avg.diff().fillna(<span class="dv">0</span>)[max_increase_year]</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The year with the highest CO₂ increase was </span><span class="sc">{</span>max_increase_year<span class="sc">}</span><span class="ss"> with an increase of </span><span class="sc">{</span>max_increase<span class="sc">:.2f}</span><span class="ss"> ppm."</span>)</span></code></pre>
-</div>
-<p><strong>Comparison:</strong></p>
-<ul>
-<li><p>Combined the data processing and annual average calculation into
-a single line of code.</p></li>
-<li><p>Removed the unnecessary <code>yearly_diff</code> variable and
-instead calculated the difference directly in the line where
-<code>max_increase</code> is calculated.</p></li>
-<li><p>Removed the unnecessary <code>max_increase_year</code>
-calculation and instead used the <code>idxmax</code> method directly on
-the <code>annual_avg</code> series.</p></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="debugging-assistance-5-min" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="debugging-assistance-5-min" class="callout-inner">
-<h3 class="callout-title">Debugging Assistance (5 min)</h3>
-<div class="callout-content">
-<p>In this exercise, you will use Codeium to identify and fix errors in
-a Python code snippet that processes the CO2 concentration dataset. The
-initial code has both logical and runtime errors, and there’s potential
-for optimizations. You’ll use Codeium to debug, correct, and improve the
-script for better functionality and efficiency.</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Filter data where CO₂ concentration is above average</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>above_avg_data <span class="op">=</span> data[data[<span class="st">'ppm'</span>] <span class="op">&gt;</span> data[<span class="st">'ppm'</span>].mean]</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># Calculate the monthly change in CO₂ concentration</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>data[<span class="st">'monthly_change'</span>] <span class="op">=</span> data[<span class="st">'ppm'</span>] <span class="op">-</span> data[<span class="st">'ppm'</span>].shift()</span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co"># Find the max monthly change</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>max_monthly_change <span class="op">=</span> <span class="bu">max</span>(data[<span class="st">'monthly_change'</span>])</span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co"># Find the date when max monthly change occurred</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>max_change_date <span class="op">=</span> data[<span class="st">'date'</span>][data[<span class="st">'monthly_change'</span>] <span class="op">==</span> max_monthly_change]</span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The maximum monthly change in CO₂ concentration was </span><span class="sc">{</span>max_monthly_change<span class="sc">}</span><span class="ss"> ppm on </span><span class="sc">{</span>max_change_date<span class="sc">}</span><span class="ss">."</span>)</span></code></pre>
-</div>
-<ul>
-<li><p>Review the provided code snippet. Note any potential errors or
-issues that may prevent it from running correctly.</p></li>
-<li><p>Use the Chat or Command feature to generate suggestions to fix
-the errors. Review the suggestions provided by Codeium and apply the
-necessary fixes. Did your code improve in terms of clarity, efficiency,
-or functionality?</p></li>
-<li><p>Test the corrected code to ensure it runs without errors and
-produces the expected output.</p></li>
-<li><p>Review the changes made and discuss how Codeium helped identify
-and fix the errors. Consider the impact of these fixes on code
-functionality and readability.</p></li>
-<li><p>Reflect on the debugging process. What did you learn about using
-AI tools for debugging? How might this affect your future coding
-practices?</p></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
-</button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
-<div class="accordion-body">
-<p>After applying the corrections suggested by Codeium, your code should
-look something like this:</p>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"></code></pre>
-</div>
-<p><strong>Changes:</strong></p>
-</div>
-</div>
-</div>
-</div>
-<div id="debugging-assistance---2-5-min" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="debugging-assistance---2-5-min" class="callout-inner">
-<h3 class="callout-title">Debugging Assistance - 2 (5 min)</h3>
-<div class="callout-content">
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv"</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co"># Filter data for the years 2010 and 2020</span></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>data_2010 <span class="op">=</span> data[data[<span class="st">'Year'</span>] <span class="op">==</span> <span class="dv">2010</span>]</span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>data_2020 <span class="op">=</span> data[data[<span class="st">'Year'</span>] <span class="op">==</span> <span class="dv">2020</span>]</span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co"># Calculate average CO2 concentration for each year</span></span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>avg_co2_2010 <span class="op">=</span> data_2010[<span class="st">'Interpolated'</span>].mean</span>
-<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a>avg_co2_2020 <span class="op">=</span> data_2020[<span class="st">'Interpolated'</span>].mean</span>
-<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="co"># Calculate the CO2 increase</span></span>
-<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a>co2_increase <span class="op">=</span> avg_co2_2020 <span class="op">-</span> avg_co2_2010</span>
-<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The increase in CO2 levels from 2010 to 2020 is:"</span>, co2_increase)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
-  <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
-</button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
-<div class="accordion-body">
-<p>After applying the corrections suggested by Codeium, your code should
-look something like this:</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"></code></pre>
-</div>
-<p><strong>Changes:</strong></p>
-</div>
-</div>
-</div>
-</div>
 </div>
 </section><section><h2 class="section-heading" id="autocomplete">Autocomplete<a class="anchor" aria-label="anchor" href="#autocomplete"></a>
 </h2>
 <hr class="half-width">
-<div class="section level3">
-<h3 id="todo-refactor-this-section-1">TODO: refactor this section<a class="anchor" aria-label="anchor" href="#todo-refactor-this-section-1"></a>
-</h3>
 <p>A key feature of Codeium is its Autocomplete function: with every
 keystroke, Codeium actively attempts to predict and complete what you’re
 typing. By analyzing the current file, previous edits, and contextual
@@ -1405,7 +1292,6 @@ standard template), as it can save you time and reduce the likelihood of
 errors. By leveraging Codeium’s Autocomplete function, you can speed up
 your coding process and focus on the more creative and challenging
 aspects of your work.</p>
-</div>
 <div class="section level3">
 <h3 id="boilerplate-formatting-and-more">Boilerplate, Formatting, and More<a class="anchor" aria-label="anchor" href="#boilerplate-formatting-and-more"></a>
 </h3>
@@ -1534,82 +1420,36 @@ in the bottom right to access it.</p></li>
 <div id="autocomplete-exploration-10-min" class="callout-inner">
 <h3 class="callout-title">Autocomplete Exploration (10 min)</h3>
 <div class="callout-content">
-<p>Familiarize yourself with Codeium’s Autocomplete feature by
-practicing coding tasks. Create the function
-<code>analyze_co2_trends()</code> that processes the CO2 data in
-<code>weekly_in_situ_co2_mlo.csv</code> to calculate monthly average CO2
-concentrations and visualizes the trend over time. The function
-should:</p>
-<ul>
-<li>Accept the dataframe as an argument.</li>
-<li>Convert the <code>date</code> column to a datetime format.</li>
-<li>Discard any rows with missing values.</li>
-<li>Resample the data to calculate monthly averages for CO2
-concentrations.</li>
-<li>Visualize the trends over time in a well-formatted plot.</li>
-<li>Return the monthly averages.</li>
-</ul>
-<p><strong>Note</strong>: While this task can be solved without using
-Autocomplete, it’s important to use Codeium in this exercise to
-demonstrate how Autocomplete can assist with coding. Although using
-Python is not mandatory, the solution will be provided in Python.</p>
+<p>Use Codeium’s Autocomplete to assist in writing Python code that
+analyzes seasonal trends and interpolates missing values in the dataset
+you loaded earlier. Considering the dataset previously loaded into a
+Pandas DataFrame, pretending that you have only <code>Date</code>,
+<code>Decimal Date</code>, and <code>Average</code> columns, follow
+these instructions:</p>
 <ol style="list-style-type: decimal">
-<li>What are the benefits of using Codeium’s Autocomplete feature in
-this function?</li>
-<li>What are the potential drawbacks of relying on Autocomplete?</li>
-<li>How can you improve the accuracy of suggestions using
-Autocomplete?</li>
+<li>Prompt Codeium to suggest code that will plot the <code>Date</code>
+versus <code>Average</code> values to visualize the seasonal trends over
+time. Use Autocomplete to adjust the plot (e.g., adding labels, legends,
+or gridlines) for better readability.</li>
+<li>Use linear or time-based interpolation and plot the Interpolated
+column over <code>Date</code> to confirm the method worked as
+expected.</li>
+<li>Use Autocomplete to write code that calculates the moving average or
+seasonal trend, potentially using the <code>Trend</code> column. Plot
+the calculated trend alongside the <code>Average</code> and
+<code>Interpolated</code> values to observe any patterns.</li>
 </ol>
 </div>
 </div>
 </div>
-<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
-  <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
-<p>Here’s a sample outline of what the <code>analyze_co2_trends()</code>
-function might look like:</p>
-<div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">def</span> analyze_co2_trends(df):</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    <span class="co"># Convert 'date' column to datetime</span></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>    df[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>])</span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>    </span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>    <span class="co"># Set 'date' as index</span></span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>    df.set_index(<span class="st">'date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>    </span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>    <span class="co"># Drop rows with NaN values</span></span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>    </span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>    <span class="co"># Resample data to get monthly averages</span></span>
-<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>    monthly_avg <span class="op">=</span> df.resample(<span class="st">'M'</span>).mean()</span>
-<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>    </span>
-<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>    <span class="co"># Plotting</span></span>
-<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
-<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a>    plt.plot(monthly_avg.index, monthly_avg[<span class="st">'CO2 ppm'</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
-<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a>    plt.title(<span class="st">'Monthly Average CO2 Concentrations'</span>)</span>
-<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a>    plt.xlabel(<span class="st">'Date'</span>)</span>
-<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a>    plt.ylabel(<span class="st">'CO2 Concentration (ppm)'</span>)</span>
-<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a>    plt.grid()</span>
-<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a>    plt.show()</span>
-<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a>    </span>
-<span id="cb14-23"><a href="#cb14-23" tabindex="-1"></a>    <span class="cf">return</span> monthly_avg</span></code></pre>
-</div>
-<ol style="list-style-type: decimal">
-<li>Autocomplete saves time by suggesting common functions, reducing the
-need for memorization, preventing typos, and recognizing patterns to
-speed up repetitive tasks.</li>
-<li>Be cautious! You might miss out on understanding the code if you
-accept suggestions blindly. Autocomplete can also suggest incorrect
-functions if the context is unclear.</li>
-<li>Improve suggestion accuracy by writing clear comments and using
-meaningful variable/function names, which help Codeium understand the
-context better.</li>
-</ol>
+<p>TBD</p>
 </div>
 </div>
 </div>
@@ -1618,9 +1458,6 @@ context better.</li>
 </section><section><h2 class="section-heading" id="context-awareness">Context Awareness<a class="anchor" aria-label="anchor" href="#context-awareness"></a>
 </h2>
 <hr class="half-width">
-<div class="section level3">
-<h3 id="todo-refactor-this-section-2">TODO: refactor this section<a class="anchor" aria-label="anchor" href="#todo-refactor-this-section-2"></a>
-</h3>
 <p>Above we mentioned that the Chat function is particularly helpful due
 to context awareness. Context awareness is one of Codeium’s most
 powerful features, allowing it to offer personalized and highly relevant
@@ -1628,21 +1465,39 @@ suggestions by pulling information from various sources. Traditionally,
 generating code required training large LLMs on specific codebases,
 which is resource-intensive and not scalable for individual users.
 However, Codeium uses a more efficient method known as
-<strong>retrieval-augmented generation (RAG)</strong>.</p>
-<figure><img src="../fig/RAG.png" alt="RAG" class="figure mx-auto d-block"></figure><p>Instead of retraining the model, it retrieves the most relevant
-pieces of context, such as:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Open files in your IDE</strong>: Codeium scans the
-current file and other open files in your development environment to
-gather context. This means the suggestions you receive are directly
-related to the code you’re actively working on, ensuring
-relevance.</p></li>
-<li><p><strong>Local repository</strong>: Codeium goes beyond open files
-and searches through your entire local codebase. This retrieval engine
-can pull relevant snippets from the broader project, even from files
-that aren’t currently open, providing deeper insights and more accurate
-suggestions.</p></li>
-</ol>
+<strong>retrieval-augmented generation (RAG)</strong>. This applies
+across the board to Autocompete, Chat, and Command.</p>
+<figure><img src="../fig/RAG.png" alt="RAG" class="figure mx-auto d-block"></figure><ul>
+<li>
+<strong>Default Context</strong>: Codeium automatically pulls
+context from multiple sources, including the current file and other open
+files in your IDE, which are typically highly relevant to your ongoing
+work. Additionally, Codeium indexes your entire local codebase,
+retrieving relevant snippets even from closed files to assist as you
+write code, ask questions, or execute commands.</li>
+<li>
+<strong>Context Pinning</strong>: Developers can provide specific
+guidance by “pinning” custom context through the chat panel’s context
+tab. You can pin directories, files, repositories, or specific code
+elements (like functions or classes) for persistent reference across
+Autocomplete, Chat, and Command. Context Pinning is useful when your
+current work depends on code from other files; however, it’s best to pin
+only essential items to avoid slowing performance. Here are some
+effective uses of Context Pinning:
+<ul>
+<li>Module Definitions: Pin class/struct definitions from other modules
+within your repository.</li>
+<li>Internal Frameworks/Libraries: Pin directories with
+framework/library usage examples.</li>
+<li>Specific Tasks: Pin files or folders with interfaces (e.g., .proto
+files, config templates).</li>
+<li>Current Focus Area: Pin a directory containing most of the files
+relevant to your coding session.</li>
+<li>Testing: Pin a file containing the class you’re writing unit tests
+for.</li>
+</ul>
+</li>
+</ul>
 <p>For instance, if you’re working on a function and ask Codeium to help
 refactor it, the tool will pull in relevant context from both your
 active file and other parts of your codebase to improve the output. This
@@ -1657,27 +1512,16 @@ project.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li><p>Command and Chat allow you to generate or edit code using natural
-language instructions, making it easy to describe complex tasks
-concisely.</p></li>
-<li><p>Chat can also be useful for code-related discussions and quick
-responses to queries; it will help you draft boilerplate code, write
-unit tests, and explain code functionality.</p></li>
-<li><p>Lenses, which are clickable prompts appear above functions and
-classes, offer shortcuts for common tasks like refactoring or generating
-docstrings, could help improve workflow efficiency.</p></li>
-<li><p>With Context Awareness, Codeium retrieves relevant context from
-open files and your entire codebase, ensuring tailored, high-quality
-suggestions that align with your current coding task.</p></li>
-<li><p>Codeium’s Autocomplete boosts coding speed by predicting and
-completing code based on context, past edits, and current
-files.</p></li>
-<li><p>Automating repetitive tasks like boilerplate code, repetitive
-functions, and formatting reduces errors and saves time.</p></li>
-<li><p>Fill-in-the-Middle (FIM) improves suggestions by analyzing the
-code above and below the insertion point.</p></li>
-<li><p>Docstring generation via code lenses automates the creation of
-accurate docstrings in the correct location.</p></li>
+<li>Codeium offers three main modes: Command, Chat, and Autocomplete,
+each serving different coding needs</li>
+<li>Context awareness through RAG technology helps Codeium provide more
+relevant and accurate suggestions</li>
+<li>The Chat feature enables conversational interaction with code-aware
+AI assistance</li>
+<li>Autocomplete includes Fill-in-the-Middle capabilities for more
+accurate code completion</li>
+<li>Clear, declarative comments and good naming conventions improve
+Codeium’s effectiveness</li>
 </ul>
 </div>
 </div>
@@ -1686,7 +1530,6 @@ accurate docstrings in the correct location.</p></li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></section><section id="aio-3-ethical-and-security-considerations"><p>Content from <a href="3-ethical-and-security-considerations.html">Ethical and Security Considerations</a></p>
 <hr>
 <p>Last updated on 2024-10-28 |
