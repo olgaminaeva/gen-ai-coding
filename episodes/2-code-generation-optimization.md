@@ -66,7 +66,7 @@ In Codeium, code lenses appear right above your function and class definitions, 
 
 ![](episodes/fig/command.webp){alt='Command'}
 
-![](episodes/fig/jetbrains_docstrings.gif){alt='Docstring generation'}
+![](episodes/fig/docstring_python.mp4){alt='Docstring generation'}
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -237,7 +237,7 @@ In the following exercises, you will have the opportunity to practice using Code
 
 ### Code Generation
 
-Let's start by exploring the Command mode and generating code snippets to analyze a dataset. In Command mode, copy and paste the following text into your editor:
+Let's start by exploring the Command mode and generating code snippets to analyze a dataset. In Command mode, copy and paste the following text into your editor (you can also break it down in smaller pieces if you prefer):
 
 ```output
 Load a [CO2 concentration dataset](https://datahub.io/core/co2-ppm/) from the file `co2-mm-mlo.csv` into a Pandas DataFrame, then generate descriptive statistics and visualize data distributions. You can download the dataset using the following URL: https://edu.nl/k6v7x.
@@ -306,7 +306,7 @@ for col in df.columns:
 plot_average_and_interpolated(df)
 ```
 
-There is something wrong here—can you spot it? We will address this issue later, but for now, let's continue.
+There is something wrong here, can you spot it? We will address this issue later in the "Bug Fixing" exercise, so keep it in mind as you proceed.
 
 ### Docstrings Generation
 
@@ -316,6 +316,22 @@ Now, let's modify the `calculate_descriptive_stats()` and `visualize_column_dist
 - Document the function’s arguments and expected data types
 - Explain what the function returns (if applicable)
 - Optionally, provide a usage example
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### 💡 Tip
+
+Try experimenting with different docstring styles! For example, you could also explore the [Google-style docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings) using the `Refactor` lens or the Command mode. The default style used by the `Docstring` lens should be the [NumPy-style](https://numpydoc.readthedocs.io/en/latest/format.html).
+
+:::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### 🔍 Note
+
+While Command mode is not aware of the context of your code and doesn't maintain a preselected docstring style across different functions, Chat mode can detect and persist a chosen docstring style across multiple functions. This feature is particularly useful when you want to maintain a consistent docstring format throughout your codebase.
+
+:::::::::::::::::::::::::::::::::::::
 
 Please note that, while you could manually write the docstring and use suggestions from Autocomplete mode (which we will cover later in this episode), this task is designed to demonstrate Codeium's `Docstring` functionality.
 
