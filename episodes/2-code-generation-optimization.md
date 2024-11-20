@@ -240,7 +240,7 @@ In the following exercises, you will have the opportunity to practice using Code
 Let's start by exploring the Command mode and generating code snippets to analyze a dataset. In Command mode, copy and paste the following text into your editor:
 
 ```output
-Load a [CO2 concentration dataset](https://datahub.io/core/co2-ppm/) from the file `co2-mm-mlo.csv` into a Pandas DataFrame, then generate descriptive statistics and visualize data distributions.
+Load a [CO2 concentration dataset](https://datahub.io/core/co2-ppm/) from the file `co2-mm-mlo.csv` into a Pandas DataFrame, then generate descriptive statistics and visualize data distributions. You can download the dataset using the following URL: https://edu.nl/k6v7x.
 
 1.  Write a function that takes a DataFrame as input and calculates key descriptive statistics, including:
 
@@ -260,7 +260,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the dataset
-url = 'https://datahub.io/core/co2-ppm/r/co2-mm-mlo.csv'
+url = 'https://edu.nl/k6v7x'
 df = pd.read_csv(url)
 
 def calculate_descriptive_stats(data_frame):
