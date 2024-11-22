@@ -79,8 +79,6 @@ In Codeium, code lenses appear right above your function and class definitions, 
 
 - **Docstring Generation**: For generating documentation, clicking the `Docstring` label automatically creates a docstring above your function header (or under the function header in Python). This AI-generated documentation will describe what the function does, helping you maintain well-documented, readable code. In Python, for example, the docstring will be correctly placed directly beneath the function header.
 
-![](episodes/fig/command.webp){alt='Command'}
-
 ![](episodes/fig/docstring_python.mp4){alt='Docstring generation'}
 
 ::::::::::::::::::::::::::::::::::::: callout
@@ -107,8 +105,6 @@ Here are a few things to remember when using Command function of Codeium:
 - To edit a specific selection of code, highlight that piece of code before using Command. If not, it will generate new code at the cursor's position.
 
 - For effective use, try to give clear and detailed prompts. While simple requests like “Fix this” or “Refactor” can work well due to context awareness, more specific instructions like “Write a function that takes two inputs of type `Diffable` and implements the Myers diff algorithm” can yield even better results.
-
-![](episodes/fig/codeium_chat_best_practices.png){alt='Best Practices for Command'}
 
 ## Chat
 
@@ -145,6 +141,8 @@ Bad: Refactor rawDataTransform
 Good: Refactor @func:rawDataTransform by turning the while loop into a for loop and using the same data structure output as @func:otherDataTransformer
 
 ![](episodes/fig/best practices chat.png){alt='Best Practices for Chat'}
+
+Note that these best practices apply to both Chat and Command modes, as they help Codeium understand your needs more effectively.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -581,11 +579,8 @@ plt.show()
 **Comparison:**
 
 - Combined the `pd.to_datetime` conversion and filtering steps into one.
-
 - Removed the unnecessary `filtered_df['Year']` column and used the `dt.year` accessor to extract the year from the `'Date'` column.
-
 - Simplified the plotting code by using the `plot` method of the Series object and removing the unnecessary `plt.figure` call.
-
 - Removed the `label` parameter from the `plot` function, as it is not necessary when using the `plot` method of the Series object.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
