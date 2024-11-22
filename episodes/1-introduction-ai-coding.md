@@ -16,14 +16,23 @@ exercises: 0
 
 - Learn about AI models behind coding assistants
 - Outline the main AI coding assistants and their capabilities
-- Set up Codeium as coding assistant for the lesson
+- Set up Codeium as a coding assistant for the lesson
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction ##
 
-Artificial intelligence (AI) models for coding assistants, such as Codeium and GitHub Copilot, rely on machine learning (ML) techniques, particularly deep learning and natural language processing (NLP), to assist developers. These models are trained on vast amounts of publicly available code and documentation to understand patterns, syntax, and code logic across various programming languages. 
-Let’s break down the *key characteristics* of how these models work:
+Artificial intelligence (AI) models for coding assistants, such as Codeium and GitHub Copilot, rely on machine learning (ML) techniques, particularly deep learning and natural language processing (NLP), to assist developers. These models are trained on vast amounts of publicly available code and documentation to understand patterns, syntax, and code logic across various programming languages. Here is a schematic process of training an AI coding assistant model.
+
+![](episodes/fig/AI_tool_development.png) 
+
+::::::::::::::::::::::::::::::::::::: callout
+
+It’s important to note that many AI coding assistants are fine-tuned from foundation models rather than trained from scratch. Fine-tuning involves adapting a pre-trained model to specific tasks using smaller, task-specific datasets. This approach is more efficient as it uses the broad capabilities of foundation models, requiring *fewer resources* and *less time* than starting from scratch.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+Now let’s break down the *key characteristics* of how these models work:
 
 | Characteristic | Description | Examples |
 | --- | ----------- | ------- |
@@ -33,6 +42,14 @@ Let’s break down the *key characteristics* of how these models work:
 | **Learning from user interaction** | AI coding assistants also learn and improve from ongoing user interactions. Over time, they adjust to individual developer preferences and coding styles, offering more personalized and relevant suggestions. | As users accept or reject suggestions, the assistant refines its future outputs based on this feedback (so-called "feedback loop"). Many AI coding assistants can learn from private codebases (when privacy policies allow) to better align with specific project structures, libraries, or functions common to a particular team or organization (custom adaptations). |
 | **Code generation and refactoring** | *Code generation*: Based on a high-level description of what you want, the assistant can write larger blocks of code.<br> *Code refactoring*: AI can help optimize and refactor your code. | You might describe a task such as, `“Create a function to handle user authentication using OAuth2”`, and the assistant will generate the appropriate code. You might also ask, `“Refactor this code to use async/await for better performance”`, and the AI will generate the necessary changes to convert synchronous functions into asynchronous ones.|
 | **Multilanguage and multimodal support** | AI coding assistants are designed to support a wide variety of programming languages and paradigms, enabling them to work across different domains (e.g., web development, data science, system programming). They are trained on the syntax, idioms, and patterns of languages like Python, JavaScript, C++, and many others. | Codeium supports Assembly, C, C++, C#, Clojure, CMake, CoffeeScript, CSS, CUDA, Dart, Delphi, Dockerfile, Elixir, F#, Go, Groovy, Haskell, HCL, HTML, Java, JavaScript, Julia, JSON, Kotlin, LISP, Less, Lua, Makefile, MATLAB, Objective-C, pbtxt, PHP, Protobuf, Python, Perl, Powershell, R, Ruby, Rust, Sass, Scala, SCSS, shell, Solidity, SQL, Starlark, Swift, TypeScript, TSX, VBA, Vue, YAML. |
+
+::::::::::::::::::::::::::::::::::::: callout 
+
+Not all AI-powered code assistance tools rely on generative AI. Many utilize traditional machine learning techniques to enhance coding efficiency, such as identifying errors, suggesting optimizations, or automating repetitive tasks. These tools often focus on static analysis, pattern recognition, or rule-based systems to provide real-time support without generating new content. By complementing human expertise, these AI tools streamline development workflows and help maintain code quality, offering reliable solutions for a wide range of programming needs.
+
+For instance, [PMD] (https://pmd.github.io/), an open-source static code analyzer to find code issues, that focuses on maintainability. [SonarQube] (https://www.sonarsource.com/products/sonarqube/) analyzes code to identify bugs, vulnerabilities, and code smells using static analysis techniques. Finally, [Snyk Code] (https://docs.snyk.io/scan-with-snyk/snyk-code) uses AI to suggest improvements and detect security issues in code.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 With a foundation of how AI models for coding assistants function — how they analyze code, offer suggestions, and improve efficiency — let’s explore some of the most popular AI coding assistants available today. Each tool uses AI in slightly different ways to enhance your coding experience. In the following table, we'll compare these tools to give you an overview of their key features, pricing, and capabilities. This will help you understand where Codeium fits and what alternatives you might consider.
 
@@ -65,7 +82,7 @@ In this lesson, we will learn about the three ways Codeium can assist with codin
 
 - AI coding assistants work by combining ML, contextual code understanding, and NLP to help developers code faster and more efficiently. 
 - These tools predict, generate, and even optimize code based on the developer’s input and ongoing context, making them powerful companions in modern software development.
-- There are several AI coding assistants abailable on the market, and they are designed to optimize your coding experience.
+- There are several AI coding assistants available on the market, and they are designed to optimize your coding experience.
 - To set up Codeium as your coding assistant you need to download and install the extension on our local PC.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
