@@ -270,6 +270,19 @@ Even if it is possible to use Codeium in Jupyter Notebooks directly within VS Co
 
 ### Code Generation
 
+During the following exercises, we will be using a dataset containing CO2 concentration measurements taken in Mauna Loa, Hawaii, from 1958 to 2024, grouped by month. The dataset is available in the file `co2-mm-mlo.csv` on [this website](https://datahub.io/core/co2-ppm/), and here is an example data view of it:
+
+![](episodes/fig/co2_dataset.png){alt='CO2 Dataset'}
+
+- `Date`: The date of the measuremen in the format `YYYY-MM`.
+- `Decimal Date`: The date in decimal format.
+- `Average`: The average CO2 concentration in parts per million (ppm) per month.
+- `Interpolated`: The interpolated CO2 concentration in ppm per month.
+- `Trend`: The trend of CO2 concentration in ppm per month.
+- `Number of Days`: The percentage number of daily averages used to compute the monthly average.
+
+For more details about how the data was collected and processed, you can refer to the [source](https://datahub.io/core/co2-ppm/).
+
 Let's start by exploring the Command mode and generating code snippets to analyze a dataset. In Command mode, keeping the python file open, press `⌘(Command)+I` on Mac or `Ctrl+I` on Windows/Linux to open the Command prompt. Then, copy and paste the following text into your editor (you can also break it down in smaller pieces if you prefer):
 
 ```output
