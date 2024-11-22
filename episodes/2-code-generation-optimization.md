@@ -235,6 +235,16 @@ The following shortcuts can be used to speed up your workflow:
 
 In the following exercises, you will have the opportunity to practice using Codeium's Command, Chat, and Autocomplete features to generate, optimize, and refactor code. Create a python file (for example `exercise.py`) in your IDE and follow along with the exercises.
 
+::::::::::::::::::::::::::::::::::::: callout
+
+### Jupyter Notebooks (Not Recommended)
+
+It is also possible to use Codeium in Jupyter Notebooks, but for the best experience, it is recommended to use Jupyter Lab after installing the officially provided [Codeium extension for JupyterLab](https://codeium.com/jupyter_tutorial).
+
+Even if it is possible to use Codeium in Jupyter Notebooks directly within VS Code, the experience may not be as smooth as in a standard Python files. Indeed, Windows users may encounter issues with some of the Codeium shortcuts and features.
+
+:::::::::::::::::::::::::::::::::::::
+
 ### Code Generation
 
 Let's start by exploring the Command mode and generating code snippets to analyze a dataset. In Command mode, keeping the python file open, press `⌘(Command)+I` on Mac or `Ctrl+I` on Windows/Linux to open the Command prompt. Then, copy and paste the following text into your editor (you can also break it down in smaller pieces if you prefer):
