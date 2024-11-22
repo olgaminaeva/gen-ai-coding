@@ -28,6 +28,21 @@ Codeium accelerates software development through three key modes: Command, Chat,
 
 Please note that while using Python is not required since Codeium supports multiple programming languages, all exercises and solutions will be provided in Python.
 
+::::::::::::::::::::::::::::::::::::: callout
+
+### Code Optimization
+
+Code optimization is the process of making your code faster (reducing runtime), more efficient (using fewer resources like memory and disk), and/or more readable (easier for developers to maintain). Some common strategies for code optimization include:
+
+- **Algorithmic optimization**: Improving the efficiency of algorithms to reduce the time or space complexity. *Example*: Reducing time complexity from O(n²) to O(n log n) by choosing the right sorting algorithm.
+- **Code refactoring**: Eliminate redundancy, improve readability, and enhance maintainability without changing the code's functionality. *Example*: Replace nested loops with more concise operations like `map`, `filter`, or comprehensions.
+- **Memory optimization**: Reducing memory usage by optimizing data structures, avoiding memory leaks, and minimizing unnecessary allocations. *Example*: Using generators instead of lists to avoid storing all elements in memory.
+- **Parallelism and concurrency**: Utilize parallel processing or multithreading to split tasks. *Example*: Process chunks of data simultaneously using `multiprocessing` in Python.
+
+Much more can be said about code optimization, but these are some common strategies to keep in mind as you work with Codeium.
+
+:::::::::::::::::::::::::::::::::::::::
+
 ## Context Awareness
 
 Context awareness is one of Codeium’s most powerful features, allowing it to offer personalized and highly relevant suggestions by pulling information from various sources. Traditionally, generating code required training large LLMs on specific codebases, which is resource-intensive and not scalable for individual users. However, Codeium uses a more efficient method known as **retrieval-augmented generation (RAG)**. This applies across the board to Autocompete, Chat, and Command.
@@ -64,8 +79,6 @@ In Codeium, code lenses appear right above your function and class definitions, 
 
 - **Docstring Generation**: For generating documentation, clicking the `Docstring` label automatically creates a docstring above your function header (or under the function header in Python). This AI-generated documentation will describe what the function does, helping you maintain well-documented, readable code. In Python, for example, the docstring will be correctly placed directly beneath the function header.
 
-![](episodes/fig/command.webp){alt='Command'}
-
 ![](episodes/fig/docstring_python.mp4){alt='Docstring generation'}
 
 ::::::::::::::::::::::::::::::::::::: callout
@@ -92,8 +105,6 @@ Here are a few things to remember when using Command function of Codeium:
 - To edit a specific selection of code, highlight that piece of code before using Command. If not, it will generate new code at the cursor's position.
 
 - For effective use, try to give clear and detailed prompts. While simple requests like “Fix this” or “Refactor” can work well due to context awareness, more specific instructions like “Write a function that takes two inputs of type `Diffable` and implements the Myers diff algorithm” can yield even better results.
-
-![](episodes/fig/codeium_chat_best_practices.png){alt='Best Practices for Command'}
 
 ## Chat
 
@@ -130,6 +141,16 @@ Bad: Refactor rawDataTransform
 Good: Refactor @func:rawDataTransform by turning the while loop into a for loop and using the same data structure output as @func:otherDataTransformer
 
 ![](episodes/fig/best practices chat.png){alt='Best Practices for Chat'}
+
+Note that these best practices apply to both Chat and Command modes, as they help Codeium understand your needs more effectively.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### 💡 Prompting Best Practices
+
+The prompting strategies we’re exploring here for Codeium aren’t just limited to this tool. These techniques (e.g., like being clear, concise, and specifying outputs) apply to many other AI-powered tools like ChatGPT, Copilot, and beyond. Mastering these skills will make your interactions with all AI tools more effective, no matter the platform!
+
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Other Features
 
@@ -233,95 +254,148 @@ The following shortcuts can be used to speed up your workflow:
 
 ## Hands-on Practice
 
-In the following exercises, you will have the opportunity to practice using Codeium's Command, Chat, and Autocomplete features to generate, optimize, and refactor code. 
+In the following exercises, you will have the opportunity to practice using Codeium's Command, Chat, and Autocomplete features to generate, optimize, and refactor code. Create a python file (for example `exercise.py`) in your IDE and follow along with the exercises.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Jupyter Notebooks (Not Recommended)
+
+It is also possible to use Codeium in Jupyter Notebooks, but for the best experience, it is recommended to use Jupyter Lab after installing the officially provided [Codeium extension for JupyterLab](https://codeium.com/jupyter_tutorial).
+
+Even if it is possible to use Codeium in Jupyter Notebooks directly within VS Code, the experience may not be as smooth as in a standard Python files. Indeed, Windows users may encounter issues with some of the Codeium shortcuts and features.
+
+:::::::::::::::::::::::::::::::::::::
 
 ### Code Generation
 
-Let's start by exploring the Command mode and generating code snippets to analyze a dataset. In Command mode, copy and paste the following text into your editor (you can also break it down in smaller pieces if you prefer):
+During the following exercises, we will be using a dataset containing CO2 concentration measurements taken in Mauna Loa, Hawaii, from 1958 to 2024, grouped by month. The dataset is available in the file `co2-mm-mlo.csv` on [this website](https://datahub.io/core/co2-ppm/), and here is an example data view of it:
+
+![](episodes/fig/co2_dataset.png){alt='CO2 Dataset'}
+
+- `Date`: The date of the measuremen in the format `YYYY-MM`.
+- `Decimal Date`: The date in decimal format.
+- `Average`: The average CO2 concentration in parts per million (ppm) per month.
+- `Interpolated`: The interpolated CO2 concentration in ppm per month.
+- `Trend`: The trend of CO2 concentration in ppm per month.
+- `Number of Days`: The percentage number of daily averages used to compute the monthly average.
+
+For more details about how the data was collected and processed, you can refer to the [source](https://datahub.io/core/co2-ppm/).
+
+Let's start by exploring the Command mode and generating code snippets to analyze a dataset. In Command mode, keeping the python file open, press `⌘(Command)+I` on Mac or `Ctrl+I` on Windows/Linux to open the Command prompt. Then, copy and paste the following text into your editor (you can also break it down in smaller pieces if you prefer):
 
 ```output
-Load a [CO2 concentration dataset](https://datahub.io/core/co2-ppm/) from the file `co2-mm-mlo.csv` into a Pandas DataFrame, then generate descriptive statistics and visualize data distributions. You can download the dataset using the following URL: https://edu.nl/k6v7x.
+Load a [CO2 concentration dataset](https://datahub.io/core/co2-ppm/) from the file `co2-mm-mlo.csv` into a Pandas DataFrame, then generate descriptive statistics and visualize data distributions. Read the dataset using the following URL: https://edu.nl/k6v7x.
 
 1.  Write a function that takes a DataFrame as input and calculates key descriptive statistics, including:
 
    - Number of rows and columns
    - Data types of each column
-   - Summary statistics (e.g., mean, minimum, maximum) for numeric columns
+   - Summary statistics (e.g., mean, minimum, maximum)
 
-2. Write a function that accepts a DataFrame and a specific column as inputs. If the column is numeric (e.g., `int64`, `float64`), create a histogram to display its distribution; if categorical, create a bar plot to show category frequencies.
+   Compute the statistics only for the numeric columns.
 
-3. Write a function to plot the `Average` and `Interpolated` columns on a single graph, with Date on the x-axis, to visualize their distributions over time.
+2. Write a function that accepts a DataFrame and a specific column as inputs, and creates a new figure in which it plots its distribution. If the column is numeric (e.g., `int64`, `float64`), create a histogram to display its distribution; if categorical, create a bar plot to show category frequencies. Add the name of the column to the title.
+
+3. Write a function that creates a new figure in which it plots the `Average` and `Interpolated` columns on a single graph, with `Date` on the x-axis, to visualize their distributions over time. 
+
+4. In the main, print nicely the information computed in 1., run the function defined in 2. on all columns, and run the function defined in 3. Use the `show()` functionality to display the figures only at the end of the main. 
 ```
 
 Here is what you would expect to see in the generated code:
 
 ```python
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 
-# Load the dataset
-url = 'https://edu.nl/k6v7x'
-df = pd.read_csv(url)
 
-def calculate_descriptive_stats(data_frame):
-    nrow, ncol = data_frame.shape
-    data_types = data_frame.dtypes
-    summary_stats = data_frame.describe()
-    return nrow, ncol, data_types, summary_stats
+def get_descriptive_stats(df):
+    """
+    Calculate key descriptive statistics for a given DataFrame.
+    """
+    stats = {"nrow": df.shape[0], "ncol": df.shape[1]}
+    for col in df.select_dtypes(include="number").columns:
+        stats[col] = {
+            "dtype": df[col].dtype,
+            "mean": df[col].mean(),
+            "min": df[col].min(),
+            "max": df[col].max(),
+        }
+    return stats
 
-def visualize_column_distribution(data_frame, column):
-    if data_frame[column].dtype in ['int64', 'float64']:
-        plt.hist(data_frame[column], bins=20, edgecolor='k')
-        plt.xlabel(column)
-        plt.ylabel('Frequency')
-        plt.title(f'Histogram of {column}')
+
+def plot_distribution(df, column):
+    """
+    Plot the distribution of a given column in a DataFrame.
+    """
+    fig, ax = plt.subplots()
+    if df[column].dtype.kind in "bifc":
+        df[column].plot.hist(ax=ax, bins=50)
     else:
-        data_frame[column].value_counts().plot(kind='bar')
-        plt.xlabel(column)
-        plt.ylabel('Count')
-        plt.title(f'Bar Plot of {column}')
+        df[column].value_counts().plot.bar(ax=ax)
+    ax.set_title(column)
+
+
+def plot_time_series(df):
+    """
+    Plot the Average and Interpolated columns over time.
+    """
+    fig, ax = plt.subplots()
+    df.plot(x="Date", y=["Average", "Interpolated"], ax=ax)
+
+
+def main():
+    url = "https://edu.nl/k6v7x"
+    df = pd.read_csv(url)
+    stats = get_descriptive_stats(df)
+    print(pd.DataFrame(stats).T)
+    for col in df.columns:
+        plot_distribution(df, col)
+    plot_time_series(df)
     plt.show()
 
-def plot_average_and_interpolated(data_frame):
-    data_frame['Date'] = pd.to_datetime(data_frame['Date'])
-    plt.figure(figsize=(12, 6))
-    plt.plot(data_frame['Date'], data_frame['Average'], label='Average')
-    plt.plot(data_frame['Date'], data_frame['Interpolated'], label='Interpolated', linestyle='--')
-    plt.xlabel('Date')
-    plt.ylabel('CO2 Concentration (ppm)')
-    plt.title('Average vs Interpolated CO2 Concentrations Over Time')
-    plt.legend()
-    plt.grid()
-    plt.show()
 
-# Example usage
-nrow, ncol, data_types, summary_stats = calculate_descriptive_stats(df)
-print(f'Number of rows: {nrow}, Number of columns: {ncol}')
-print(f'Data types:\n{data_types}')
-print(f'Summary statistics:\n{summary_stats}')
-
-for col in df.columns:
-    visualize_column_distribution(df, col)
-
-plot_average_and_interpolated(df)
+if __name__ == "__main__":
+    main()
 ```
 
 There is something wrong here, can you spot it? We will address this issue later in the "Bug Fixing" exercise, so keep it in mind as you proceed.
 
+::::::::::::::::::::::::::::::::::::: callout
+
+### Pseudo-randomness 🔍
+
+You may obtain slightly different results due to the pseudo-randomness of the command mode generation process.
+
+:::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Instructions 🔍
+
+The instructions provided in the text were clear and precise, designed to achieve the expected results accurately using the command mode. Try experimenting with removing, rearranging, or adding details to the instructions. You’ll notice that the assistant might generate slightly different code, which occasionally may not fully meet your intended goal.
+
+This exercise highlights the importance of having a clear understanding of what you want to achieve when seeking help from an assistant. It allows you to refine or adjust the instructions to guide the tool effectively toward your objective. Relying too heavily on the assistant can lead to mistakes, a point we will emphasize repeatedly throughout this lesson.
+
+:::::::::::::::::::::::::::::::::::::
+
 ### Docstrings Generation
 
-Now, let's modify the `calculate_descriptive_stats()` and `visualize_column_distribution()` functions you created during the previous exercise to add a detailed docstring using Codeium's `Docstring` lens. Each docstring should:
+Now, let's modify the `get_descriptive_stats()` and `plot_column_distribution()` functions' docstrings you created during the previous exercise to add further details using Codeium's `Refactor` lens. Each docstring should:
 
 - Describe the purpose of the function
 - Document the function’s arguments and expected data types
 - Explain what the function returns (if applicable)
 - Optionally, provide a usage example
 
+To do this, click on the `Refactor` lens above the function definition and select the `Add docstring and comments to the code` option. Codeium will add more details to the existing docstring, making it more informative and useful.
+
+Note that if you don't have a docstring yet in your function definition, another lens will appear to help you generate one, the `Generate Docstring` lens. Try experimenting with both lenses to see how they can improve your code documentation.
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### 💡 Tip
 
-Try experimenting with different docstring styles! For example, you could also explore the [Google-style docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings) using the `Refactor` lens or the Command mode. The default style used by the `Docstring` lens should be the [NumPy-style](https://numpydoc.readthedocs.io/en/latest/format.html).
+Try experimenting with different docstring styles! For example, you could also explore the [Google-style docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings) using the `Refactor` lens or the Command mode. The default style used by the lenses should be the [NumPy-style](https://numpydoc.readthedocs.io/en/latest/format.html).
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -333,62 +407,60 @@ While Command mode is not aware of the context of your code and doesn't maintain
 
 :::::::::::::::::::::::::::::::::::::
 
-Please note that, while you could manually write the docstring and use suggestions from Autocomplete mode (which we will cover later in this episode), this task is designed to demonstrate Codeium's `Docstring` functionality.
-
-Here’s an example of how the `calculate_descriptive_stats()` and the `visualize_column_distribution() `functions might look with the generated docstrings:
+Here’s an example of how the `get_descriptive_stats()` and the `plot_column_distribution() `functions might look with the refactored docstrings:
 
 ```python
-def calculate_descriptive_stats(data_frame):
+def plot_distribution(df, column):
     """
-    Calculate the number of rows, number of columns, data types of columns,
-    and descriptive statistics of a given DataFrame.
+    Plot the distribution of a given column in a DataFrame.
+
+    For numerical columns, a histogram is plotted. For categorical columns,
+    a bar plot of the counts is plotted.
 
     Parameters
     ----------
-    data_frame : pandas.DataFrame
-        The DataFrame to be analyzed
-
-    Returns
-    -------
-    tuple
-        A tuple containing (nrow, ncol, data_types, summary_stats)
-    """
-    nrow, ncol = data_frame.shape
-    data_types = data_frame.dtypes
-    summary_stats = data_frame.describe()
-    return nrow, ncol, data_types, summary_stats
-
-def visualize_column_distribution(data_frame, column):
-    """
-    Visualize the distribution of the given column in a DataFrame.
-
-    Parameters
-    ----------
-    data_frame : pandas.DataFrame
-        The DataFrame containing the column to be visualized
+    df : DataFrame
+        The DataFrame to plot the distribution for.
     column : str
-        The column name to be visualized
+        The column to plot the distribution for.
 
     Returns
     -------
     None
-
-    Notes
-    -----
-    If the column is numeric (int64 or float64), a histogram is plotted.
-    Otherwise, a bar plot of the value counts is plotted.
-    """    
-    if data_frame[column].dtype in ["int64", "float64"]:
-        plt.hist(data_frame[column], bins=20, edgecolor="k")
-        plt.xlabel(column)
-        plt.ylabel("Frequency")
-        plt.title(f"Histogram of {column}")
+    """
+    fig, ax = plt.subplots()
+    if df[column].dtype.kind in "bifc":
+        # Plot a histogram for numerical columns
+        df[column].plot.hist(ax=ax, bins=50)
     else:
-        data_frame[column].value_counts().plot(kind="bar")
-        plt.xlabel(column)
-        plt.ylabel("Count")
-        plt.title(f"Bar Plot of {column}")
-    plt.show()
+        # Plot a bar plot of the counts for categorical columns
+        df[column].value_counts().plot.bar(ax=ax)
+    ax.set_title(column)
+
+def plot_column_distribution(df, column):
+    """
+    Plot the distribution of a given column in a DataFrame.
+
+    Parameters
+    ----------
+    df : DataFrame
+        The DataFrame containing the data.
+    column : str
+        The column name in the DataFrame for which to plot the distribution.
+    """
+    # Create a new figure and axis for the plot
+    fig, ax = plt.subplots()
+    
+    # Check if the column is of a numeric type
+    if df[column].dtype.kind in "bifc":
+        # Plot a histogram for numeric data
+        df[column].plot.hist(ax=ax, bins=50)
+    else:
+        # Plot a bar chart for categorical data
+        df[column].value_counts().plot.bar(ax=ax)
+    
+    # Set the title of the plot to the column name
+    ax.set_title(column)
 ```
 
 Note that you might need to adjust the generated docstring if the function has complex logic or if the generated docstring lacks specific details about edge cases or exceptions.
@@ -397,7 +469,7 @@ Note that you might need to adjust the generated docstring if the function has c
 
 ## Bug Fixing (5 min)
 
-Look back at the code generated during the "Assisted Code Generation" section. If you look at the head of the DataFrame, what do you notice? Use the Chat feature to discuss the issue with Codeium and ask for suggestions on how to resolve it. Then run again the functions defined in the previous exercise to see if the issue has been resolved.
+Look back at the code generated during the "Code Generation" section. If you look at the head of the DataFrame, what do you notice? Use the Chat feature to discuss the issue with Codeium and ask for suggestions on how to resolve it. Then run again the functions defined in the previous exercise to see if the issue has been resolved.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -407,7 +479,7 @@ Look back at the code generated during the "Assisted Code Generation" section. I
 
 The issue is that the `Date` column is used as index column, causing all the other columns to shift by one. Here’s how you might discuss the issue with Codeium in the Chat:
 
-1. **Prompt**: "The `Date` column is being used as the index, causing the other columns to shift by one. How can I resolve this issue?"
+1. **Prompt**: "The `Date` column is being used as the index, causing the other columns to shift by one. How can I read the file without encourring into this issue?"
 2. **Discussion**: Codeium might suggest resetting the index or using the `reset_index()` function to address the issue. Alternatively, it might recommend setting `index_col=False` when reading the CSV file to prevent the `Date` column from being used as the index.
 
 Correct example of how to resolve the issue:
@@ -444,7 +516,7 @@ Or even like this:
 df['Avg-Int'] = df['Average'] - df['Interpolated']
 ```
 
-This version is faster and more memory-efficient because it uses vectorized operations, which are a key feature of the pandas library.
+This version is faster and more memory-efficient because it uses vectorized operations, which are a key feature of the `pandas` library.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -454,16 +526,16 @@ Similar to the exercise above, execute the code as is to verify it works and exa
 
 ```python
 # Convert 'Date' column to datetime format
-data['Date'] = pd.to_datetime(data['Date'], format='%Y-%m')
+df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m')
 
 # Filter data for a specific date range
-filtered_data = data[(data['Date'] >= '2000-01-01') & (data['Date'] <= '2010-12-31')]
+filtered_df = df[(df['Date'] >= '2000-01-01') & (df['Date'] <= '2010-12-31')]
 
 # Extract the year value from the 'Date' column
-filtered_data['Year'] = filtered_data['Date'].dt.year
+filtered_df['Year'] = filtered_df['Date'].dt.year
 
 # Group data by year and calculate the average CO2 level for each year
-avg_co2_per_year = filtered_data.groupby('Year')['Interpolated'].mean()
+avg_co2_per_year = filtered_df.groupby('Year')['Interpolated'].mean()
 
 # Plot the results
 plt.figure(figsize=(10, 6))
@@ -485,12 +557,13 @@ plt.show()
 
 ```python
 # Convert 'Date' column to datetime format and filter data for a specific date range
-filtered_data = data[(pd.to_datetime(data['Date'], format='%Y-%m') >= '2000-01-01') & 
-                     (pd.to_datetime(data['Date'], format='%Y-%m') <= '2010-12-31')]
+filtered_df = df[
+    (pd.to_datetime(df['Date'], format='%Y-%m') >= '2000-01-01') & 
+    (pd.to_datetime(df['Date'], format='%Y-%m') <= '2010-12-31')]
 
 
 # Group data by year and calculate the average CO2 level for each year
-avg_co2_per_year = filtered_data.groupby(pd.to_datetime(filtered_data['Date'], format='%Y-%m').dt.year)['Interpolated'].mean()
+avg_co2_per_year = filtered_df.groupby(pd.to_datetime(filtered_df['Date'], format='%Y-%m').dt.year)['Interpolated'].mean()
 
 
 # Plot the results
@@ -506,11 +579,8 @@ plt.show()
 **Comparison:**
 
 - Combined the `pd.to_datetime` conversion and filtering steps into one.
-
-- Removed the unnecessary `filtered_data['Year']` column and used the `dt.year` accessor to extract the year from the `'Date'` column.
-
+- Removed the unnecessary `filtered_df['Year']` column and used the `dt.year` accessor to extract the year from the `'Date'` column.
 - Simplified the plotting code by using the `plot` method of the Series object and removing the unnecessary `plt.figure` call.
-
 - Removed the `label` parameter from the `plot` function, as it is not necessary when using the `plot` method of the Series object.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
