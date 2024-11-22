@@ -30,7 +30,14 @@ Click Open Visual Studio Code, which should redirect you back to Visual Studio C
 
 7. All Done! You will be asked to confirm the authentication in Visual Studio Code (click Open in the resulting pop-up).
 
+8. Make sure that the extension is enabled by checking the bottom left corner of your Visual Studio Code window. You should see a Codeium icon there. Otherwise, go to the marketplace, look for Codeium, and click the Enable button. It could be necessary to reload the window after enabling the extension.
+
 You can alternatively follow the [Codeium installation instructions in VS Code](https://codeium.com/vscode_tutorial) on the official website, which will guide you through the same steps.
+
+### Additional Notes
+
+- If you have issues with enabling the Codeium chat, it could be due to the disabled telemetry on your VS Code. Make sure to enable telemetry by following the instructions on the [VS Code telemetry page](https://code.visualstudio.com/docs/getstarted/telemetry).
+- Codeium can be also used with other IDEs, such as IntelliJ IDEA, PyCharm, Vim, and WebStorm. You can find the installation instructions for these IDEs on the [Codeium download page](https://codeium.com/download).
 
 ## Data Sets
 
