@@ -131,6 +131,14 @@ Good: Refactor @func:rawDataTransform by turning the while loop into a for loop 
 
 ![](episodes/fig/best practices chat.png){alt='Best Practices for Chat'}
 
+::::::::::::::::::::::::::::::::::::: callout
+
+### 💡 Prompting Best Practices
+
+The prompting strategies we’re exploring here for Codeium aren’t just limited to this tool. These techniques (e.g., like being clear, concise, and specifying outputs) apply to many other AI-powered tools like ChatGPT, Copilot, and beyond. Mastering these skills will make your interactions with all AI tools more effective, no matter the platform!
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 ### Other Features
 
 - **Persistent Context**: Configure the `Context` tab in the chat panel to enable continuous contextual awareness during and across conversations. Within this tab, you’ll find:
