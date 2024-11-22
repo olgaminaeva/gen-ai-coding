@@ -28,6 +28,21 @@ Codeium accelerates software development through three key modes: Command, Chat,
 
 Please note that while using Python is not required since Codeium supports multiple programming languages, all exercises and solutions will be provided in Python.
 
+::::::::::::::::::::::::::::::::::::: callout
+
+### Code Optimization
+
+Code optimization is the process of making your code faster (reducing runtime), more efficient (using fewer resources like memory and disk), and/or more readable (easier for developers to maintain). Some common strategies for code optimization include:
+
+- **Algorithmic optimization**: Improving the efficiency of algorithms to reduce the time or space complexity. *Example*: Reducing time complexity from O(n²) to O(n log n) by choosing the right sorting algorithm.
+- **Code refactoring**: Eliminate redundancy, improve readability, and enhance maintainability without changing the code's functionality. *Example*: Replace nested loops with more concise operations like `map`, `filter`, or comprehensions.
+- **Memory optimization**: Reducing memory usage by optimizing data structures, avoiding memory leaks, and minimizing unnecessary allocations. *Example*: Using generators instead of lists to avoid storing all elements in memory.
+- **Parallelism and concurrency**: Utilize parallel processing or multithreading to split tasks. *Example*: Process chunks of data simultaneously using `multiprocessing` in Python.
+
+Much more can be said about code optimization, but these are some common strategies to keep in mind as you work with Codeium.
+
+:::::::::::::::::::::::::::::::::::::::
+
 ## Context Awareness
 
 Context awareness is one of Codeium’s most powerful features, allowing it to offer personalized and highly relevant suggestions by pulling information from various sources. Traditionally, generating code required training large LLMs on specific codebases, which is resource-intensive and not scalable for individual users. However, Codeium uses a more efficient method known as **retrieval-augmented generation (RAG)**. This applies across the board to Autocompete, Chat, and Command.
