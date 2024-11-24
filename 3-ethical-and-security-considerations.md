@@ -47,11 +47,11 @@ You're leading a team that's considering adopting an AI coding assistant for a n
 
 Here are a few examples of sensitive situations you might think about:
 
-1. Handling confidential participant data (e.g., writing code for analyzing participant responses in medical or psychological studies where data includes health records or personal information).
+  1. Handling confidential participant data (e.g., writing code for analyzing participant responses in medical or psychological studies where data includes health records or personal information).
 
-2. Incorporating third-party libraries with unverified security compliance.
+  2. Incorporating third-party libraries with unverified security compliance.
 
-3. Securing proprietary algorithms when developing code for cutting-edge research models or simulations that could be misused if exposed.
+  3. Securing proprietary algorithms when developing code for cutting-edge research models or simulations that could be misused if exposed.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
