@@ -234,7 +234,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#ethical-considerations">Ethical Considerations</a></li>
+        <ul><li><a href="#introduction-to-the-practical-exercise">Introduction to the Practical Exercise</a></li>
+<li><a href="#ethical-considerations">Ethical Considerations</a></li>
 <li><a href="#identifying-vulnerabilities">Identifying Vulnerabilities</a></li>
 <li><a href="#safety-measures-and-best-practices">Safety measures and best practices</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -301,7 +302,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Ethical and Security Considerations</h1>
-        <p>Last updated on 2024-10-28 |
+        <p>Last updated on 2024-11-24 |
 
         <a href="https://github.com/olgaminaeva/gen-ai-coding/edit/main/episodes/3-ethical-and-security-considerations.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -346,7 +347,122 @@ teams.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="ethical-considerations">Ethical Considerations<a class="anchor" aria-label="anchor" href="#ethical-considerations"></a></h2>
+<section><h2 class="section-heading" id="introduction-to-the-practical-exercise">Introduction to the Practical Exercise<a class="anchor" aria-label="anchor" href="#introduction-to-the-practical-exercise"></a></h2>
+<hr class="half-width"><p>Before diving into the core content on ethical and security
+considerations for AI coding assistants, let’s begin with a
+scenario-based exercise to set the stage. This exercise will help you
+identify potential challenges and think critically about how you might
+address them.</p>
+<div id="ai-coding-assistant-ethics-challenge-15-min" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="ai-coding-assistant-ethics-challenge-15-min" class="callout-inner">
+<h3 class="callout-title">AI Coding Assistant Ethics Challenge (15 min)</h3>
+<div class="callout-content">
+<p>You’re leading a team that’s considering adopting an AI coding
+assistant for a new project involving sensitive user data. Your task is
+to create a comprehensive plan that addresses the ethical and security
+concerns discussed in the lesson.</p>
+<ol style="list-style-type: decimal"><li><p>List at least two potential risks or vulnerabilities that could
+arise from using an AI coding assistant in this project.</p></li>
+<li><p>For each risk identified, propose a specific mitigation strategy.
+Explain how this strategy addresses the risk and aligns with the best
+practices discussed in the lesson.</p></li>
+<li><p>Draft a set of at least 5 ethical guidelines for your team to
+follow when using the AI coding assistant. These should cover areas such
+as bias prevention, code review processes, and data privacy.</p></li>
+<li><p>Outline a security protocol that includes at least three specific
+measures to protect sensitive data and ensure the integrity of the
+AI-assisted development process.</p></li>
+<li><p>Design a collaborative code review process that leverages the
+strengths of both human developers and the AI assistant while mitigating
+potential risks.</p></li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Show details </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<p>Here are a few examples of sensitive situations you might think
+about:</p>
+<ul><li><p>Handling confidential participant data (e.g., writing code for
+analyzing participant responses in medical or psychological studies
+where data includes health records or personal information).</p></li>
+<li><p>Incorporating third-party libraries with unverified security
+compliance.</p></li>
+<li><p>Securing proprietary algorithms when developing code for
+cutting-edge research models or simulations that could be misused if
+exposed.</p></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<div class="section level3">
+<h3 id="potential-risks-or-vulnerabilities">1. Potential risks or vulnerabilities<a class="anchor" aria-label="anchor" href="#potential-risks-or-vulnerabilities"></a></h3>
+<ul><li>The AI assistant might inadvertently expose sensitive user data if
+it’s not properly configured to handle confidential information.</li>
+<li>The AI assistant might suggest insecure coding practices or outdated
+libraries, introducing vulnerabilities into the project.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="mitigation-strategies">2. Mitigation strategies<a class="anchor" aria-label="anchor" href="#mitigation-strategies"></a></h3>
+<ul><li>Implement a local, offline version of the AI coding assistant or
+create mock data when the AI coding assistant is enable to prevent
+exposure of real user data.</li>
+<li>Integrate automated security scanning tools into the CI/CD pipeline
+(e.g., Synk) to identify and address vulnerabilities in the code
+suggested by the AI.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="ethical-guidelines">3. Ethical guidelines<a class="anchor" aria-label="anchor" href="#ethical-guidelines"></a></h3>
+<ul><li>Always document when and how the AI assistant is used in code
+development.</li>
+<li>Every piece of AI-generated code must be reviewed by at least one
+human developer before integration.</li>
+<li>Never input sensitive user data or proprietary information into the
+AI assistant.</li>
+<li>Take responsibility for all code in the project, regardless of
+whether it was human or AI-generated.</li>
+<li>Use the AI assistant as a tool to enhance human capabilities, not to
+replace critical thinking or decision-making.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="security-protocol">4. Security protocol<a class="anchor" aria-label="anchor" href="#security-protocol"></a></h3>
+<ul><li>If using an offline version of the AI coding assistant, make sure to
+run it in an isolated, sandboxed environment to prevent unauthorized
+access to sensitive project data.</li>
+<li>Implement strict role-based access controls to limit who can use the
+AI assistant and what parts of the codebase it can access.</li>
+<li>Regularly update the AI assistant and its underlying libraries to
+patch security vulnerabilities.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="collaborative-code-review-process">5. Collaborative code review process<a class="anchor" aria-label="anchor" href="#collaborative-code-review-process"></a></h3>
+<ul><li>Always do peer code reviews of AI-generated code to catch any
+potential security vulnerabilities or ethical concerns.</li>
+<li>Run the code through automated testing and security scanning tools
+to catch potential issues missed by human reviewers.</li>
+<li>Hold regular team meetings to discuss complex issues, AI-suggested
+patterns, and potential biases or security concerns identified during
+the review process.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="ethical-considerations">Ethical Considerations<a class="anchor" aria-label="anchor" href="#ethical-considerations"></a></h2>
 <hr class="half-width"><p>When using AI coding assistants, it is essential to recognize the
 ethical challenges they pose. Indeed, these tools, while powerful, raise
 issues of bias, transparency, accountability and privacy. Key ethical
@@ -515,94 +631,6 @@ quality through diverse perspectives.</p></li>
 </ul><p>By integrating these best practices and security measures, developers
 can leverage the advantages of AI coding assistants while effectively
 mitigating the ethical and security risks associated with their use.</p>
-<div id="ai-coding-assistant-ethics-challenge-15-min" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="ai-coding-assistant-ethics-challenge-15-min" class="callout-inner">
-<h3 class="callout-title">AI Coding Assistant Ethics Challenge (15 min)</h3>
-<div class="callout-content">
-<p>You’re leading a team that’s considering adopting an AI coding
-assistant for a new project involving sensitive user data. Your task is
-to create a comprehensive plan that addresses the ethical and security
-concerns discussed in the lesson.</p>
-<ol style="list-style-type: decimal"><li><p>List at least two potential risks or vulnerabilities that could
-arise from using an AI coding assistant in this project.</p></li>
-<li><p>For each risk identified, propose a specific mitigation strategy.
-Explain how this strategy addresses the risk and aligns with the best
-practices discussed in the lesson.</p></li>
-<li><p>Draft a set of at least 5 ethical guidelines for your team to
-follow when using the AI coding assistant. These should cover areas such
-as bias prevention, code review processes, and data privacy.</p></li>
-<li><p>Outline a security protocol that includes at least three specific
-measures to protect sensitive data and ensure the integrity of the
-AI-assisted development process.</p></li>
-<li><p>Design a collaborative code review process that leverages the
-strengths of both human developers and the AI assistant while mitigating
-potential risks.</p></li>
-</ol></div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="section level3">
-<h3 id="potential-risks-or-vulnerabilities">1. Potential risks or vulnerabilities<a class="anchor" aria-label="anchor" href="#potential-risks-or-vulnerabilities"></a></h3>
-<ul><li>The AI assistant might inadvertently expose sensitive user data if
-it’s not properly configured to handle confidential information.</li>
-<li>The AI assistant might suggest insecure coding practices or outdated
-libraries, introducing vulnerabilities into the project.</li>
-</ul></div>
-<div class="section level3">
-<h3 id="mitigation-strategies">2. Mitigation strategies<a class="anchor" aria-label="anchor" href="#mitigation-strategies"></a></h3>
-<ul><li>Implement a local, offline version of the AI coding assistant or
-create mock data when the AI coding assistant is enable to prevent
-exposure of real user data.</li>
-<li>Integrate automated security scanning tools into the CI/CD pipeline
-(e.g., Synk) to identify and address vulnerabilities in the code
-suggested by the AI.</li>
-</ul></div>
-<div class="section level3">
-<h3 id="ethical-guidelines">3. Ethical guidelines<a class="anchor" aria-label="anchor" href="#ethical-guidelines"></a></h3>
-<ul><li>Always document when and how the AI assistant is used in code
-development.</li>
-<li>Every piece of AI-generated code must be reviewed by at least one
-human developer before integration.</li>
-<li>Never input sensitive user data or proprietary information into the
-AI assistant.</li>
-<li>Take responsibility for all code in the project, regardless of
-whether it was human or AI-generated.</li>
-<li>Use the AI assistant as a tool to enhance human capabilities, not to
-replace critical thinking or decision-making.</li>
-</ul></div>
-<div class="section level3">
-<h3 id="security-protocol">4. Security protocol<a class="anchor" aria-label="anchor" href="#security-protocol"></a></h3>
-<ul><li>If using an offline version of the AI coding assistant, make sure to
-run it in an isolated, sandboxed environment to prevent unauthorized
-access to sensitive project data.</li>
-<li>Implement strict role-based access controls to limit who can use the
-AI assistant and what parts of the codebase it can access.</li>
-<li>Regularly update the AI assistant and its underlying libraries to
-patch security vulnerabilities.</li>
-</ul></div>
-<div class="section level3">
-<h3 id="collaborative-code-review-process">5. Collaborative code review process<a class="anchor" aria-label="anchor" href="#collaborative-code-review-process"></a></h3>
-<ul><li>Always do peer code reviews of AI-generated code to catch any
-potential security vulnerabilities or ethical concerns.</li>
-<li>Run the code through automated testing and security scanning tools
-to catch potential issues missed by human reviewers.</li>
-<li>Hold regular team meetings to discuss complex issues, AI-suggested
-patterns, and potential biases or security concerns identified during
-the review process.</li>
-</ul></div>
-</div>
-</div>
-</div>
-</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -684,7 +712,7 @@ any links that you are not going to use.
   "url": "https://olgaminaeva.github.io/gen-ai-coding/3-ethical-and-security-considerations.html",
   "identifier": "https://olgaminaeva.github.io/gen-ai-coding/3-ethical-and-security-considerations.html",
   "dateCreated": "2024-09-12",
-  "dateModified": "2024-10-28",
+  "dateModified": "2024-11-24",
   "datePublished": "2024-11-24"
 }
 
