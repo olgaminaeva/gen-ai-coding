@@ -21,6 +21,76 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Introduction to the Practical Exercise
+
+Before diving into the core content on ethical and security considerations for AI coding assistants, let’s begin with a scenario-based exercise to set the stage. This exercise will help you identify potential challenges and think critically about how you might address them.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## AI Coding Assistant Ethics Challenge (15 min)
+
+You're leading a team that's considering adopting an AI coding assistant for a new project involving sensitive user data. Your task is to create a comprehensive plan that addresses the ethical and security concerns discussed in the lesson.
+
+1. List at least two potential risks or vulnerabilities that could arise from using an AI coding assistant in this project.
+
+2. For each risk identified, propose a specific mitigation strategy. Explain how this strategy addresses the risk and aligns with the best practices discussed in the lesson.
+
+3. Draft a set of at least 5 ethical guidelines for your team to follow when using the AI coding assistant. These should cover areas such as bias prevention, code review processes, and data privacy.
+
+4. Outline a security protocol that includes at least three specific measures to protect sensitive data and ensure the integrity of the AI-assisted development process.
+
+5. Design a collaborative code review process that leverages the strengths of both human developers and the AI assistant while mitigating potential risks.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: spoiler 
+
+Here are a few examples of sensitive situations you might think about:
+
+- Handling confidential participant data (e.g., writing code for analyzing participant responses in medical or psychological studies where data includes health records or personal information).
+  
+- Incorporating third-party libraries with unverified security compliance.
+
+- Securing proprietary algorithms when developing code for cutting-edge research models or simulations that could be misused if exposed.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: solution 
+
+## Solution
+
+### 1. Potential risks or vulnerabilities
+
+- The AI assistant might inadvertently expose sensitive user data if it's not properly configured to handle confidential information.
+- The AI assistant might suggest insecure coding practices or outdated libraries, introducing vulnerabilities into the project.
+
+### 2. Mitigation strategies
+
+-  Implement a local, offline version of the AI coding assistant or create mock data when the AI coding assistant is enable to prevent exposure of real user data.
+-  Integrate automated security scanning tools into the CI/CD pipeline (e.g., Synk) to identify and address vulnerabilities in the code suggested by the AI.
+
+### 3. Ethical guidelines
+
+- Always document when and how the AI assistant is used in code development.
+- Every piece of AI-generated code must be reviewed by at least one human developer before integration.
+- Never input sensitive user data or proprietary information into the AI assistant.
+- Take responsibility for all code in the project, regardless of whether it was human or AI-generated.
+- Use the AI assistant as a tool to enhance human capabilities, not to replace critical thinking or decision-making.
+
+### 4. Security protocol
+
+- If using an offline version of the AI coding assistant, make sure to run it in an isolated, sandboxed environment to prevent unauthorized access to sensitive project data.
+- Implement strict role-based access controls to limit who can use the AI assistant and what parts of the codebase it can access.
+- Regularly update the AI assistant and its underlying libraries to patch security vulnerabilities. 
+
+### 5. Collaborative code review process
+
+- Always do peer code reviews of AI-generated code to catch any potential security vulnerabilities or ethical concerns.
+- Run the code through automated testing and security scanning tools to catch potential issues missed by human reviewers.
+- Hold regular team meetings to discuss complex issues, AI-suggested patterns, and potential biases or security concerns identified during the review process.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Ethical Considerations
 
 When using AI coding assistants, it is essential to recognize the ethical challenges they pose. Indeed, these tools, while powerful, raise issues of bias, transparency, accountability and privacy. Key ethical considerations include:
@@ -94,60 +164,6 @@ To ensure ethical and safe use of AI coding assistants, developers must adopt a 
 - **Collaborative Oversight**: Encourage a collaborative oversight approach where teams share responsibility for evaluating AI-generated code. This collective effort can enhance code quality, as multiple perspectives help identify potential flaws that an individual developer might overlook. Implementing regular code reviews can foster an environment of collective responsibility, enhancing code quality through diverse perspectives.
 
 By integrating these best practices and security measures, developers can leverage the advantages of AI coding assistants while effectively mitigating the ethical and security risks associated with their use.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## AI Coding Assistant Ethics Challenge (15 min)
-
-You're leading a team that's considering adopting an AI coding assistant for a new project involving sensitive user data. Your task is to create a comprehensive plan that addresses the ethical and security concerns discussed in the lesson.
-
-1. List at least two potential risks or vulnerabilities that could arise from using an AI coding assistant in this project.
-
-2. For each risk identified, propose a specific mitigation strategy. Explain how this strategy addresses the risk and aligns with the best practices discussed in the lesson.
-
-3. Draft a set of at least 5 ethical guidelines for your team to follow when using the AI coding assistant. These should cover areas such as bias prevention, code review processes, and data privacy.
-
-4. Outline a security protocol that includes at least three specific measures to protect sensitive data and ensure the integrity of the AI-assisted development process.
-
-5. Design a collaborative code review process that leverages the strengths of both human developers and the AI assistant while mitigating potential risks.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: solution 
-
-## Solution
-
-### 1. Potential risks or vulnerabilities
-
-- The AI assistant might inadvertently expose sensitive user data if it's not properly configured to handle confidential information.
-- The AI assistant might suggest insecure coding practices or outdated libraries, introducing vulnerabilities into the project.
-
-### 2. Mitigation strategies
-
--  Implement a local, offline version of the AI coding assistant or create mock data when the AI coding assistant is enable to prevent exposure of real user data.
--  Integrate automated security scanning tools into the CI/CD pipeline (e.g., Synk) to identify and address vulnerabilities in the code suggested by the AI.
-
-### 3. Ethical guidelines
-
-- Always document when and how the AI assistant is used in code development.
-- Every piece of AI-generated code must be reviewed by at least one human developer before integration.
-- Never input sensitive user data or proprietary information into the AI assistant.
-- Take responsibility for all code in the project, regardless of whether it was human or AI-generated.
-- Use the AI assistant as a tool to enhance human capabilities, not to replace critical thinking or decision-making.
-
-### 4. Security protocol
-
-- If using an offline version of the AI coding assistant, make sure to run it in an isolated, sandboxed environment to prevent unauthorized access to sensitive project data.
-- Implement strict role-based access controls to limit who can use the AI assistant and what parts of the codebase it can access.
-- Regularly update the AI assistant and its underlying libraries to patch security vulnerabilities. 
-
-### 5. Collaborative code review process
-
-- Always do peer code reviews of AI-generated code to catch any potential security vulnerabilities or ethical concerns.
-- Run the code through automated testing and security scanning tools to catch potential issues missed by human reviewers.
-- Hold regular team meetings to discuss complex issues, AI-suggested patterns, and potential biases or security concerns identified during the review process.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
