@@ -43,7 +43,7 @@ You're leading a team that's considering adopting an AI coding assistant for a n
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: spoiler 
+::::::::::::::::::::::::::::::::::::: hint 
 
 Here are a few examples of sensitive situations you might think about:
 
